@@ -247,12 +247,12 @@ public class Model implements Serializable {
 	Payment bank;
 	Date timestamp;
 	boolean cv,sop;
-	public Model(Payment x)
+	public Model(String xb,String xiib,int yox,int yoxii,float x,float xii,String degree,String dept,String college,String univ,String city,String state,int year,int ece,int pg,int other,int sat,Payment pay,String email,String name,String add_c,String mobile,int stream,String pref[],int gender,int category,int physical,int yy,int mm,int dd,int war,String fname,String nation,String p_add)
 	{
-//		P=new Personal();
-//		E=new Education();
+		P=new Personal(email,name,add_c,mobile,stream,pref,gender,category,physical,yy,mm,dd,war,fname,nation,p_add);
+		E=new Education(xb,xiib,yox,yoxii,x,xii,degree,dept,college,univ,city,state,year,ece,pg,other,sat);
 		enrollment_number="";
-		bank=x;
+		bank=pay;
 		cv=sop=false;
 		timestamp=new Date(); //get current date from system
 	}
