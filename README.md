@@ -1,2 +1,2 @@
 # AP_Project
-AP Project (made with Satyam Kumar)
+AP Project Frontend (made with Satyam Kumar)
