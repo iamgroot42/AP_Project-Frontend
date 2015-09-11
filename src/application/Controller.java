@@ -209,9 +209,9 @@ public class Controller
 			addp_x2.setTextFill(Color.BLACK);
 		}
 		random=false;
-		if(stream1_x.isPressed()) random=true;
-		if(stream2_x.isPressed()) random=true;
-		if(stream3_x.isPressed()) random=true;
+		if(stream1_x.isSelected()) random=true;
+		if(stream2_x.isSelected()) random=true;
+		if(stream3_x.isSelected()) random=true;
 		if(!random)
 		{
 			phd_x2.setTextFill(Color.RED);
@@ -225,8 +225,8 @@ public class Controller
 			phd_x2.setTextFill(Color.BLACK);
 		}
 		random=false;
-		if(genderm_x.isPressed()) random=true;
-		if(genderf_x.isPressed()) random=true;
+		if(genderm_x.isSelected()) random=true;
+		if(genderf_x.isSelected()) random=true;
 		if(!random)
 		{
 			gender_x2.setTextFill(Color.RED);
@@ -239,8 +239,8 @@ public class Controller
 			gender_x2.setTextFill(Color.BLACK);
 		}
 		random=false;
-		if(phyy_x.isPressed()) random=true;
-		if(phyn_x.isPressed()) random=true;
+		if(phyy_x.isSelected()) random=true;
+		if(phyn_x.isSelected()) random=true;
 		if(!random)
 		{
 			phy_x2.setTextFill(Color.RED);
@@ -253,8 +253,8 @@ public class Controller
 			phy_x2.setTextFill(Color.BLACK);
 		}
 		random=false;
-		if(wary_x.isPressed()) random=true;
-		if(warn_x.isPressed()) random=true;
+		if(wary_x.isSelected()) random=true;
+		if(warn_x.isSelected()) random=true;
 		if(!random)
 		{
 			war_x2.setTextFill(Color.RED);
@@ -266,23 +266,42 @@ public class Controller
 		{
 			war_x2.setTextFill(Color.BLACK);
 		}
-		if(category_x.getValue().equals(""))
+		if(category_x.getValue().equals("----"))
 		{
 			category_x2.setTextFill(Color.RED);
+			temp=false;
 		}
 		else
 		{
 			category_x2.setTextFill(Color.BLACK);
 		}
-		if(nation_x.getValue().equals(""))
+		if(nation_x.getValue().equals("----"))
 		{
 			nation_x2.setTextFill(Color.RED);
+			temp=false;
 		}
 		else
 		{
 			nation_x2.setTextFill(Color.BLACK);
 		}
-				
+		try
+		{
+			if(dob_x.getValue()==null)
+			{
+				dob_x2.setTextFill(Color.RED);
+				temp=false;
+			}
+			else
+			{
+				dob_x2.setTextFill(Color.BLACK);
+			}
+		}
+		catch(Exception e)
+		{
+			dob_x2.setTextFill(Color.RED);
+			temp=false;
+		}
+		
 		if(temp)
 		{
 //			save_P();
@@ -395,57 +414,41 @@ public class Controller
 	private void populate_choice_t1()
 	{
 		category_x.setItems(FXCollections.observableArrayList(
-			    "","General", "SC", "ST", "OBC")
+			    "----","General", "SC", "ST", "OBC")
 			);
+		category_x.getSelectionModel().select(0);
 		nation_x.setItems(FXCollections.observableArrayList(
-			    "", "India","Others")
+			    "----", "India","Others")
 			);
+		nation_x.getSelectionModel().select(0);
 	}
 	
 	@FXML
 	public void initialize_() {	
+			populate_choice_t1(); 
         	t.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Tab>()
 			{	
         		@Override
 				public void changed(ObservableValue<? extends Tab> tab, Tab oldTab, Tab newTab) {
 					if(newTab==t1)
 					{
-						populate_choice_t1(); //Not working :(
 //						populate_t1();
 //						clear_t1();
 					}
 					else if(newTab==t2)
 					{
-//						L2.setText("");
-//						L3.setText("");
-//						L4.setText("");
-//						L5.setText("");
-//						category.setText("");
-//						amount.setText("");
-//						date.setValue(null);
-//						L6.setText("Total Budget: Rs."+mane.getBUD());
-//						L7.setText("Available Budget: Rs."+mane.getAVL());
 					}
 					else if(newTab==t3)
 					{
-						//Table
-//						L6.setText("Total Budget: Rs."+mane.getBUD());
-//						L7.setText("Total Expense: Rs."+(mane.getBUD()-mane.getAVL()));
 					}
 					else if(newTab==t4)
 					{	
-						//Pie Chart
-//						Charter();
 					}
 					else
 					{
 						
 					}
 			}});
-//        	dump.setEditable(false);
-//        	col1.setCellValueFactory(x -> new SimpleStringProperty(x.getValue().getCategory()));
-//        	col2.setCellValueFactory(x -> new SimpleIntegerProperty(x.getValue().getAmount()).asObject());
-//        	col3.setCellValueFactory(x -> new SimpleStringProperty(x.getValue().getDt()));
         	
 	}
 }
