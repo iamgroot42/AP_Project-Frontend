@@ -3,50 +3,16 @@ package application;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
-class Date implements Comparable<Date>
-{
-    int dd,mm,yy;
-	public Date() {dd=mm=yy=-1;}
-	public String toString() {return dd+"/"+mm+"/"+yy;}
-	public void setDate(int a,int b,int c) {dd=a;mm=b;yy=c;}
-	@Override
-	public int compareTo(Date temp) 
-	{
-		Date x=temp; 
-		int aa,bb,cc;
-		aa=x.dd;
-		bb=x.mm;
-		cc=x.yy;
-		if(yy > cc) return 1;
-		else if(yy < cc) return -1;
-		else
-		{
-			if(mm > bb) return 1;
-			else if(mm < bb) return -1;
-			else
-			{
-				if(dd > aa) return 1;
-				return -1;
-			}
-		}
-	}
-	public boolean equals(Date temp)
-	{
-		Date x=temp;
-		boolean a;
-		a=false;
-		if(x.dd==this.dd) if(x.mm==this.mm) if(x.yy==this.yy) a=true;
-		return a;
-	}
-}
+import javafx.scene.control.DatePicker;
+
 
 abstract class CheckEmpty
 {
 	public boolean filled(int x) {return x != -1;}
 	public boolean filled(String x) {return  !x.isEmpty();}
-	public boolean filled(Date x)
+	public boolean filled(DatePicker x)
 	{
-		return x.dd != -1; //If anything is -1,invalid
+		return x.getValue()==null; 
 	}
 	public boolean filled(float x) {return x != -1;}
 }
@@ -139,11 +105,11 @@ class Personal
 {
 	String email,name,mobile,add_correspondence;
 	String add_permanent,father_name,nationality,pincode;
-	int phd_stream,gender,category,physically_disabled,war_category;
+	int phd_stream,gender,physically_disabled,war_category;
 	String[]  preference;
-	String reftype;
-	Date date_of_birth;
-	public Personal(String email,String name,String add_c,String mobile,int stream,String pref[],int gender,int category,int physical,int yy,int mm,int dd,int war,String fname,String nation,String p_add)
+	String reftype,category;
+	DatePicker date_of_birth;
+	public Personal(String email,String name,String add_c,String mobile,int stream,String pref[],int gender,String category,int physical,int war,String fname,String nation,String p_add)
 	{
 		this.email=email;
 		this.name=name;
@@ -158,8 +124,9 @@ class Personal
 		this.gender=gender;
 		this.category=category;
 		physically_disabled=physical;
-		date_of_birth=new Date();
-		date_of_birth.setDate(dd, mm, yy);
+//		Deal with DOB later
+//		date_of_birth=new DatePicker();
+//		date_of_birth=dd.getValue();
 		war_category=war;
 		father_name=fname;
 		nationality=nation;
@@ -172,9 +139,9 @@ class Personal
 	public String getMobile() {return mobile;}
 	public int getStream() {return phd_stream;}
 	public int getGender() {return gender;}
-	public int getCategory() {return category;}
+	public String getCategory() {return category;}
 	public int getPhysical(){return physically_disabled;}
-	public Date getDOB() {return date_of_birth;}
+//	public Date getDOB() {return date_of_birth;}
 	public int getWar() {return war_category;}
 	public String getFatherName() {return father_name;}
 	public String getNationality() {return nationality;}
@@ -245,21 +212,21 @@ public class Model implements Serializable {
 	Education E;
 	String enrollment_number; //Yet to figure out
 	Payment bank;
-	Date timestamp;
+//	Date timestamp;
 	boolean cv,sop;
 	public Model(String xb,String xiib,int yox,int yoxii,float x,float xii,String degree,String dept,String college,String univ,String city,String state,int year,int ece,int pg,int other,int sat,Payment pay,String email,String name,String add_c,String mobile,int stream,String pref[],int gender,int category,int physical,int yy,int mm,int dd,int war,String fname,String nation,String p_add)
 	{
-		P=new Personal(email,name,add_c,mobile,stream,pref,gender,category,physical,yy,mm,dd,war,fname,nation,p_add);
+//		P=new Personal(email,name,add_c,mobile,stream,pref,gender,category,physical,yy,mm,dd,war,fname,nation,p_add);
 		E=new Education(xb,xiib,yox,yoxii,x,xii,degree,dept,college,univ,city,state,year,ece,pg,other,sat);
 		enrollment_number="";
 		bank=pay;
 		cv=sop=false;
-		timestamp=new Date(); //get current date from system
+//		timestamp=new Date(); //get current date from system
 	}
 	public String getEnrollmentNumber() {return enrollment_number;}
 	public boolean getCV() {return cv;}
 	public void setCV(boolean x) {cv=x;}
 	public boolean getSOP() {return sop;}
 	public void setSOP(boolean x) {sop=x;}	
-	public Date getTimestamp() {return timestamp;}
+//	public Date getTimestamp() {return timestamp;}
 }
