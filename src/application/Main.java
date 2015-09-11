@@ -35,7 +35,6 @@ public class Main extends Application
 	Education education;
 	Payment payment;
 	Feedback feedback;
-	boolean t1_saved,t2_saved,t3_saved,t4_saved;
 
 	public Personal getPersonal() {
 		return personal;
@@ -67,38 +66,6 @@ public class Main extends Application
 
 	public void setFeedback(Feedback feedback) {
 		this.feedback = feedback;
-	}
-
-	public boolean isT1_saved() {
-		return t1_saved;
-	}
-
-	public void setT1_saved(boolean t1_saved) {
-		this.t1_saved = t1_saved;
-	}
-
-	public boolean isT2_saved() {
-		return t2_saved;
-	}
-
-	public void setT2_saved(boolean t2_saved) {
-		this.t2_saved = t2_saved;
-	}
-
-	public boolean isT3_saved() {
-		return t3_saved;
-	}
-
-	public void setT3_saved(boolean t3_saved) {
-		this.t3_saved = t3_saved;
-	}
-
-	public boolean isT4_saved() {
-		return t4_saved;
-	}
-
-	public void setT4_saved(boolean t4_saved) {
-		this.t4_saved = t4_saved;
 	}
 
 	@Override

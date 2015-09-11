@@ -3,6 +3,7 @@ package application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
@@ -72,15 +73,16 @@ public class Controller
 		stream3_x.setSelected(false);
 	}
 	
+	@FXML
+    void handleb1(ActionEvent event) {
+		//Here
+    }
+	
 	private void save_P()
 	{
 		if(mane.getPersonal()==null)
-		{
-			String[] temp2=new String[3];
-			temp2[0]=pref1_x.getValue();
-			temp2[1]=pref2_x.getValue();
-			temp2[2]=pref3_x.getValue();			
-			Personal temp=new Personal(email_x.getText(),name_x.getText(),addc_x.getText(),mob_x.getText(),phdstream,temp2,gender,category_x.getValue(),physical,war,fname_x.getText(),nation_x.getValue(),addp_x.getText());
+		{			
+			Personal temp=new Personal();
 			mane.setPersonal(temp);
 		}
 		else
@@ -91,25 +93,25 @@ public class Controller
 //			mane.getPersonal().setDate_of_birth(dob_x.getValue());
 			mane.getPersonal().setEmail(email_x.getText());
 			mane.getPersonal().setFather_name(fname_x.getText());
-			mane.getPersonal().setGender(gender);
+			mane.getPersonal().setGender(this.gender);
 			mane.getPersonal().setMobile(mob_x.getText());
 			mane.getPersonal().setName(name_x.getText());
 			mane.getPersonal().setNationality(nation_x.getValue());
-			mane.getPersonal().setPhd_stream(phdstream);
-			mane.getPersonal().setPhysically_disabled(physical);
+			mane.getPersonal().setPhd_stream(this.phdstream);
+			mane.getPersonal().setPhysically_disabled(this.physical);
 			mane.getPersonal().setPincode(pin_x.getText());
 			String[] temp=new String[3];
 			temp[0]=pref1_x.getValue();
 			temp[1]=pref2_x.getValue();
 			temp[2]=pref3_x.getValue();
 			mane.getPersonal().setPreference(temp);
-			mane.getPersonal().setWar_category(war);	
+			mane.getPersonal().setWar_category(this.war);	
 		}
 	}
 	
 	private void populate_t1()
 	{
-		if(mane.isT1_saved())
+		if(true) //Check if file contains data
 		{
 			Personal temp=mane.getPersonal();
 			email_x.setText(temp.getEmail());
@@ -124,7 +126,7 @@ public class Controller
 			fname_x.setText(temp.getFather_name());
 			addp_x.setText(temp.getAdd_permanent());
 			pin_x.setText(temp.getPincode());
-			if(war)
+			if(this.war)
 			{
 				wary_x.setSelected(true);
 				warn_x.setSelected(false);
@@ -134,7 +136,7 @@ public class Controller
 				wary_x.setSelected(false);
 				warn_x.setSelected(true);
 			}
-			if(physical)
+			if(this.physical)
 			{
 				phyy_x.setSelected(true);
 				phyn_x.setSelected(false);
@@ -144,7 +146,7 @@ public class Controller
 				phyy_x.setSelected(false);
 				phyn_x.setSelected(true);
 			}
-			if(gender) //Sexism
+			if(this.gender) //Sexism
 			{
 				genderf_x.setSelected(true); 
 				genderm_x.setSelected(false);
@@ -154,19 +156,19 @@ public class Controller
 				genderf_x.setSelected(false); 
 				genderm_x.setSelected(true);
 			}
-			if(phdstream==1)
+			if(this.phdstream==1)
 			{
 				stream1_x.setSelected(true);
 				stream2_x.setSelected(false);
 				stream3_x.setSelected(false);
 			}
-			else if(phdstream==2)
+			else if(this.phdstream==2)
 			{
 				stream1_x.setSelected(false);
 				stream2_x.setSelected(true);
 				stream3_x.setSelected(false);
 			}
-			else if(phdstream==3)
+			else if(this.phdstream==3)
 			{
 				stream1_x.setSelected(false);
 				stream2_x.setSelected(false);
@@ -199,6 +201,7 @@ public class Controller
 					if(newTab==t1)
 					{
 						populate_choice_t1();
+						populate_t1();
 					}
 					else if(newTab==t2)
 					{

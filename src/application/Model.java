@@ -170,30 +170,6 @@ class Personal
 	String category;
 	boolean gender,physically_disabled,war_category;
 	DatePicker date_of_birth;
-	public Personal(String email,String name,String add_c,String mobile,int stream,String pref[],boolean gender,String category,boolean physical,boolean war,String fname,String nation,String p_add)
-	{
-		this.email=email;
-		this.name=name;
-		add_correspondence=add_c;
-		this.mobile=mobile;
-		phd_stream=stream;
-		preference=new String[4];
-		preference[0]=pref[0];
-		preference[1]=pref[1];
-		preference[2]=pref[2];
-		preference[3]="";
-		this.gender=gender;
-		this.category=category;
-		physically_disabled=physical;
-//		Deal with DOB later
-//		date_of_birth=new DatePicker();
-//		date_of_birth=dd.getValue();
-		war_category=war;
-		father_name=fname;
-		nationality=nation;
-		add_permanent=p_add;
-		pincode="";
-	}
 	public String getEmail() {
 		return email;
 	}
