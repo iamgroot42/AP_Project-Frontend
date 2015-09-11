@@ -3,6 +3,7 @@ package application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
@@ -66,6 +67,9 @@ public class Controller
 	Main mane;
 	int phdstream;
 	boolean gender,physical,war;
+	ObservableList<String> cse_pref;
+	ObservableList<String> ece_pref;
+	ObservableList<String> bt_pref;
 	
 	public void setMainApp(Main p)
 	{
@@ -98,6 +102,7 @@ public class Controller
 	{
 		stream2_x.setSelected(false);
 		stream3_x.setSelected(false);
+		populate_cse_pref();
 	}
 	
 	@FXML
@@ -105,6 +110,16 @@ public class Controller
 	{
 		stream1_x.setSelected(false);
 		stream3_x.setSelected(false);
+		populate_ece_pref();
+	}
+	
+	@FXML
+	void stream3_x_f(ActionEvent event)
+	{
+		stream1_x.setSelected(false);
+		stream2_x.setSelected(false);
+		populate_bt_pref();
+		
 	}
 	
 	@FXML
@@ -141,13 +156,6 @@ public class Controller
 	void warn_x_f(ActionEvent event)
 	{
 		wary_x.setSelected(false);
-	}
-	
-	@FXML
-	void stream3_x_f(ActionEvent event)
-	{
-		stream1_x.setSelected(false);
-		stream2_x.setSelected(false);
 	}
 	
 	@FXML
@@ -411,6 +419,27 @@ public class Controller
 		}
 	}
 	
+	private void populate_cse_pref()
+	{
+		pref1_x.setItems(cse_pref);
+		pref2_x.setItems(cse_pref);
+		pref3_x.setItems(cse_pref);
+	}
+	
+	private void populate_ece_pref()
+	{
+		pref1_x.setItems(ece_pref);
+		pref2_x.setItems(ece_pref);
+		pref3_x.setItems(ece_pref);
+	}
+	
+	private void populate_bt_pref()
+	{
+		pref1_x.setItems(bt_pref);	
+		pref2_x.setItems(bt_pref);	
+		pref3_x.setItems(bt_pref);	
+	}
+	
 	private void populate_choice_t1()
 	{
 		category_x.setItems(FXCollections.observableArrayList(
@@ -425,7 +454,27 @@ public class Controller
 	
 	@FXML
 	public void initialize_() {	
+		cse_pref=FXCollections.observableArrayList(
+			    "----","Artificial Intelligence and Robotics - CSE","Biophysics - CB","Compilers - CSE","Computer Architecture and Systems Design - csE",
+			    "Computer Graphics - CSE","Computer Vision - CSE","Image Analysis and Biometrics - CSE","Information Management and Data Engineering - CSE",
+			    "Machine Learning - CSE","Massively Parallel Systems - CSE","Mobile Computing and Networking Applications - CSE",
+			    "Program Analysis - CSE","Security and Privacy - CSE","Signal and Image Processing - CSE","Software Engineering - CSE",
+			    "Theoretical Computer Science - CSE","Wireless Networks - CSE");
+		ece_pref=FXCollections.observableArrayList(
+			    "----","Computer Architecture and Systems Design - ECE","Controls and Robotics - ECE","Digital and Analog VLSI Systems Design - ECE",
+			    "Electromagnetics - ECE","Embedded and VLSI systems design - ECE","Embedded Systems - ECE","Fiber-Wireless Architectures - ECE",
+			    "Machine Learning - ECE","OFDM based Optical Access Networks - ECE","Optical Wireless Communication Systems - ECE",
+			    "RF and mixed signal electronics - ECE","Signal and Image Processing - ECE","Wireless Communication - ECE",
+			    "Wireless Networks - ECE");
+		bt_pref=FXCollections.observableArrayList(
+			    "----","Biophysics - CB","Structural Biology - CB","Systems Biology - CB");
 			populate_choice_t1(); 
+			pref1_x.setItems(FXCollections.observableArrayList(
+				    "----"));
+			pref2_x.setItems(FXCollections.observableArrayList(
+				    "----"));
+			pref3_x.setItems(FXCollections.observableArrayList(
+				    "----"));
         	t.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Tab>()
 			{	
         		@Override
