@@ -165,11 +165,12 @@ class Personal
 {
 	String email,name,mobile,add_correspondence;
 	String add_permanent,father_name,nationality,pincode;
-	int phd_stream,gender,physically_disabled,war_category;
+	int phd_stream;
 	String[]  preference;
-	String reftype,category;
+	String category;
+	boolean gender,physically_disabled,war_category;
 	DatePicker date_of_birth;
-	public Personal(String email,String name,String add_c,String mobile,int stream,String pref[],int gender,String category,int physical,int war,String fname,String nation,String p_add)
+	public Personal(String email,String name,String add_c,String mobile,int stream,String pref[],boolean gender,String category,boolean physical,boolean war,String fname,String nation,String p_add)
 	{
 		this.email=email;
 		this.name=name;
@@ -247,22 +248,22 @@ class Personal
 	public void setPhd_stream(int phd_stream) {
 		this.phd_stream = phd_stream;
 	}
-	public int getGender() {
+	public boolean getGender() {
 		return gender;
 	}
-	public void setGender(int gender) {
+	public void setGender(boolean gender) {
 		this.gender = gender;
 	}
-	public int getPhysically_disabled() {
+	public boolean getPhysically_disabled() {
 		return physically_disabled;
 	}
-	public void setPhysically_disabled(int physically_disabled) {
+	public void setPhysically_disabled(boolean physically_disabled) {
 		this.physically_disabled = physically_disabled;
 	}
-	public int getWar_category() {
+	public boolean getWar_category() {
 		return war_category;
 	}
-	public void setWar_category(int war_category) {
+	public void setWar_category(boolean war_category) {
 		this.war_category = war_category;
 	}
 	public String[] getPreference() {
@@ -270,12 +271,6 @@ class Personal
 	}
 	public void setPreference(String[] preference) {
 		this.preference = preference;
-	}
-	public String getReftype() {
-		return reftype;
-	}
-	public void setReftype(String reftype) {
-		this.reftype = reftype;
 	}
 	public String getCategory() {
 		return category;

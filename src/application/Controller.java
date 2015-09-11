@@ -43,7 +43,8 @@ public class Controller
     @FXML private Tab t4;
     @FXML private Tab t5;
 	Main mane;
-	int phdstream,gender,physical,war;
+	int phdstream;
+	boolean gender,physical,war;
 	
 	public void setMainApp(Main p)
 	{
@@ -84,7 +85,25 @@ public class Controller
 		}
 		else
 		{
-			
+			mane.getPersonal().setAdd_correspondence(addc_x.getText());
+			mane.getPersonal().setAdd_permanent(addp_x.getText());
+			mane.getPersonal().setCategory(category_x.getValue());
+//			mane.getPersonal().setDate_of_birth(dob_x.getValue());
+			mane.getPersonal().setEmail(email_x.getText());
+			mane.getPersonal().setFather_name(fname_x.getText());
+			mane.getPersonal().setGender(gender);
+			mane.getPersonal().setMobile(mob_x.getText());
+			mane.getPersonal().setName(name_x.getText());
+			mane.getPersonal().setNationality(nation_x.getValue());
+			mane.getPersonal().setPhd_stream(phdstream);
+			mane.getPersonal().setPhysically_disabled(physical);
+			mane.getPersonal().setPincode(pin_x.getText());
+			String[] temp=new String[3];
+			temp[0]=pref1_x.getValue();
+			temp[1]=pref2_x.getValue();
+			temp[2]=pref3_x.getValue();
+			mane.getPersonal().setPreference(temp);
+			mane.getPersonal().setWar_category(war);	
 		}
 	}
 	
@@ -93,6 +112,67 @@ public class Controller
 		if(mane.isT1_saved())
 		{
 			Personal temp=mane.getPersonal();
+			email_x.setText(temp.getEmail());
+			name_x.setText(temp.getName());
+			addc_x.setText(temp.getAdd_correspondence());
+			mob_x.setText(temp.getMobile());
+			pref1_x.setValue(temp.getPreference()[0]);
+			pref2_x.setValue(temp.getPreference()[1]);
+			pref3_x.setValue(temp.getPreference()[2]);
+			category_x.setValue(temp.getCategory());
+//			dob_x.setValue(temp.getDate_of_birth());
+			fname_x.setText(temp.getFather_name());
+			addp_x.setText(temp.getAdd_permanent());
+			pin_x.setText(temp.getPincode());
+			if(war)
+			{
+				wary_x.setSelected(true);
+				warn_x.setSelected(false);
+			}
+			else
+			{
+				wary_x.setSelected(false);
+				warn_x.setSelected(true);
+			}
+			if(physical)
+			{
+				phyy_x.setSelected(true);
+				phyn_x.setSelected(false);
+			}
+			else
+			{
+				phyy_x.setSelected(false);
+				phyn_x.setSelected(true);
+			}
+			if(gender) //Sexism
+			{
+				genderf_x.setSelected(true); 
+				genderm_x.setSelected(false);
+			}
+			else
+			{
+				genderf_x.setSelected(false); 
+				genderm_x.setSelected(true);
+			}
+			if(phdstream==1)
+			{
+				stream1_x.setSelected(true);
+				stream2_x.setSelected(false);
+				stream3_x.setSelected(false);
+			}
+			else if(phdstream==2)
+			{
+				stream1_x.setSelected(false);
+				stream2_x.setSelected(true);
+				stream3_x.setSelected(false);
+			}
+			else if(phdstream==3)
+			{
+				stream1_x.setSelected(false);
+				stream2_x.setSelected(false);
+				stream3_x.setSelected(true);
+			}
+			
 		}
 		else
 		{
