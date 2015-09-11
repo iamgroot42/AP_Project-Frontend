@@ -6,7 +6,6 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <TabPane fx:id="t" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="2000.0" prefWidth="719.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
   <tabs>
     <Tab fx:id="t1" text="Personal Information">
@@ -441,6 +440,18 @@
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Statement of Purpose*" GridPane.rowIndex="2" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CV/Resume*" GridPane.rowIndex="1" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Achievements (Other information like ranks, medals etc.)" wrappingWidth="309.83251953125" />
+                           </children>
+                        </GridPane>
+                        <GridPane GridPane.rowIndex="7">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="106.0" text="Save" GridPane.columnIndex="1" />
                            </children>
                         </GridPane>
                      </children>

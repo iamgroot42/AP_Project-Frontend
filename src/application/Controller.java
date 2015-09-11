@@ -73,9 +73,18 @@ public class Controller
 		stream3_x.setSelected(false);
 	}
 	
+	void validate_t1()
+	{
+		if(email_x.getText().equals(""))
+		{
+			
+		}
+	}
+	
 	@FXML
     void handleb1(ActionEvent event) {
 		//Here
+	
     }
 	
 	private void save_P()

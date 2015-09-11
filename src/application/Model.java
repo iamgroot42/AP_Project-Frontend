@@ -5,7 +5,6 @@ import java.sql.Timestamp;
 
 import javafx.scene.control.DatePicker;
 
-
 abstract class CheckEmpty
 {
 	public boolean filled(int x) {return x != -1;}
@@ -158,7 +157,6 @@ class Gate extends CheckEmpty
 	public void setScore(float score) {
 		this.score = score;
 	}
-	
 }
 
 class Personal
