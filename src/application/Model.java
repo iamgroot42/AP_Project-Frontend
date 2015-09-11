@@ -457,19 +457,42 @@ public class Model implements Serializable {
 	Payment bank;
 //	Date timestamp;
 	boolean cv,sop;
-	public Model(String xb,String xiib,int yox,int yoxii,float x,float xii,String degree,String dept,String college,String univ,String city,String state,int year,int ece,int pg,int other,int sat,Payment pay,String email,String name,String add_c,String mobile,int stream,String pref[],int gender,int category,int physical,int yy,int mm,int dd,int war,String fname,String nation,String p_add)
-	{
-//		P=new Personal(email,name,add_c,mobile,stream,pref,gender,category,physical,yy,mm,dd,war,fname,nation,p_add);
-		E=new Education(xb,xiib,yox,yoxii,x,xii,degree,dept,college,univ,city,state,year,ece,pg,other,sat);
-		enrollment_number="";
-		bank=pay;
-		cv=sop=false;
-//		timestamp=new Date(); //get current date from system
+	public Personal getP() {
+		return P;
 	}
-	public String getEnrollmentNumber() {return enrollment_number;}
-	public boolean getCV() {return cv;}
-	public void setCV(boolean x) {cv=x;}
-	public boolean getSOP() {return sop;}
-	public void setSOP(boolean x) {sop=x;}	
-//	public Date getTimestamp() {return timestamp;}
+	public void setP(Personal p) {
+		P = p;
+	}
+	public Education getE() {
+		return E;
+	}
+	public void setE(Education e) {
+		E = e;
+	}
+	public String getEnrollment_number() {
+		return enrollment_number;
+	}
+	public void setEnrollment_number(String enrollment_number) {
+		this.enrollment_number = enrollment_number;
+	}
+	public Payment getBank() {
+		return bank;
+	}
+	public void setBank(Payment bank) {
+		this.bank = bank;
+	}
+	public boolean isCv() {
+		return cv;
+	}
+	public void setCv(boolean cv) {
+		this.cv = cv;
+	}
+	public boolean isSop() {
+		return sop;
+	}
+	public void setSop(boolean sop) {
+		this.sop = sop;
+	}
+	
+	
 }

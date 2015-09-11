@@ -7,11 +7,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 
 public class Controller
 {
@@ -43,6 +46,23 @@ public class Controller
     @FXML private Tab t3;
     @FXML private Tab t4;
     @FXML private Tab t5;
+    @FXML Label error_t1;
+    @FXML private Label email_x2;
+    @FXML private Label name_x2;
+    @FXML private Label addc_x2;
+    @FXML private Label mob_x2;
+    @FXML private Label phd_x2;
+    @FXML private Label pref1_x2;
+    @FXML private Label pref2_x2;
+    @FXML private Label pref3_x2;
+    @FXML private Label gender_x2;
+    @FXML private Label category_x2;
+    @FXML private Label phy_x2;
+    @FXML private Label dob_x2;
+    @FXML private Label war_x2;
+    @FXML private Label fname_x2;
+    @FXML private Label nation_x2;
+    @FXML private Label addp_x2;
 	Main mane;
 	int phdstream;
 	boolean gender,physical,war;
@@ -73,18 +93,200 @@ public class Controller
 		stream3_x.setSelected(false);
 	}
 	
-	void validate_t1()
+	@FXML
+	void stream1_x_f(ActionEvent event)
 	{
-		if(email_x.getText().equals(""))
-		{
-			
-		}
+		stream2_x.setSelected(false);
+		stream3_x.setSelected(false);
+	}
+	
+	@FXML
+	void stream2_x_f(ActionEvent event)
+	{
+		stream1_x.setSelected(false);
+		stream3_x.setSelected(false);
+	}
+	
+	@FXML
+	void genderf_x_f(ActionEvent event)
+	{
+		genderm_x.setSelected(false);
+	}
+	
+	@FXML
+	void genderm_x_f(ActionEvent event)
+	{
+		genderf_x.setSelected(false);
+	}
+	
+	@FXML
+	void phyn_x_f(ActionEvent event)
+	{
+		phyy_x.setSelected(false);
+	}
+	
+	@FXML
+	void phyy_x_f(ActionEvent event)
+	{
+		phyn_x.setSelected(false);
+	}
+	
+	@FXML
+	void wary_x_f(ActionEvent event)
+	{
+		warn_x.setSelected(false);
+	}
+	
+	@FXML
+	void warn_x_f(ActionEvent event)
+	{
+		wary_x.setSelected(false);
+	}
+	
+	@FXML
+	void stream3_x_f(ActionEvent event)
+	{
+		stream1_x.setSelected(false);
+		stream2_x.setSelected(false);
 	}
 	
 	@FXML
     void handleb1(ActionEvent event) {
-		//Here
-	
+		boolean temp=true;
+		boolean random=false;
+		if(email_x.getText().equals(""))
+		{
+			email_x2.setTextFill(Color.RED);
+			temp=false;
+		}
+		else
+		{
+			email_x2.setTextFill(Color.BLACK);
+		}
+		if(name_x.getText().equals(""))
+		{
+			name_x2.setTextFill(Color.RED);
+			temp=false;
+		}
+		else
+		{
+			name_x2.setTextFill(Color.BLACK);
+		}
+		if(addc_x.getText().equals(""))
+		{
+			addc_x2.setTextFill(Color.RED);
+			temp=false;
+		}
+		else
+		{
+			addc_x2.setTextFill(Color.BLACK);
+		}
+		if(mob_x.getText().equals(""))
+		{
+			mob_x2.setTextFill(Color.RED); 
+			temp=false;
+		}
+		else
+		{
+			mob_x2.setTextFill(Color.BLACK); 
+		}
+		if(fname_x.getText().equals(""))
+		{
+			fname_x2.setTextFill(Color.RED);
+			temp=false;
+		}
+		else
+		{
+			fname_x2.setTextFill(Color.BLACK);
+		}
+		if(addp_x.getText().equals(""))
+		{
+			addp_x2.setTextFill(Color.RED);
+			temp=false;
+		}
+		else
+		{
+			addp_x2.setTextFill(Color.BLACK);
+		}
+		random=false;
+		if(stream1_x.isPressed()) random=true;
+		if(stream2_x.isPressed()) random=true;
+		if(stream3_x.isPressed()) random=true;
+		if(!random)
+		{
+			phd_x2.setTextFill(Color.RED);
+			temp=false;
+			stream1_x.setSelected(false);
+			stream2_x.setSelected(false);
+			stream3_x.setSelected(false);
+		}
+		else
+		{
+			phd_x2.setTextFill(Color.BLACK);
+		}
+		random=false;
+		if(genderm_x.isPressed()) random=true;
+		if(genderf_x.isPressed()) random=true;
+		if(!random)
+		{
+			gender_x2.setTextFill(Color.RED);
+			temp=false;
+			genderm_x.setSelected(false);
+			genderf_x.setSelected(false);
+		}
+		else
+		{
+			gender_x2.setTextFill(Color.BLACK);
+		}
+		random=false;
+		if(phyy_x.isPressed()) random=true;
+		if(phyn_x.isPressed()) random=true;
+		if(!random)
+		{
+			phy_x2.setTextFill(Color.RED);
+			temp=false;
+			phyy_x.setSelected(false);
+			phyn_x.setSelected(false);
+		}
+		else
+		{
+			phy_x2.setTextFill(Color.BLACK);
+		}
+		random=false;
+		if(wary_x.isPressed()) random=true;
+		if(warn_x.isPressed()) random=true;
+		if(!random)
+		{
+			war_x2.setTextFill(Color.RED);
+			temp=false;
+			wary_x.setSelected(false);
+			warn_x.setSelected(false);
+		}
+		else
+		{
+			war_x2.setTextFill(Color.BLACK);
+		}
+		if(category_x.getValue().equals(""))
+		{
+			category_x2.setTextFill(Color.RED);
+		}
+		else
+		{
+			category_x2.setTextFill(Color.BLACK);
+		}
+		if(nation_x.getValue().equals(""))
+		{
+			nation_x2.setTextFill(Color.RED);
+		}
+		else
+		{
+			nation_x2.setTextFill(Color.BLACK);
+		}
+				
+		if(temp)
+		{
+//			save_P();
+		}
     }
 	
 	private void save_P()
@@ -183,7 +385,6 @@ public class Controller
 				stream2_x.setSelected(false);
 				stream3_x.setSelected(true);
 			}
-			
 		}
 		else
 		{
@@ -209,8 +410,9 @@ public class Controller
 				public void changed(ObservableValue<? extends Tab> tab, Tab oldTab, Tab newTab) {
 					if(newTab==t1)
 					{
-						populate_choice_t1();
-						populate_t1();
+						populate_choice_t1(); //Not working :(
+//						populate_t1();
+//						clear_t1();
 					}
 					else if(newTab==t2)
 					{
