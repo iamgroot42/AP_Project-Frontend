@@ -647,13 +647,19 @@ public class Controller
 	void handleb2(ActionEvent event)
 	{
 		boolean temp=true;
-		temp=temp && schooling();
-		temp=temp && graduation();
-		if(check1.isSelected()) temp=temp && teb1_check();
-		if(check2.isSelected()) temp=temp && teb2_check();
-		if(check3.isSelected()) temp=temp && teb3_check();
-		if(check4.isSelected()) temp=temp && teb4_check();
+		boolean temp2;
+		temp2=schooling(); temp=temp && temp2;
+		temp2=graduation(); temp=temp && temp2;
+		//ToDo : Make the TitledPanes go Red as well
+		if(check1.isSelected()) {temp2=teb1_check(); if(!temp2){ teb1.setTextFill(Color.RED);} else{teb1.setTextFill(Color.BLACK);}temp=temp && temp2;}
+		if(check2.isSelected()) {temp2=teb2_check(); if(!temp2){ teb2.setTextFill(Color.RED);} else{teb2.setTextFill(Color.BLACK);}temp=temp && temp2;}
+		if(check3.isSelected()) {temp2=teb3_check(); if(!temp2){ teb3.setTextFill(Color.RED);} else{teb3.setTextFill(Color.BLACK);}temp=temp && temp2;}
+		if(check4.isSelected()) {temp2=teb4_check(); if(!temp2){ teb4.setTextFill(Color.RED);} else{teb4.setTextFill(Color.BLACK);}temp=temp && temp2;}
 		//Check for uploaded file
+		if(temp)
+		{
+			//write objects of subclasses individually
+		}
 	}
 	
 	@FXML
