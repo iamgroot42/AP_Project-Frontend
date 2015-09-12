@@ -111,6 +111,7 @@ public class Main extends Application
 			{
 				in=new ObjectInputStream(new FileInputStream("temp.dat"));
 				model=(Model)in.readObject();
+				System.out.println("File Loaded");
 			}
 			catch(Exception e)
 			{

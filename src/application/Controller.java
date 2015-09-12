@@ -6,6 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -14,6 +15,7 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TitledPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
@@ -77,7 +79,75 @@ public class Controller
     @FXML private Label xii_marks_yl;
     @FXML private Label x_year_yl;
     @FXML private Label xii_year_yl;
-        
+    @FXML private TextField grad_degree_y;
+    @FXML private TextField grad_dept_y;
+    @FXML private TextField grad_coll_y;
+    @FXML private TextField grad_univ_y;
+    @FXML private TextField grad_city_y;
+    @FXML private ChoiceBox<String> grad_state_y;
+    @FXML private ChoiceBox<Integer> grad_year_y;
+    @FXML private Label grad_degree_yl;
+    @FXML private Label grad_dept_yl;
+    @FXML private Label grad_coll_yl;
+    @FXML private Label grad_univ_yl;
+    @FXML private Label grad_city_yl;
+    @FXML private Label grad_state_yl;
+    @FXML private Label grad_year_yl;
+    @FXML private CheckBox check1;
+    @FXML private CheckBox check2;
+    @FXML private CheckBox check3;
+    @FXML private CheckBox check4;
+    @FXML private TitledPane teb1;
+    @FXML private TitledPane teb2;
+    @FXML private TitledPane teb3;
+    @FXML private TitledPane teb4;
+    //Mini tab 1:
+    @FXML private Label ece_pref1l;
+    @FXML private Label ece_pref2l;
+    @FXML private Label ece_pref3l;
+    @FXML private Label ece_pref4l;
+    @FXML private ChoiceBox<String> ece_pref1;
+    @FXML private ChoiceBox<String> ece_pref2;
+    @FXML private ChoiceBox<String> ece_pref3;
+    @FXML private ChoiceBox<String> ece_pref4;
+    //Mini tab 2:
+    @FXML private TextField post_coll;
+    @FXML private TextField post_city;
+    @FXML private TextField post_dept;
+    @FXML private TextField post_degree;
+    @FXML private TextField post_thesis;
+    @FXML private ChoiceBox<String> post_state;
+    @FXML private ChoiceBox<Integer> post_year;
+    @FXML private Label post_colll;
+    @FXML private Label post_cityl;
+    @FXML private Label post_deptl;
+    @FXML private Label post_degreel;
+    @FXML private Label post_thesisl;
+    @FXML private Label post_statel;
+    @FXML private Label post_yearl;
+    //Mini tab 3:
+    @FXML private TextField exam;
+    @FXML private TextField subject;
+    @FXML private ChoiceBox<String> other_year;
+    @FXML private TextField score;
+    @FXML private TextField rank;
+    @FXML private Label examl;
+    @FXML private Label subjectl;
+    @FXML private Label other_yearl;
+    @FXML private Label scorel;
+    @FXML private Label rankl;
+    //Mini tab 4:
+    @FXML private TextField area;
+    @FXML private TextField marks_other;
+    @FXML private TextField score_other;
+    @FXML private TextField rank_other;
+    @FXML private ChoiceBox<Integer> year_other; 
+    @FXML private Label areal;
+    @FXML private Label marks_otherl;
+    @FXML private Label score_otherl;
+    @FXML private Label rank_otherl;
+    @FXML private Label year_otherl; 
+      
 	Main mane;
 	int phdstream;
 	boolean gender,physical,war;
@@ -150,6 +220,58 @@ public class Controller
 		wary_x.setSelected(false);
 	}
 	
+	@FXML
+	void check1_f(ActionEvent event)
+	{
+		if(check1.isSelected())
+		{
+			teb1.setDisable(false);
+		}
+		else
+		{
+			teb1.setDisable(true);
+		}
+	}
+	
+	@FXML
+	void check2_f(ActionEvent event)
+	{
+		if(check2.isSelected())
+		{
+			teb2.setDisable(false);
+		}
+		else
+		{
+			teb2.setDisable(true);
+		}
+	}
+	
+	@FXML
+	void check3_f(ActionEvent event)
+	{
+		if(check3.isSelected())
+		{
+			teb3.setDisable(false);
+		}
+		else
+		{
+			teb3.setDisable(true);
+		}
+	}
+	
+	@FXML
+	void check4_f(ActionEvent event)
+	{
+		if(check4.isSelected())
+		{
+			teb4.setDisable(false);
+		}
+		else
+		{
+			teb4.setDisable(true);
+		}
+	}
+		
 	private boolean schooling()
 	{
 		boolean temp=true;
@@ -212,11 +334,326 @@ public class Controller
 		return temp;
 	}
 	
+	private boolean graduation()
+	{
+		boolean temp=true;
+		if(grad_degree_y.getText().equals(""))
+		{
+			grad_degree_yl.setTextFill(Color.RED);
+			temp=false;
+		}
+		else
+		{
+			grad_degree_yl.setTextFill(Color.BLACK);
+		}
+		if(grad_dept_y.getText().equals(""))
+		{
+			grad_dept_yl.setTextFill(Color.RED);
+			temp=false;
+		}
+		else
+		{
+			grad_dept_yl.setTextFill(Color.BLACK);
+		}
+		if(grad_coll_y.getText().equals(""))
+		{
+			grad_coll_yl.setTextFill(Color.RED);
+			temp=false;
+		}
+		else
+		{
+			grad_coll_yl.setTextFill(Color.BLACK);
+		}
+		if(grad_univ_y.getText().equals(""))
+		{
+			grad_univ_yl.setTextFill(Color.RED);
+			temp=false;
+		}
+		else
+		{
+			grad_univ_yl.setTextFill(Color.BLACK);
+		}
+		if(grad_city_y.getText().equals(""))
+		{
+			grad_city_yl.setTextFill(Color.RED);
+			temp=false;
+		}
+		else
+		{
+			grad_city_yl.setTextFill(Color.BLACK);
+		}
+		return temp;
+	}
+	
+	private boolean teb1_check()
+	{
+		boolean temp=true;
+		if(ece_pref1.getValue().equals("----"))
+		{
+			temp=false;
+			ece_pref1l.setTextFill(Color.RED);
+		}
+		else
+		{
+			ece_pref1l.setTextFill(Color.BLACK);
+		}
+		if(ece_pref2.getValue().equals("----"))
+		{
+			temp=false;
+			ece_pref2l.setTextFill(Color.RED);
+		}
+		else
+		{
+			ece_pref2l.setTextFill(Color.BLACK);
+		}
+		if(ece_pref3.getValue().equals("----"))
+		{
+			temp=false;
+			ece_pref3l.setTextFill(Color.RED);
+		}
+		else
+		{
+			ece_pref3l.setTextFill(Color.BLACK);
+		}
+		if(ece_pref4.getValue().equals("----"))
+		{
+			temp=false;
+			ece_pref4l.setTextFill(Color.RED);
+		}
+		else
+		{
+			ece_pref4l.setTextFill(Color.BLACK);
+		}
+		return temp;
+	}
+	
+	private boolean teb2_check()
+	{
+		boolean temp=true;
+		if(post_coll.getText().equals(""))
+		{
+			temp=false;
+			post_colll.setTextFill(Color.RED);
+		}
+		else
+		{
+			post_colll.setTextFill(Color.BLACK);
+		}
+		if(post_city.getText().equals(""))
+		{
+			temp=false;
+			post_cityl.setTextFill(Color.RED);
+		}
+		else
+		{
+			post_cityl.setTextFill(Color.BLACK);
+		}
+		if(post_dept.getText().equals(""))
+		{
+			temp=false;
+			post_deptl.setTextFill(Color.RED);
+		}
+		else
+		{
+			post_deptl.setTextFill(Color.BLACK);
+		}
+		if(post_degree.getText().equals(""))
+		{
+			temp=false;
+			post_degreel.setTextFill(Color.RED);
+		}
+		else
+		{
+			post_degreel.setTextFill(Color.BLACK);
+		}
+		if(post_thesis.getText().equals(""))
+		{
+			temp=false;
+			post_thesisl.setTextFill(Color.RED);
+		}
+		else
+		{
+			post_thesisl.setTextFill(Color.BLACK);
+		}
+		if(post_state.getValue().equals("----"))
+		{
+			temp=false;
+			post_statel.setTextFill(Color.RED);
+		}
+		else
+		{
+			post_statel.setTextFill(Color.BLACK);
+		}
+		if(post_year.getValue().equals("----"))
+		{
+			temp=false;
+			post_yearl.setTextFill(Color.RED);
+		}
+		else
+		{
+			post_yearl.setTextFill(Color.BLACK);
+		}
+		return temp;
+	}
+	
+	private boolean teb3_check()
+	{
+		boolean temp=true;
+		if(exam.getText().equals(""))
+		{
+			examl.setTextFill(Color.RED);
+			temp=false;
+		}
+		else
+		{
+			examl.setTextFill(Color.BLACK);
+		}
+		if(subject.getText().equals(""))
+		{
+			subjectl.setTextFill(Color.RED);
+			temp=false;
+		}
+		else
+		{
+			subjectl.setTextFill(Color.BLACK);
+		}
+		try
+		{
+			int x=Integer.parseInt(score.getText());
+			if(x<0)
+			{
+				scorel.setTextFill(Color.RED);
+				temp=false;
+			}
+			else
+			{
+				scorel.setTextFill(Color.BLACK);
+			}
+		}
+		catch(Exception e)
+		{
+			scorel.setTextFill(Color.RED);
+			temp=false;
+		}
+		try
+		{
+			int x=Integer.parseInt(rank.getText());
+			if(x<0)
+			{
+				rankl.setTextFill(Color.RED);
+				temp=false;
+			}
+			else
+			{
+				rankl.setTextFill(Color.BLACK);
+			}
+		}
+		catch(Exception e)
+		{
+			rankl.setTextFill(Color.RED);
+			temp=false;
+		}
+		if(other_year.getValue().equals("----"))
+		{
+			other_yearl.setTextFill(Color.RED);
+			temp=false;
+		}
+		else
+		{
+			other_yearl.setTextFill(Color.BLACK);
+		}
+		return temp;
+	}
+	
+	private boolean teb4_check()
+	{
+		boolean temp=true;
+		if(area.getText().equals(""))
+		{
+			temp=false;
+			areal.setTextFill(Color.RED);
+		}
+		else
+		{
+			areal.setTextFill(Color.BLACK);
+		}
+		if(year_other.getValue().equals("----"))
+		{
+			temp=false;
+			year_otherl.setTextFill(Color.RED);
+		}
+		else
+		{
+			year_otherl.setTextFill(Color.BLACK);
+		}
+		try
+		{
+			float x=Float.parseFloat(marks_other.getText());
+			if(x<0 || x>100)
+			{
+				temp=false;
+				marks_otherl.setTextFill(Color.RED);
+			}
+			else
+			{
+				marks_otherl.setTextFill(Color.BLACK);
+			}
+		}
+		catch(Exception e)
+		{
+			marks_otherl.setTextFill(Color.RED);
+			temp=false;
+		}
+		try
+		{
+			float x=Float.parseFloat(score_other.getText());
+			if(x<0 || x>100)
+			{
+				temp=false;
+				score_otherl.setTextFill(Color.RED);
+			}
+			else
+			{
+				score_otherl.setTextFill(Color.BLACK);
+			}
+		}
+		catch(Exception e)
+		{
+			score_otherl.setTextFill(Color.RED);
+			temp=false;
+		}
+		try
+		{
+			int x=Integer.parseInt(rank_other.getText());
+			if(x<0 || x>100)
+			{
+				temp=false;
+				rank_otherl.setTextFill(Color.RED);
+			}
+			else
+			{
+				rank_otherl.setTextFill(Color.BLACK);
+			}
+		}
+		catch(Exception e)
+		{
+			rank_otherl.setTextFill(Color.RED);
+			temp=false;
+		}
+		return temp;
+	}
+	
 	@FXML
 	void handleb2(ActionEvent event)
 	{
 		boolean temp=true;
 		temp=temp && schooling();
+		temp=temp && graduation();
+		if(check1.isSelected()) temp=temp && teb1_check();
+		if(check2.isSelected()) temp=temp && teb2_check();
+		if(check3.isSelected()) temp=temp && teb3_check();
+		if(check4.isSelected()) temp=temp && teb4_check();
+		//Check for uploaded file
 	}
 	
 	@FXML
@@ -407,7 +844,7 @@ public class Controller
 	
 	private void populate_t1()
 	{
-		if(mane.getPersonal()!=null) //Check if file contains data
+		if(mane.getPersonal()!=null) 
 		{
 			Personal temp=mane.getPersonal();
 			email_x.setText(temp.getEmail());
@@ -526,6 +963,10 @@ public class Controller
 	
 	@FXML
 	public void initialize_() {	
+		teb1.setDisable(true);
+		teb2.setDisable(true);
+		teb3.setDisable(true);
+		teb4.setDisable(true);
 		cse_pref=FXCollections.observableArrayList(
 			    "----","Artificial Intelligence and Robotics - CSE","Biophysics - CB","Compilers - CSE","Computer Architecture and Systems Design - csE",
 			    "Computer Graphics - CSE","Computer Vision - CSE","Image Analysis and Biometrics - CSE","Information Management and Data Engineering - CSE",

@@ -137,81 +137,380 @@
          <content>
             <ScrollPane prefHeight="1194.0" prefWidth="720.0">
                <content>
-                  <GridPane prefHeight="1967.0" prefWidth="720.0">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                        <RowConstraints maxHeight="355.0" minHeight="10.0" prefHeight="355.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="457.0" minHeight="0.0" prefHeight="386.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="359.0" minHeight="0.0" prefHeight="236.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="501.0" minHeight="0.0" prefHeight="365.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="439.0" minHeight="0.0" prefHeight="225.0" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="380.0" minHeight="0.0" prefHeight="197.0" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="277.0" minHeight="0.0" prefHeight="125.0" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="92.0" minHeight="0.0" prefHeight="65.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
+                  <GridPane prefHeight="1627.0" prefWidth="674.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="1461.0" minHeight="10.0" prefHeight="660.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="838.0" minHeight="10.0" prefHeight="567.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="838.0" minHeight="10.0" prefHeight="348.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="838.0" minHeight="0.0" prefHeight="73.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
                      <children>
-                        <GridPane>
+                        <GridPane prefHeight="1467.0" prefWidth="700.0">
                           <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="366.0" minWidth="10.0" prefWidth="339.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="368.0" minWidth="10.0" prefWidth="361.0" />
                           </columnConstraints>
                           <rowConstraints>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="1201.0" minHeight="10.0" prefHeight="301.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="673.0" minHeight="10.0" prefHeight="544.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <TextField GridPane.columnIndex="1" fx:id="x_board_y" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="x_marks_y" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="xii_board_y" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" fx:id="xii_marks_y" />
-                              <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="x_year_y" />
-                              <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" fx:id="xii_year_y" />
-                              <Label text="Xth Board*" fx:id="x_board_yl" />
-                              <Label text="Xth Marks (%)*" GridPane.rowIndex="1" fx:id="x_marks_yl" />
-                              <Label text="Year of Passing Xth*" GridPane.rowIndex="2" fx:id="x_year_yl" />
-                              <Label text="XIIth Board*" GridPane.rowIndex="3" fx:id="xii_board_yl" />
-                              <Label text="XIIth Marks (%)*" GridPane.rowIndex="4" fx:id="xii_marks_yl" />
-                              <Label text="Year of Passing XIIth*" GridPane.rowIndex="5" fx:id="xii_year_yl" />
+                              <GridPane>
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Xth Board*" GridPane.rowIndex="1" fx:id="x_board_yl" />
+                                    <Label text="Xth Marks (%)*" GridPane.rowIndex="2" fx:id="x_marks_yl" />
+                                    <Label text="Year of Passing Xth*" GridPane.rowIndex="3" fx:id="x_year_yl" />
+                                    <Label text="XIIth Board*" GridPane.rowIndex="4" fx:id="xii_board_yl" />
+                                    <Label text="XIIth Marks (%)*" GridPane.rowIndex="5" fx:id="xii_marks_yl" />
+                                    <Label text="Year of Passing XIIth*" GridPane.rowIndex="6" fx:id="xii_year_yl" />
+                                    <Label prefHeight="104.0" prefWidth="511.0" text="Schooling Information">
+                                       <font>
+                                          <Font name="System Bold" size="19.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                              <GridPane GridPane.columnIndex="1">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <TextField GridPane.rowIndex="1" fx:id="x_board_y" />
+                                    <TextField GridPane.rowIndex="2" fx:id="x_marks_y" />
+                                    <TextField GridPane.rowIndex="4" fx:id="xii_board_y" />
+                                    <TextField GridPane.rowIndex="5" fx:id="xii_marks_y" />
+                                    <ChoiceBox prefWidth="150.0" GridPane.rowIndex="3" fx:id="x_year_y" />
+                                    <ChoiceBox prefWidth="150.0" GridPane.rowIndex="6" fx:id="xii_year_y" />
+                                 </children>
+                              </GridPane>
+                              <GridPane GridPane.rowIndex="1">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label prefHeight="104.0" prefWidth="511.0" text="Graduation Information">
+                                       <font>
+                                          <Font name="System Bold" size="19.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="grad_degree_yl" text="Degree*" GridPane.rowIndex="1" />
+                                    <Label fx:id="grad_dept_yl" text="Department/Discipline*" GridPane.rowIndex="2" />
+                                    <Label fx:id="grad_coll_yl" text="Name of College*" GridPane.rowIndex="3" />
+                                    <Label fx:id="grad_univ_yl" text="Name of University*" GridPane.rowIndex="4" />
+                                    <Label fx:id="grad_city_yl" text="City*" GridPane.rowIndex="5" />
+                                    <Label fx:id="grad_state_yl" text="State*" GridPane.rowIndex="6" />
+                                    <Label fx:id="grad_year_yl" text="Year of Graduation*" GridPane.rowIndex="7" />
+                                    <Label text="CGPA or MARKS?" GridPane.rowIndex="8" />
+                                    <GridPane GridPane.rowIndex="10">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <CheckBox fx:id="check1" mnemonicParsing="false" onAction="#check1_f" text="Are you applying for ECE PhD?" />
+                                          <CheckBox fx:id="check3" mnemonicParsing="false" onAction="#check3_f" text="Have you completed your Post Graduation?" GridPane.rowIndex="1" />
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </GridPane>
+                              <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <TextField fx:id="grad_degree_y" GridPane.rowIndex="1" />
+                                    <TextField fx:id="grad_dept_y" GridPane.rowIndex="2" />
+                                    <TextField fx:id="grad_coll_y" GridPane.rowIndex="3" />
+                                    <TextField fx:id="grad_univ_y" GridPane.rowIndex="4" />
+                                    <TextField fx:id="grad_city_y" GridPane.rowIndex="5" />
+                                    <ChoiceBox fx:id="grad_year_y" prefWidth="150.0" GridPane.rowIndex="7" />
+                                    <GridPane GridPane.rowIndex="10">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <CheckBox fx:id="check2" mnemonicParsing="false" onAction="#check2_f" text="Have you completed your Post Graduation?" />
+                                          <CheckBox fx:id="check4" mnemonicParsing="false" onAction="#check4_f" text="Taken GATE Exam?" GridPane.rowIndex="1" />
+                                       </children>
+                                    </GridPane>
+                                    <GridPane GridPane.rowIndex="9">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" minWidth="10.0" prefWidth="102.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="268.0" minWidth="10.0" prefWidth="258.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <RadioButton mnemonicParsing="false" text="MARKS(%)" />
+                                          <TextField GridPane.columnIndex="1" />
+                                       </children>
+                                    </GridPane>
+                                    <GridPane GridPane.rowIndex="8">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="114.0" minWidth="10.0" prefWidth="69.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="172.0" minWidth="10.0" prefWidth="138.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="143.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <RadioButton mnemonicParsing="false" text="CGPA" />
+                                          <TextField prefHeight="26.0" prefWidth="146.0" GridPane.columnIndex="1" />
+                                          <ChoiceBox prefWidth="150.0" GridPane.columnIndex="2" />
+                                       </children>
+                                    </GridPane>
+                                    <ChoiceBox fx:id="grad_state_y" prefWidth="150.0" GridPane.rowIndex="6" />
+                                 </children>
+                              </GridPane>
                            </children>
                         </GridPane>
-                        <GridPane GridPane.rowIndex="1">
+                        <Accordion GridPane.rowIndex="1">
+                          <panes>
+                            <TitledPane fx:id="teb1" animated="false" prefHeight="486.0" prefWidth="699.0" text="ECE PhD Subject Preference">
+                              <content>
+                                    <GridPane prefHeight="460.0" prefWidth="676.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints maxHeight="224.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="427.0" minHeight="10.0" prefHeight="427.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="You are required to select 4 subjects if you are an under-graduate otherwise you need to fill 3." />
+                                          <GridPane GridPane.rowIndex="1">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Label fx:id="ece_pref1l" text="Preference 1*" />
+                                                <Label fx:id="ece_pref2l" text="Preference 2*" GridPane.rowIndex="1" />
+                                                <Label fx:id="ece_pref3l" text="Preference 3*" GridPane.rowIndex="2" />
+                                                <Label fx:id="ece_pref4l" text="Preference 4" GridPane.rowIndex="3" />
+                                                <ChoiceBox fx:id="ece_pref1" prefWidth="150.0" GridPane.columnIndex="1" />
+                                                <ChoiceBox fx:id="ece_pref2" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <ChoiceBox fx:id="ece_pref3" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <ChoiceBox fx:id="ece_pref4" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                              </content>
+                            </TitledPane>
+                            <TitledPane fx:id="teb2" animated="false" text="Post - Graduation Information">
+                              <content>
+                                    <GridPane prefHeight="459.0" prefWidth="675.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label fx:id="post_colll" prefHeight="68.0" prefWidth="386.0" text="Name of College*" />
+                                          <Label fx:id="post_cityl" prefHeight="151.0" prefWidth="488.0" text="City*" GridPane.rowIndex="1" />
+                                          <Label fx:id="post_statel" prefHeight="151.0" prefWidth="526.0" text="State*" GridPane.rowIndex="2" />
+                                          <Label fx:id="post_deptl" prefHeight="117.0" prefWidth="442.0" text="Department/Discipline*" GridPane.rowIndex="3" />
+                                          <Label fx:id="post_degreel" prefHeight="150.0" prefWidth="464.0" text="Degree*" GridPane.rowIndex="4" />
+                                          <Label fx:id="post_thesisl" prefHeight="122.0" prefWidth="487.0" text="Thesis Title*" GridPane.rowIndex="5" />
+                                          <Label fx:id="post_yearl" prefHeight="119.0" prefWidth="483.0" text="Year of Post-Graduation*" GridPane.rowIndex="6" />
+                                          <Label prefHeight="141.0" prefWidth="476.0" text="CGPA or MARKS?CGPA" GridPane.rowIndex="7" />
+                                          <TextField fx:id="post_coll" GridPane.columnIndex="1" />
+                                          <TextField fx:id="post_city" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <TextField fx:id="post_dept" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <TextField fx:id="post_degree" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <TextField fx:id="post_thesis" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <ChoiceBox fx:id="post_state" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <ChoiceBox fx:id="post_year" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                          <GridPane GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="107.0" minWidth="10.0" prefWidth="69.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.0" minWidth="10.0" prefWidth="138.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="124.0" minWidth="10.0" prefWidth="124.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <RadioButton mnemonicParsing="false" text="CGPA" />
+                                                <TextField GridPane.columnIndex="1" />
+                                                <ChoiceBox prefWidth="150.0" GridPane.columnIndex="2" />
+                                             </children>
+                                          </GridPane>
+                                          <GridPane GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="163.0" minWidth="10.0" prefWidth="111.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="255.0" minWidth="10.0" prefWidth="226.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <RadioButton mnemonicParsing="false" text="MARKS(%)" />
+                                                <TextField GridPane.columnIndex="1" />
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                              </content>
+                            </TitledPane>
+                            <TitledPane fx:id="teb3" animated="false" text="Other Academic Degrees">
+                                 <content>
+                                    <GridPane prefHeight="446.0" prefWidth="644.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label fx:id="examl" prefHeight="104.0" prefWidth="578.0" text="Exam Name*" />
+                                          <Label fx:id="other_yearl" prefHeight="200.0" prefWidth="541.0" text="Year*" GridPane.rowIndex="2" />
+                                          <Label fx:id="scorel" prefHeight="172.0" prefWidth="530.0" text="Score*" GridPane.rowIndex="3" />
+                                          <Label fx:id="rankl" prefHeight="212.0" prefWidth="584.0" text="Rank*" GridPane.rowIndex="4" />
+                                          <Label fx:id="subjectl" prefHeight="151.0" prefWidth="529.0" text="Subject*" GridPane.rowIndex="1" />
+                                          <TextField fx:id="exam" GridPane.columnIndex="1" />
+                                          <TextField fx:id="subject" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <TextField fx:id="score" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <TextField fx:id="rank" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <ChoiceBox fx:id="other_year" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                       </children>
+                                    </GridPane>
+                                 </content>
+                            </TitledPane>
+                              <TitledPane fx:id="teb4" animated="false" layoutX="10.0" layoutY="62.0" text="Gate">
+                                 <content>
+                                    <GridPane prefHeight="462.0" prefWidth="674.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label fx:id="areal" prefHeight="181.0" prefWidth="513.0" text="Area*" />
+                                          <Label fx:id="year_otherl" prefHeight="179.0" prefWidth="519.0" text="Year of Graduation*" GridPane.rowIndex="1" />
+                                          <Label fx:id="marks_otherl" prefHeight="173.0" prefWidth="499.0" text="Marks(Out Of 100) *" GridPane.rowIndex="2" />
+                                          <Label fx:id="score_otherl" prefHeight="176.0" prefWidth="493.0" text="Score*" GridPane.rowIndex="3" />
+                                          <Label fx:id="rank_otherl" prefHeight="187.0" prefWidth="572.0" text="Rank*" GridPane.rowIndex="4" />
+                                          <TextField fx:id="area" GridPane.columnIndex="1" />
+                                          <TextField fx:id="marks_other" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <TextField fx:id="score_other" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <TextField fx:id="rank_other" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <ChoiceBox fx:id="year_other" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                       </children>
+                                    </GridPane>
+                                 </content>
+                              </TitledPane>
+                          </panes>
+                        </Accordion>
+                        <GridPane prefHeight="584.0" prefWidth="643.0" GridPane.rowIndex="2">
                           <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="549.0" minWidth="10.0" prefWidth="396.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="342.0" minWidth="10.0" prefWidth="301.0" />
                           </columnConstraints>
                           <rowConstraints>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="295.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="550.0" minHeight="10.0" prefHeight="103.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="625.0" minHeight="5.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="679.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <ChoiceBox fx:id="grad_state_y" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name of College*" GridPane.rowIndex="2" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Department/Discipline*" GridPane.rowIndex="1" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name of University*" GridPane.rowIndex="3" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="City*" GridPane.rowIndex="4" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="State*" GridPane.rowIndex="5" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CGPA or MARKS?" GridPane.rowIndex="7" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Year of Graduation*" GridPane.rowIndex="6" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Degree*" />
-                              <TextField fx:id="grad_dep_y" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <TextField fx:id="grad_degree_y" GridPane.columnIndex="1" />
-                              <TextField fx:id="grad_college_y" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <TextField fx:id="grad_univ_y" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <TextField fx:id="grad_city_y" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                              <ChoiceBox fx:id="grad_year_y" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                              <GridPane GridPane.columnIndex="1" GridPane.rowIndex="7">
+                              <Label prefHeight="111.0" prefWidth="359.0" text="Achievements (Other information like ranks, medals etc.)" wrapText="true" GridPane.rowIndex="1" />
+                              <Label prefHeight="158.0" prefWidth="501.0" text="CV/Resume*" GridPane.rowIndex="2" />
+                              <Label prefHeight="169.0" prefWidth="475.0" text="Statement of Purpose*" GridPane.rowIndex="3" />
+                              <Label prefHeight="97.0" prefWidth="493.0" text="Achievements, CV and Statement of Purpose">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2">
                                 <columnConstraints>
                                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -221,58 +520,11 @@
                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                    <RadioButton mnemonicParsing="false" text="CGPA" />
-                                    <RadioButton mnemonicParsing="false" text="Percentage" GridPane.columnIndex="1" />
-                                    <TextField GridPane.rowIndex="1" />
+                                    <Button mnemonicParsing="false" text="Choose FIle" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Upload a pdf file of max 10 MB" GridPane.rowIndex="1" />
                                  </children>
                               </GridPane>
-                              <Accordion GridPane.rowIndex="1" />
-                           </children>
-                        </GridPane>
-                        <GridPane GridPane.rowIndex="2">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
-                           <children>
-                              <ChoiceBox fx:id="phd_pref2_y" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Preference 1*" GridPane.rowIndex="1" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Preference 2*" GridPane.rowIndex="2" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Preference 3*" GridPane.rowIndex="3" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Preference 4" GridPane.rowIndex="4" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Are you applying for ECE PhD?" />
-                              <CheckBox fx:id="is_phd_y" mnemonicParsing="false" text="CheckBox" GridPane.columnIndex="1" />
-                              <ChoiceBox fx:id="phd_pref1_y" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <ChoiceBox fx:id="phd_pref3_y" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <ChoiceBox fx:id="phd_pref4_y" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                           </children>
-                        </GridPane>
-                        <GridPane GridPane.rowIndex="3">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
-                           <children>
-                              <GridPane GridPane.columnIndex="1" GridPane.rowIndex="8">
+                              <GridPane GridPane.columnIndex="1" GridPane.rowIndex="3">
                                 <columnConstraints>
                                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -280,112 +532,15 @@
                                 <rowConstraints>
                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
+                                 <children>
+                                    <Button mnemonicParsing="false" text="Choose FIle" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Upload a pdf file of max 10 MB" GridPane.rowIndex="1" />
+                                 </children>
                               </GridPane>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Have you completed your Post Graduation?" />
-                              <CheckBox fx:id="is_post_y" mnemonicParsing="false" text="CheckBox" GridPane.columnIndex="1" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name of College" GridPane.rowIndex="1" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="City" GridPane.rowIndex="2" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="State" GridPane.rowIndex="3" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Department/Discipline" GridPane.rowIndex="4" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Degree" GridPane.rowIndex="5" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Thesis Title" GridPane.rowIndex="6" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Year of Post-Graduation*" GridPane.rowIndex="7" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CGPA or MARKS?" GridPane.rowIndex="8" />
-                              <TextField fx:id="post_college_y" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <TextField fx:id="post_city_y" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <TextField fx:id="post_dept_y" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                              <TextField fx:id="post_degree_y" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                              <TextField fx:id="post_title_y" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                              <ChoiceBox fx:id="post_state_y" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <ChoiceBox fx:id="post_year_y" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                            </children>
                         </GridPane>
-                        <GridPane GridPane.rowIndex="4">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
-                           <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Exam Name" GridPane.rowIndex="1" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Subject" GridPane.rowIndex="2" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Year*" GridPane.rowIndex="3" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Score" GridPane.rowIndex="4" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rank" GridPane.rowIndex="5" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Other Academic Degrees?" />
-                              <TextField fx:id="other_name_y" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <TextField fx:id="other_subject_y" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <TextField fx:id="other_score_y" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                              <TextField fx:id="other_rank_y" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                              <ChoiceBox fx:id="other_year_y" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <CheckBox mnemonicParsing="false" text="CheckBox" GridPane.columnIndex="1" />
-                           </children>
-                        </GridPane>
-                        <GridPane GridPane.rowIndex="5">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
-                           <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Area" GridPane.rowIndex="1" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Year of Graduation*" GridPane.rowIndex="2" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Marks(Out Of 100) " GridPane.rowIndex="3" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Score" GridPane.rowIndex="4" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rank" GridPane.rowIndex="5" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Taken GATE Exam?" />
-                              <TextField fx:id="gate_marks_y" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <TextField fx:id="gate_area_y" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <TextField fx:id="gate_score_y" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                              <TextField fx:id="gate_rank_y" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                              <RadioButton mnemonicParsing="false" text="RadioButton" GridPane.columnIndex="1" />
-                              <ChoiceBox fx:id="gate_year_y" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                           </children>
-                        </GridPane>
-                        <GridPane GridPane.rowIndex="6">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
-                           <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Statement of Purpose*" GridPane.rowIndex="2" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CV/Resume*" GridPane.rowIndex="1" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Achievements (Other information like ranks, medals etc.)" wrappingWidth="309.83251953125" />
-                           </children>
-                        </GridPane>
-                        <GridPane GridPane.rowIndex="7">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
-                           <children>
-                              <Button fx:id="button2" mnemonicParsing="false" onAction="#handleb2" prefHeight="49.0" prefWidth="106.0" text="Save" GridPane.columnIndex="1" />
-                           </children>
-                        </GridPane>
+                        <Button mnemonicParsing="false" onAction="#handleb2" text="Save" GridPane.rowIndex="3" />
                      </children>
                   </GridPane>
                </content>
