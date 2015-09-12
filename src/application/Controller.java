@@ -292,24 +292,24 @@ public class Controller
 		{
 			nation_x2.setTextFill(Color.BLACK);
 		}
-		try
-		{
-			if(dob_x.getValue()==null)
-			{
-				dob_x2.setTextFill(Color.RED);
-				temp=false;
-			}
-			else
-			{
-				dob_x2.setTextFill(Color.BLACK);
-			}
-		}
-		catch(Exception e)
+		if(dob_x.getValue()==null)
 		{
 			dob_x2.setTextFill(Color.RED);
 			temp=false;
 		}
-		
+		else
+		{
+			dob_x2.setTextFill(Color.BLACK);
+		}
+		if(pref1_x.getValue().equals("----"))
+		{
+			pref1_x2.setTextFill(Color.RED);
+			temp=false;
+		}
+		else
+		{
+			pref1_x2.setTextFill(Color.BLACK);
+		}
 		if(temp)
 		{
 //			save_P();
@@ -450,6 +450,15 @@ public class Controller
 			    "----", "India","Others")
 			);
 		nation_x.getSelectionModel().select(0);
+		pref1_x.setItems(FXCollections.observableArrayList(
+			    "----"));
+		pref2_x.setItems(FXCollections.observableArrayList(
+			    "----"));
+		pref3_x.setItems(FXCollections.observableArrayList(
+			    "----"));
+		pref1_x.getSelectionModel().select(0);
+		pref2_x.getSelectionModel().select(0);
+		pref3_x.getSelectionModel().select(0);
 	}
 	
 	@FXML
@@ -469,12 +478,6 @@ public class Controller
 		bt_pref=FXCollections.observableArrayList(
 			    "----","Biophysics - CB","Structural Biology - CB","Systems Biology - CB");
 			populate_choice_t1(); 
-			pref1_x.setItems(FXCollections.observableArrayList(
-				    "----"));
-			pref2_x.setItems(FXCollections.observableArrayList(
-				    "----"));
-			pref3_x.setItems(FXCollections.observableArrayList(
-				    "----"));
         	t.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Tab>()
 			{	
         		@Override

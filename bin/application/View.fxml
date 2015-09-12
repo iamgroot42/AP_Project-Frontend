@@ -76,7 +76,7 @@
                               <RadioButton fx:id="phyn_x" mnemonicParsing="false" onAction="#phyn_x_f" text="No" GridPane.columnIndex="1" />
                            </children>
                         </GridPane>
-                        <DatePicker fx:id="dob_x" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                        <DatePicker fx:id="dob_x" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="11" />
                         <GridPane GridPane.columnIndex="1" GridPane.rowIndex="12">
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
