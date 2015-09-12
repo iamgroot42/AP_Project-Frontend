@@ -424,6 +424,9 @@ public class Controller
 		pref1_x.setItems(cse_pref);
 		pref2_x.setItems(cse_pref);
 		pref3_x.setItems(cse_pref);
+		pref1_x.getSelectionModel().select(0);
+		pref2_x.getSelectionModel().select(0);
+		pref3_x.getSelectionModel().select(0);
 	}
 	
 	private void populate_ece_pref()
@@ -431,6 +434,9 @@ public class Controller
 		pref1_x.setItems(ece_pref);
 		pref2_x.setItems(ece_pref);
 		pref3_x.setItems(ece_pref);
+		pref1_x.getSelectionModel().select(0);
+		pref2_x.getSelectionModel().select(0);
+		pref3_x.getSelectionModel().select(0);
 	}
 	
 	private void populate_bt_pref()
@@ -438,6 +444,9 @@ public class Controller
 		pref1_x.setItems(bt_pref);	
 		pref2_x.setItems(bt_pref);	
 		pref3_x.setItems(bt_pref);	
+		pref1_x.getSelectionModel().select(0);
+		pref2_x.getSelectionModel().select(0);
+		pref3_x.getSelectionModel().select(0);
 	}
 	
 	private void populate_choice_t1()
