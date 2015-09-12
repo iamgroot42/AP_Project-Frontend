@@ -323,33 +323,30 @@ public class Controller
 			Personal temp=new Personal();
 			mane.setPersonal(temp);
 		}
-		else
-		{
-			mane.getPersonal().setAdd_correspondence(addc_x.getText());
-			mane.getPersonal().setAdd_permanent(addp_x.getText());
-			mane.getPersonal().setCategory(category_x.getValue());
-//			mane.getPersonal().setDate_of_birth(dob_x.getValue());
-			mane.getPersonal().setEmail(email_x.getText());
-			mane.getPersonal().setFather_name(fname_x.getText());
-			mane.getPersonal().setGender(this.gender);
-			mane.getPersonal().setMobile(mob_x.getText());
-			mane.getPersonal().setName(name_x.getText());
-			mane.getPersonal().setNationality(nation_x.getValue());
-			mane.getPersonal().setPhd_stream(this.phdstream);
-			mane.getPersonal().setPhysically_disabled(this.physical);
-			mane.getPersonal().setPincode(pin_x.getText());
-			String[] temp=new String[3];
-			temp[0]=pref1_x.getValue();
-			temp[1]=pref2_x.getValue();
-			temp[2]=pref3_x.getValue();
-			mane.getPersonal().setPreference(temp);
-			mane.getPersonal().setWar_category(this.war);	
-		}
+		mane.getPersonal().setAdd_correspondence(addc_x.getText());
+		mane.getPersonal().setAdd_permanent(addp_x.getText());
+		mane.getPersonal().setCategory(category_x.getValue());
+//		mane.getPersonal().setDate_of_birth(dob_x.getValue());
+		mane.getPersonal().setEmail(email_x.getText());
+		mane.getPersonal().setFather_name(fname_x.getText());
+		mane.getPersonal().setGender(this.gender);
+		mane.getPersonal().setMobile(mob_x.getText());
+		mane.getPersonal().setName(name_x.getText());
+		mane.getPersonal().setNationality(nation_x.getValue());
+		mane.getPersonal().setPhd_stream(this.phdstream);
+		mane.getPersonal().setPhysically_disabled(this.physical);
+		mane.getPersonal().setPincode(pin_x.getText());
+		String[] temp=new String[3];
+		temp[0]=pref1_x.getValue();
+		temp[1]=pref2_x.getValue();
+		temp[2]=pref3_x.getValue();
+		mane.getPersonal().setPreference(temp);
+		mane.getPersonal().setWar_category(this.war);	
 	}
 	
 	private void populate_t1()
 	{
-		if(true) //Check if file contains data
+		if(mane.getPersonal()!=null) //Check if file contains data
 		{
 			Personal temp=mane.getPersonal();
 			email_x.setText(temp.getEmail());
@@ -412,10 +409,6 @@ public class Controller
 				stream2_x.setSelected(false);
 				stream3_x.setSelected(true);
 			}
-		}
-		else
-		{
-			clear_t1();
 		}
 	}
 	
@@ -487,14 +480,13 @@ public class Controller
 		bt_pref=FXCollections.observableArrayList(
 			    "----","Biophysics - CB","Structural Biology - CB","Systems Biology - CB");
 			populate_choice_t1(); 
-//			populate_t1(); //Load details from file
+			populate_t1(); //Load details from file
         	t.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Tab>()
 			{	
         		@Override
 				public void changed(ObservableValue<? extends Tab> tab, Tab oldTab, Tab newTab) {
 					if(newTab==t1)
 					{
-			
 					}
 					else if(newTab==t2)
 					{

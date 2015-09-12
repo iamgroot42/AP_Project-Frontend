@@ -4,10 +4,13 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
 
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -76,11 +79,20 @@ public class Main extends Application
 	
 	private void closer()
 	{
-		model.setBank(this.payment);
-		model.setP(this.personal);
-		model.setE(this.education);
-		model.setSop(this.sop);
-		model.setCv(this.cv);
+		this.model.setBank(this.payment);
+		this.model.setP(this.personal);
+		this.model.setE(this.education);
+		this.model.setSop(this.sop);
+		this.model.setCv(this.cv);
+		try {
+			ObjectOutputStream temp=new ObjectOutputStream(new FileOutputStream("temp.dat"));
+			temp.writeObject(this.model);
+			if(this.model.getP()==null) System.out.println("F*CK");
+		} catch (IOException e) {
+			System.out.println("Could not write to file");
+			e.printStackTrace();
+		}
+		
 	}
 	
 	@Override
