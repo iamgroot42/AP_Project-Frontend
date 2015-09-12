@@ -171,7 +171,7 @@ public class Controller
 		{
 			email_x2.setTextFill(Color.BLACK);
 		}
-		if(name_x.getText().equals(""))
+		if(name_x.getText().equals("") || name_x.getText().matches(".*\\d+.*"))
 		{
 			name_x2.setTextFill(Color.RED);
 			temp=false;
@@ -198,7 +198,7 @@ public class Controller
 		{
 			mob_x2.setTextFill(Color.BLACK); 
 		}
-		if(fname_x.getText().equals(""))
+		if(fname_x.getText().equals("") || fname_x.getText().matches(".*\\d+.*"))
 		{
 			fname_x2.setTextFill(Color.RED);
 			temp=false;
@@ -487,14 +487,14 @@ public class Controller
 		bt_pref=FXCollections.observableArrayList(
 			    "----","Biophysics - CB","Structural Biology - CB","Systems Biology - CB");
 			populate_choice_t1(); 
+//			populate_t1(); //Load details from file
         	t.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Tab>()
 			{	
         		@Override
 				public void changed(ObservableValue<? extends Tab> tab, Tab oldTab, Tab newTab) {
 					if(newTab==t1)
 					{
-//						populate_t1();
-//						clear_t1();
+			
 					}
 					else if(newTab==t2)
 					{
