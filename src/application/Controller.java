@@ -64,6 +64,20 @@ public class Controller
     @FXML private Label fname_x2;
     @FXML private Label nation_x2;
     @FXML private Label addp_x2;
+    //Tab 2:
+    @FXML private TextField x_board_y;
+    @FXML private TextField x_marks_y;
+    @FXML private TextField xii_board_y;
+    @FXML private TextField xii_marks_y;
+    @FXML private ChoiceBox<String> x_year_y;
+    @FXML private ChoiceBox<String> xii_year_y;
+    @FXML private Label x_board_yl;
+    @FXML private Label x_marks_yl;
+    @FXML private Label xii_board_yl;
+    @FXML private Label xii_marks_yl;
+    @FXML private Label x_year_yl;
+    @FXML private Label xii_year_yl;
+        
 	Main mane;
 	int phdstream;
 	boolean gender,physical,war;
@@ -74,27 +88,6 @@ public class Controller
 	public void setMainApp(Main p)
 	{
 		this.mane=p;
-	}
-	
-	public void clear_t1()
-	{
-		email_x.setText("");
-		name_x.setText("");
-		addc_x.setText("");
-		mob_x.setText("");
-		dob_x.setValue(null);
-		fname_x.setText("");
-		addp_x.setText("");
-		pin_x.setText("");
-		wary_x.setSelected(false);
-		warn_x.setSelected(false);
-		phyy_x.setSelected(false);
-		phyn_x.setSelected(false);
-		genderm_x.setSelected(false);
-		genderf_x.setSelected(false);
-		stream1_x.setSelected(false);
-		stream2_x.setSelected(false);
-		stream3_x.setSelected(false);
 	}
 	
 	@FXML
@@ -119,7 +112,6 @@ public class Controller
 		stream1_x.setSelected(false);
 		stream2_x.setSelected(false);
 		populate_bt_pref();
-		
 	}
 	
 	@FXML
@@ -156,6 +148,75 @@ public class Controller
 	void warn_x_f(ActionEvent event)
 	{
 		wary_x.setSelected(false);
+	}
+	
+	private boolean schooling()
+	{
+		boolean temp=true;
+		
+		if(x_board_y.getText().equals(""))
+		{
+			temp=false;
+			x_board_yl.setTextFill(Color.RED);
+		}
+		else
+		{
+			x_board_yl.setTextFill(Color.BLACK);
+		}
+		try
+		{
+			float x=Float.parseFloat(x_marks_y.getText());
+			if(x<0 || x>100)
+			{
+				x_marks_yl.setTextFill(Color.RED);
+				temp=false;
+			}
+			else
+			{
+				x_marks_yl.setTextFill(Color.BLACK);
+			}
+		}
+		catch(Exception e)
+		{
+			x_marks_yl.setTextFill(Color.RED);
+			temp=false;
+		}
+		if(xii_board_y.getText().equals(""))
+		{
+			temp=false;
+			xii_board_yl.setTextFill(Color.RED);
+		}
+		else
+		{
+			xii_board_yl.setTextFill(Color.BLACK);
+		}
+		try
+		{
+			float x=Float.parseFloat(xii_marks_y.getText());
+			if(x<0 || x>100)
+			{
+				xii_marks_yl.setTextFill(Color.RED);
+				temp=false;
+			}
+			else
+			{
+				xii_marks_yl.setTextFill(Color.BLACK);
+			}
+		}
+		catch(Exception e)
+		{
+			xii_marks_yl.setTextFill(Color.RED);
+			temp=false;
+		}
+		
+		return temp;
+	}
+	
+	@FXML
+	void handleb2(ActionEvent event)
+	{
+		boolean temp=true;
+		temp=temp && schooling();
 	}
 	
 	@FXML

@@ -166,18 +166,18 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="XIIth Board*" GridPane.rowIndex="3" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Xth Marks (%)*" GridPane.rowIndex="1" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Year of Passing Xth*" GridPane.rowIndex="2" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="XIIth Marks (%)*" GridPane.rowIndex="4" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Year of Passing XIIth*" GridPane.rowIndex="5" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Xth Board*" />
-                              <TextField GridPane.columnIndex="1" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                              <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <TextField GridPane.columnIndex="1" fx:id="x_board_y" />
+                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="x_marks_y" />
+                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="xii_board_y" />
+                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" fx:id="xii_marks_y" />
+                              <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="x_year_y" />
+                              <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" fx:id="xii_year_y" />
+                              <Label text="Xth Board*" fx:id="x_board_yl" />
+                              <Label text="Xth Marks (%)*" GridPane.rowIndex="1" fx:id="x_marks_yl" />
+                              <Label text="Year of Passing Xth*" GridPane.rowIndex="2" fx:id="x_year_yl" />
+                              <Label text="XIIth Board*" GridPane.rowIndex="3" fx:id="xii_board_yl" />
+                              <Label text="XIIth Marks (%)*" GridPane.rowIndex="4" fx:id="xii_marks_yl" />
+                              <Label text="Year of Passing XIIth*" GridPane.rowIndex="5" fx:id="xii_year_yl" />
                            </children>
                         </GridPane>
                         <GridPane GridPane.rowIndex="1">
@@ -196,7 +196,7 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <ChoiceBox fx:id="grad_state_y" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name of College*" GridPane.rowIndex="2" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Department/Discipline*" GridPane.rowIndex="1" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name of University*" GridPane.rowIndex="3" />
@@ -205,12 +205,12 @@
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CGPA or MARKS?" GridPane.rowIndex="7" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Year of Graduation*" GridPane.rowIndex="6" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Degree*" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <TextField GridPane.columnIndex="1" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                              <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <TextField fx:id="grad_dep_y" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="grad_degree_y" GridPane.columnIndex="1" />
+                              <TextField fx:id="grad_college_y" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="grad_univ_y" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <TextField fx:id="grad_city_y" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <ChoiceBox fx:id="grad_year_y" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                               <GridPane GridPane.columnIndex="1" GridPane.rowIndex="7">
                                 <columnConstraints>
                                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -221,11 +221,13 @@
                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <RadioButton mnemonicParsing="false" text="RadioButton" />
-                                    <RadioButton mnemonicParsing="false" text="RadioButton" GridPane.columnIndex="1" />
+                                    <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <RadioButton mnemonicParsing="false" text="CGPA" />
+                                    <RadioButton mnemonicParsing="false" text="Percentage" GridPane.columnIndex="1" />
                                     <TextField GridPane.rowIndex="1" />
                                  </children>
                               </GridPane>
+                              <Accordion GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
                         <GridPane GridPane.rowIndex="2">
@@ -241,16 +243,16 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <ChoiceBox fx:id="phd_pref2_y" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Preference 1*" GridPane.rowIndex="1" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Preference 2*" GridPane.rowIndex="2" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Preference 3*" GridPane.rowIndex="3" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Preference 4" GridPane.rowIndex="4" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Are you applying for ECE PhD?" />
-                              <CheckBox mnemonicParsing="false" text="CheckBox" GridPane.columnIndex="1" />
-                              <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <CheckBox fx:id="is_phd_y" mnemonicParsing="false" text="CheckBox" GridPane.columnIndex="1" />
+                              <ChoiceBox fx:id="phd_pref1_y" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <ChoiceBox fx:id="phd_pref3_y" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <ChoiceBox fx:id="phd_pref4_y" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                            </children>
                         </GridPane>
                         <GridPane GridPane.rowIndex="3">
@@ -282,7 +284,7 @@
                                 </rowConstraints>
                               </GridPane>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Have you completed your Post Graduation?" />
-                              <CheckBox mnemonicParsing="false" text="CheckBox" GridPane.columnIndex="1" />
+                              <CheckBox fx:id="is_post_y" mnemonicParsing="false" text="CheckBox" GridPane.columnIndex="1" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name of College" GridPane.rowIndex="1" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="City" GridPane.rowIndex="2" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="State" GridPane.rowIndex="3" />
@@ -291,13 +293,13 @@
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Thesis Title" GridPane.rowIndex="6" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Year of Post-Graduation*" GridPane.rowIndex="7" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CGPA or MARKS?" GridPane.rowIndex="8" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                              <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                              <TextField fx:id="post_college_y" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="post_city_y" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="post_dept_y" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <TextField fx:id="post_degree_y" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <TextField fx:id="post_title_y" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <ChoiceBox fx:id="post_state_y" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <ChoiceBox fx:id="post_year_y" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                            </children>
                         </GridPane>
                         <GridPane GridPane.rowIndex="4">
@@ -320,12 +322,12 @@
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Score" GridPane.rowIndex="4" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rank" GridPane.rowIndex="5" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Other Academic Degrees?" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                              <TextField GridPane.columnIndex="1" />
-                              <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="other_name_y" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="other_subject_y" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="other_score_y" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <TextField fx:id="other_rank_y" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <ChoiceBox fx:id="other_year_y" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <CheckBox mnemonicParsing="false" text="CheckBox" GridPane.columnIndex="1" />
                            </children>
                         </GridPane>
                         <GridPane GridPane.rowIndex="5">
@@ -348,12 +350,12 @@
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Score" GridPane.rowIndex="4" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rank" GridPane.rowIndex="5" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Taken GATE Exam?" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <TextField fx:id="gate_marks_y" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <TextField fx:id="gate_area_y" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="gate_score_y" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <TextField fx:id="gate_rank_y" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                               <RadioButton mnemonicParsing="false" text="RadioButton" GridPane.columnIndex="1" />
-                              <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <ChoiceBox fx:id="gate_year_y" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                            </children>
                         </GridPane>
                         <GridPane GridPane.rowIndex="6">
@@ -381,7 +383,7 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="106.0" text="Save" GridPane.columnIndex="1" />
+                              <Button fx:id="button2" mnemonicParsing="false" onAction="#handleb2" prefHeight="49.0" prefWidth="106.0" text="Save" GridPane.columnIndex="1" />
                            </children>
                         </GridPane>
                      </children>
