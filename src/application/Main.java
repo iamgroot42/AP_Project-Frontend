@@ -95,15 +95,16 @@ public class Main extends Application
 			p.setScene(new Scene(a));
 			p.setTitle("PhD Application Form");
 			in=null;
-//			try
-//			{
-//				in=new ObjectInputStream(new FileInputStream("temp.dat"));
-//				model=(Model)in.readObject();
-//			}
-//			catch(Exception e)
-//			{
-//				e.printStackTrace();
-//			}
+			try
+			{
+				in=new ObjectInputStream(new FileInputStream("temp.dat"));
+				model=(Model)in.readObject();
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+				System.out.println("Nothing to Load");
+			}
 			p.show();
 			Controller x=b.getController();
 			x.setMainApp(this);
