@@ -59,7 +59,7 @@ public class Main extends Application
 		this.education = education;
 	}
 	
-	private void closer()
+	public void closer()
 	{
 		this.model.setP(this.personal);
 		this.model.setE(this.education);
@@ -96,18 +96,17 @@ public class Main extends Application
 			}
 			catch(Exception e)
 			{
-				e.printStackTrace();
 				System.out.println("Nothing to Load");
 			}
 			p.show();
 			Controller x=b.getController();
 			x.setMainApp(this);
 			x.initialize_();
-			p.setOnCloseRequest(new EventHandler<WindowEvent>() {
-		          public void handle(WindowEvent we) {
-		              closer(); //Write saved data (Model object) to file 
-		          }
-			});  
+//			p.setOnCloseRequest(new EventHandler<WindowEvent>() {
+//		          public void handle(WindowEvent we) {
+//		              closer(); //Write saved data (Model object) to file 
+//		          }
+//			});  
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

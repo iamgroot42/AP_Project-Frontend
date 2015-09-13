@@ -973,6 +973,7 @@ public class Controller
 		tempo.setWar_category(this.war);	
 		System.out.println("Updated new");
 		mane.setPersonal(tempo);
+		mane.closer();
 	}
 	
 	private void saveE()
@@ -1047,6 +1048,7 @@ public class Controller
 	{
 		if(mane.getPersonal()!=null) 
 		{
+			System.out.println("This must be my lucky day");
 			Personal temp=mane.getPersonal();
 			email_x.setText(temp.getEmail());
 			name_x.setText(temp.getName());
@@ -1109,8 +1111,8 @@ public class Controller
 				stream3_x.setSelected(true);
 			}
 		}
+		System.out.println("Maybe not..f**k you");
 	}
-	
 	
 	private void populate_cse_pref()
 	{
