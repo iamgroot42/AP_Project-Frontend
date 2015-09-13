@@ -502,8 +502,8 @@
                           </rowConstraints>
                            <children>
                               <Label prefHeight="111.0" prefWidth="359.0" text="Achievements (Other information like ranks, medals etc.)" wrapText="true" GridPane.rowIndex="1" />
-                              <Label prefHeight="158.0" prefWidth="501.0" text="CV/Resume*" GridPane.rowIndex="2" />
-                              <Label prefHeight="169.0" prefWidth="475.0" text="Statement of Purpose*" GridPane.rowIndex="3" />
+                              <Label fx:id="uploadCVl" prefHeight="158.0" prefWidth="501.0" text="CV/Resume*" GridPane.rowIndex="2" />
+                              <Label fx:id="uploadSOPl" prefHeight="169.0" prefWidth="475.0" text="Statement of Purpose*" GridPane.rowIndex="3" />
                               <Label prefHeight="97.0" prefWidth="493.0" text="Achievements, CV and Statement of Purpose">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
@@ -520,7 +520,7 @@
                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <Button mnemonicParsing="false" text="Choose FIle" />
+                                    <Button mnemonicParsing="false" onAction="#uploadCV" text="Choose FIle" />
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Upload a pdf file of max 10 MB" GridPane.rowIndex="1" />
                                  </children>
                               </GridPane>
@@ -534,7 +534,7 @@
                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <Button mnemonicParsing="false" text="Choose FIle" />
+                                    <Button mnemonicParsing="false" onAction="#uploadSOP" text="Choose FIle" />
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Upload a pdf file of max 10 MB" GridPane.rowIndex="1" />
                                  </children>
                               </GridPane>

@@ -1,70 +1,29 @@
 package application;
 	
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.FileWriter;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.OutputStream;
-
 import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
 
 public class Main extends Application
 {
-	Personal personal;
-	Education education;
 	ObjectInputStream in;
-	Model model;
-	boolean sop,cv;
-
-	public Personal getPersonal() {
-		return personal;
-	}
-
-	public void setPersonal(Personal personal) {
-		this.personal = personal;
-	}
-
-	public Education getEducation() {
-		return education;
-	}
-
-	public void setEducation(Education education) {
-		this.education = education;
+	private Model model;
+	
+	public Model getModel()
+	{
+		return this.model;
 	}
 	
 	public void closer()
 	{
-		this.model.setP(this.personal);
-		this.model.setE(this.education);
-		this.model.setSop(this.sop);
-		this.model.setCv(this.cv);
 		try {
 			ObjectOutputStream temp=new ObjectOutputStream(new FileOutputStream("temp.dat"));
 			temp.writeObject(this.model);
@@ -102,11 +61,6 @@ public class Main extends Application
 			Controller x=b.getController();
 			x.setMainApp(this);
 			x.initialize_();
-//			p.setOnCloseRequest(new EventHandler<WindowEvent>() {
-//		          public void handle(WindowEvent we) {
-//		              closer(); //Write saved data (Model object) to file 
-//		          }
-//			});  
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

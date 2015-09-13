@@ -111,6 +111,9 @@ public class Controller
     @FXML private TextField marks2;
     @FXML private Label cgpa1l;
     @FXML private Label cgpa2l;
+    @FXML private Label uploadCVl;
+    @FXML private Label uploadSOPl;
+    
     //Mini tab 1:
     @FXML private Label ece_pref1l;
     @FXML private Label ece_pref2l;
@@ -207,7 +210,7 @@ public class Controller
 	}
 	
 	@FXML
-	void stream1_x_f(ActionEvent event)
+	void stream1_x_f()
 	{
 		stream2_x.setSelected(false);
 		stream3_x.setSelected(false);
@@ -215,7 +218,7 @@ public class Controller
 	}
 	
 	@FXML
-	void stream2_x_f(ActionEvent event)
+	void stream2_x_f()
 	{
 		stream1_x.setSelected(false);
 		stream3_x.setSelected(false);
@@ -223,7 +226,7 @@ public class Controller
 	}
 	
 	@FXML
-	void stream3_x_f(ActionEvent event)
+	void stream3_x_f()
 	{
 		stream1_x.setSelected(false);
 		stream2_x.setSelected(false);
@@ -231,43 +234,43 @@ public class Controller
 	}
 	
 	@FXML
-	void genderf_x_f(ActionEvent event)
+	void genderf_x_f()
 	{
 		genderm_x.setSelected(false);
 	}
 	
 	@FXML
-	void genderm_x_f(ActionEvent event)
+	void genderm_x_f()
 	{
 		genderf_x.setSelected(false);
 	}
 	
 	@FXML
-	void phyn_x_f(ActionEvent event)
+	void phyn_x_f()
 	{
 		phyy_x.setSelected(false);
 	}
 	
 	@FXML
-	void phyy_x_f(ActionEvent event)
+	void phyy_x_f()
 	{
 		phyn_x.setSelected(false);
 	}
 	
 	@FXML
-	void wary_x_f(ActionEvent event)
+	void wary_x_f()
 	{
 		warn_x.setSelected(false);
 	}
 	
 	@FXML
-	void warn_x_f(ActionEvent event)
+	void warn_x_f()
 	{
 		wary_x.setSelected(false);
 	}
 	
 	@FXML
-	void check1_f(ActionEvent event)
+	void check1_f()
 	{
 		if(check1.isSelected())
 		{
@@ -280,7 +283,7 @@ public class Controller
 	}
 	
 	@FXML
-	void check2_f(ActionEvent event)
+	void check2_f()
 	{
 		if(check2.isSelected())
 		{
@@ -293,7 +296,7 @@ public class Controller
 	}
 	
 	@FXML
-	void check3_f(ActionEvent event)
+	void check3_f()
 	{
 		if(check3.isSelected())
 		{
@@ -306,7 +309,7 @@ public class Controller
 	}
 	
 	@FXML
-	void check4_f(ActionEvent event)
+	void check4_f()
 	{
 		if(check4.isSelected())
 		{
@@ -763,7 +766,7 @@ public class Controller
 	}
 	
 	@FXML
-	void handleb2(ActionEvent event)
+	void handleb2()
 	{
 		boolean temp=true;
 		boolean temp2;
@@ -782,7 +785,7 @@ public class Controller
 	}
 	
 	@FXML
-    void handleb1(ActionEvent event) {
+    void handleb1() {
 		boolean temp=true;
 		boolean random=false;
 		if(email_x.getText().equals(""))
@@ -972,7 +975,7 @@ public class Controller
 		tempo.setPreference(temp);
 		tempo.setWar_category(this.war);	
 		System.out.println("Updated new");
-		mane.setPersonal(tempo);
+		mane.getModel().setP(tempo);
 		mane.closer();
 	}
 	
@@ -1029,7 +1032,7 @@ public class Controller
 //			p.setYear(other_year.getValue());
 			p.setScore(Integer.parseInt(score.getText()));
 			p.setRank(Integer.parseInt(rank.getText()));
-			mane.getEducation().setOD(p);
+			tempo.setOD(p);
 		}
 		if(four)
 		{
@@ -1042,74 +1045,66 @@ public class Controller
 			tempo.setG(p);
 		}	
 		//Save file
+		mane.getModel().setE(tempo);
+		mane.closer();
 	}
 	
 	private void populate_t1()
 	{
-		if(mane.getPersonal()!=null) 
+		if(mane.getModel().getP()!=null) 
 		{
 			System.out.println("This must be my lucky day");
-			Personal temp=mane.getPersonal();
+			Personal temp=mane.getModel().getP();
 			email_x.setText(temp.getEmail());
 			name_x.setText(temp.getName());
 			addc_x.setText(temp.getAdd_correspondence());
 			mob_x.setText(temp.getMobile());
-			pref1_x.setValue(temp.getPreference()[0]);
+			pref1_x.setValue(temp.getPreference()[0]); //Not working :(
 			pref2_x.setValue(temp.getPreference()[1]);
 			pref3_x.setValue(temp.getPreference()[2]);
 			category_x.setValue(temp.getCategory());
+			int nada=temp.getPhd_stream();
+			System.out.println(nada);
+			if(nada==1) stream1_x.setSelected(true);
+			else if(nada==2) stream2_x.setSelected(true);
+			else stream3_x.setSelected(true);
 //			dob_x.setValue(temp.getDate_of_birth());
 			fname_x.setText(temp.getFather_name());
 			addp_x.setText(temp.getAdd_permanent());
 			pin_x.setText(temp.getPincode());
-			if(this.war)
-			{
-				wary_x.setSelected(true);
-				warn_x.setSelected(false);
-			}
-			else
-			{
-				wary_x.setSelected(false);
-				warn_x.setSelected(true);
-			}
-			if(this.physical)
-			{
-				phyy_x.setSelected(true);
-				phyn_x.setSelected(false);
-			}
-			else
-			{
-				phyy_x.setSelected(false);
-				phyn_x.setSelected(true);
-			}
-			if(this.gender) //Sexism
-			{
-				genderf_x.setSelected(true); 
-				genderm_x.setSelected(false);
-			}
-			else
-			{
-				genderf_x.setSelected(false); 
-				genderm_x.setSelected(true);
-			}
-			if(this.phdstream==1)
-			{
-				stream1_x.setSelected(true);
-				stream2_x.setSelected(false);
-				stream3_x.setSelected(false);
-			}
-			else if(this.phdstream==2)
-			{
-				stream1_x.setSelected(false);
-				stream2_x.setSelected(true);
-				stream3_x.setSelected(false);
-			}
-			else if(this.phdstream==3)
-			{
-				stream1_x.setSelected(false);
-				stream2_x.setSelected(false);
-				stream3_x.setSelected(true);
-			}
+			if(temp.getWar_category()) wary_x.setSelected(true);
+			else warn_x.setSelected(true);
+			if(temp.getPhysically_disabled()) phyy_x.setSelected(true);
+			else phyn_x.setSelected(true);
+			if(temp.getGender()) genderf_x.setSelected(true); //Sexism
+			else genderm_x.setSelected(true);
+		}
+		System.out.println("Maybe not..f**k you");
+	}
+	
+	private void populate_t2()
+	{
+		if(mane.getModel().getE()!=null) 
+		{
+			System.out.println("This must be my lucky day");
+			Education temp=mane.getModel().getE();
+			x_board_y.setText(temp.getX_board());
+			x_marks_y.setText(String.valueOf(temp.getX_marks()));
+			x_year_y.setValue(temp.getX_year());
+			xii_board_y.setText(temp.getXii_board());
+			xii_marks_y.setText(String.valueOf(temp.getXii_marks()));
+			xii_year_y.setValue(temp.getXii_year());
+			grad_degree_y.setText(temp.getDegree());
+			grad_dept_y.setText(temp.getDepartment());
+			grad_coll_y.setText(temp.getCollege());
+			grad_univ_y.setText(temp.getUniversity());
+			grad_city_y.setText(temp.getCity());
+			grad_state_y.setValue(temp.getState());
+			grad_year_y.setValue(temp.getGraduation_year());
+			if(temp.getEce_phd()) check1_f();
+			if(temp.getPost_graduate()) check2_f();
+			if(temp.getOther_degree()) check3_f();
+			if(temp.getGiven_gate()) check4_f();
 		}
 		System.out.println("Maybe not..f**k you");
 	}
@@ -1211,6 +1206,19 @@ public class Controller
 			    "----","Biophysics - CB","Structural Biology - CB","Systems Biology - CB");
 			populate_choice_t1(); 
 			populate_tab2_choices();
-			populate_t1(); //Load details from file    	
+			populate_t1(); //Load Personal details from file    	
+			populate_t2(); //Load Education details from file
+	}
+	
+	@FXML
+	void uploadCV()
+	{
+		
+	}
+	
+	@FXML
+	void uploadSOP()
+	{
+		
 	}
 }
