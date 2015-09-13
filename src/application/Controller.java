@@ -101,6 +101,16 @@ public class Controller
     @FXML private TitledPane teb2;
     @FXML private TitledPane teb3;
     @FXML private TitledPane teb4;
+    @FXML private RadioButton cgpa1b;
+    @FXML private RadioButton marks1b;
+    @FXML private ChoiceBox<Integer> cgpa1d;
+    @FXML private TextField cgpa1;
+    @FXML private TextField marks1;
+    @FXML private RadioButton cgpa2b;
+    @FXML private RadioButton marks2b;
+    @FXML private ChoiceBox<Integer> cgpa2d;
+    @FXML private TextField cgpa2;
+    @FXML private TextField marks2;
     //Mini tab 1:
     @FXML private Label ece_pref1l;
     @FXML private Label ece_pref2l;
@@ -158,6 +168,42 @@ public class Controller
 	public void setMainApp(Main p)
 	{
 		this.mane=p;
+	}
+	
+	@FXML
+	void cgpat()
+	{
+		marks1.setDisable(true);
+		cgpa1.setDisable(false);
+		cgpa1d.setDisable(false);
+		marks1b.setSelected(false);
+	}
+	
+	@FXML
+	void cgpa2t()
+	{
+		marks2.setDisable(true);
+		cgpa2.setDisable(false);
+		cgpa2d.setDisable(false);
+		marks2b.setSelected(false);
+	}
+	
+	@FXML
+	void markst()
+	{
+		marks1.setDisable(false);
+		cgpa1.setDisable(true);
+		cgpa1d.setDisable(true);
+		cgpa1b.setSelected(false);
+	}
+	
+	@FXML
+	void marks2t()
+	{
+		marks2.setDisable(false);
+		cgpa2.setDisable(true);
+		cgpa2d.setDisable(true);
+		cgpa2b.setSelected(false);
 	}
 	
 	@FXML
@@ -414,15 +460,6 @@ public class Controller
 		else
 		{
 			ece_pref3l.setTextFill(Color.BLACK);
-		}
-		if(ece_pref4.getValue().equals("----"))
-		{
-			temp=false;
-			ece_pref4l.setTextFill(Color.RED);
-		}
-		else
-		{
-			ece_pref4l.setTextFill(Color.BLACK);
 		}
 		return temp;
 	}
@@ -967,6 +1004,30 @@ public class Controller
 		pref3_x.getSelectionModel().select(0);
 	}
 	
+	private void populate_tab2_choices()
+	{
+		cgpa1d.setItems(FXCollections.observableArrayList(4,10));
+		cgpa1d.getSelectionModel().select(0);
+		cgpa2d.setItems(FXCollections.observableArrayList(4,10));
+		cgpa2d.getSelectionModel().select(0);
+		ece_pref1.setItems(FXCollections.observableArrayList("----","Advanced Signal Processing","Statistical Signal Processing","Digital VLSI Design",
+				"Analog CMOS design","Digital Communications","Communication Networks","Linear systems","Introduction to Robotics",
+				"RF Circuit design","Antennas and Propagation","Embedded Systems"));
+		ece_pref1.getSelectionModel().select(0);
+		ece_pref2.setItems(FXCollections.observableArrayList("----","Advanced Signal Processing","Statistical Signal Processing","Digital VLSI Design",
+				"Analog CMOS design","Digital Communications","Communication Networks","Linear systems","Introduction to Robotics",
+				"RF Circuit design","Antennas and Propagation","Embedded Systems"));
+		ece_pref2.getSelectionModel().select(0);
+		ece_pref3.setItems(FXCollections.observableArrayList("----","Advanced Signal Processing","Statistical Signal Processing","Digital VLSI Design",
+				"Analog CMOS design","Digital Communications","Communication Networks","Linear systems","Introduction to Robotics",
+				"RF Circuit design","Antennas and Propagation","Embedded Systems"));
+		ece_pref3.getSelectionModel().select(0);
+		ece_pref4.setItems(FXCollections.observableArrayList("----","Advanced Signal Processing","Statistical Signal Processing","Digital VLSI Design",
+				"Analog CMOS design","Digital Communications","Communication Networks","Linear systems","Introduction to Robotics",
+				"RF Circuit design","Antennas and Propagation","Embedded Systems"));
+		ece_pref4.getSelectionModel().select(0);
+	}
+	
 	@FXML
 	public void initialize_() {	
 		teb1.setDisable(true);
@@ -988,6 +1049,7 @@ public class Controller
 		bt_pref=FXCollections.observableArrayList(
 			    "----","Biophysics - CB","Structural Biology - CB","Systems Biology - CB");
 			populate_choice_t1(); 
+			populate_tab2_choices();
 			populate_t1(); //Load details from file
         	t.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Tab>()
 			{	

@@ -299,8 +299,8 @@
                                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                       </rowConstraints>
                                        <children>
-                                          <RadioButton mnemonicParsing="false" text="MARKS(%)" />
-                                          <TextField GridPane.columnIndex="1" />
+                                          <RadioButton fx:id="marks1b" mnemonicParsing="false" onAction="#markst" text="MARKS(%)" />
+                                          <TextField fx:id="marks1" GridPane.columnIndex="1" />
                                        </children>
                                     </GridPane>
                                     <GridPane GridPane.rowIndex="8">
@@ -313,9 +313,9 @@
                                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                       </rowConstraints>
                                        <children>
-                                          <RadioButton mnemonicParsing="false" text="CGPA" />
-                                          <TextField prefHeight="26.0" prefWidth="146.0" GridPane.columnIndex="1" />
-                                          <ChoiceBox prefWidth="150.0" GridPane.columnIndex="2" />
+                                          <RadioButton fx:id="cgpa1b" mnemonicParsing="false" onAction="#cgpat" text="CGPA" />
+                                          <TextField fx:id="cgpa1" prefHeight="26.0" prefWidth="146.0" GridPane.columnIndex="1" />
+                                          <ChoiceBox fx:id="cgpa1d" prefWidth="150.0" GridPane.columnIndex="2" />
                                        </children>
                                     </GridPane>
                                     <ChoiceBox fx:id="grad_state_y" prefWidth="150.0" GridPane.rowIndex="6" />
@@ -407,9 +407,9 @@
                                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                             </rowConstraints>
                                              <children>
-                                                <RadioButton mnemonicParsing="false" text="CGPA" />
-                                                <TextField GridPane.columnIndex="1" />
-                                                <ChoiceBox prefWidth="150.0" GridPane.columnIndex="2" />
+                                                <RadioButton fx:id="cgpa2b" mnemonicParsing="false" onAction="#cgpa2t" text="CGPA" />
+                                                <TextField fx:id="cgpa2" GridPane.columnIndex="1" />
+                                                <ChoiceBox fx:id="cgpa2d" prefWidth="150.0" GridPane.columnIndex="2" />
                                              </children>
                                           </GridPane>
                                           <GridPane GridPane.columnIndex="1" GridPane.rowIndex="8">
@@ -421,8 +421,8 @@
                                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                             </rowConstraints>
                                              <children>
-                                                <RadioButton mnemonicParsing="false" text="MARKS(%)" />
-                                                <TextField GridPane.columnIndex="1" />
+                                                <RadioButton fx:id="marks2b" mnemonicParsing="false" onAction="#marks2t" text="MARKS(%)" />
+                                                <TextField fx:id="marks2" GridPane.columnIndex="1" />
                                              </children>
                                           </GridPane>
                                        </children>
