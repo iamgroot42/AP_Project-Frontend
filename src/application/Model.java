@@ -3,6 +3,7 @@ package application;
 import java.io.File;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 
 import javafx.scene.control.DatePicker;
 
@@ -10,9 +11,9 @@ abstract class CheckEmpty implements Serializable
 {
 	public boolean filled(int x) {return x != -1;}
 	public boolean filled(String x) {return  !x.isEmpty();}
-	public boolean filled(DatePicker x)
+	public boolean filled(LocalDate x)
 	{
-		return x.getValue()==null; 
+		return x==null; 
 	}
 	public boolean filled(float x) {return x != -1;}
 }
@@ -164,7 +165,7 @@ class Personal implements Serializable
 	String[]  preference;
 	String category;
 	boolean gender,physically_disabled,war_category;
-	DatePicker date_of_birth;
+	LocalDate date_of_birth;
 	public String getEmail() {
 		return email;
 	}
@@ -249,10 +250,10 @@ class Personal implements Serializable
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	public DatePicker getDate_of_birth() {
+	public LocalDate getDate_of_birth() {
 		return date_of_birth;
 	}
-	public void setDate_of_birth(DatePicker date_of_birth) {
+	public void setDate_of_birth(LocalDate date_of_birth) {
 		this.date_of_birth = date_of_birth;
 	}
 	

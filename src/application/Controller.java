@@ -781,6 +781,8 @@ public class Controller
 		if(temp)
 		{
 			//write objects of subclasses individually
+			saveE();
+			System.out.println("Writing new Education");
 		}
 	}
 	
@@ -939,7 +941,7 @@ public class Controller
 		if(temp)
 		{
 			save_P();
-			System.out.println("Writing new");
+			System.out.println("Writing new Personal");
 		}
     }
 	
@@ -958,7 +960,7 @@ public class Controller
 		tempo.setAdd_correspondence(addc_x.getText());
 		tempo.setAdd_permanent(addp_x.getText());
 		tempo.setCategory(category_x.getValue());
-//		tempo.setDate_of_birth(dob_x.getValue());
+		tempo.setDate_of_birth(dob_x.getValue());
 		tempo.setEmail(email_x.getText());
 		tempo.setFather_name(fname_x.getText());
 		tempo.setGender(this.gender);
@@ -984,10 +986,10 @@ public class Controller
 		Education tempo=new Education();
 		tempo.setX_board(x_board_y.getText());
 		tempo.setX_marks(Float.parseFloat(x_marks_y.getText()));
-//	    tempo.setX_year(x_year_y.getValue());
+	    tempo.setX_year(x_year_y.getValue());
 		tempo.setXii_board(xii_board_y.getText());
 		tempo.setXii_marks(Float.parseFloat(xii_marks_y.getText()));
-//		tempo.setXii_year(xii_year_y.getValue());
+		tempo.setXii_year(xii_year_y.getValue());
 		tempo.setDegree(grad_degree_y.getText());
 		tempo.setDepartment(grad_dept_y.getText());
 		tempo.setCollege(grad_coll_y.getText());
@@ -1017,7 +1019,7 @@ public class Controller
 			Post_Graduate p=new Post_Graduate();
 			p.setCollege(post_coll.getText());
 			p.setCity(post_city.getText());
-//			p.setState(post_state.getValue());
+			p.setState(post_state.getValue());
 			p.setDepartment(post_dept.getText());
 			p.setDegree(post_degree.getText());
 			p.setTitle(post_thesis.getText());
@@ -1029,7 +1031,7 @@ public class Controller
 			Other_Degree p=new Other_Degree();
 			p.setExam_name(exam.getText());
 			p.setSubject(subject.getText());
-//			p.setYear(other_year.getValue());
+			p.setYear(other_year.getValue());
 			p.setScore(Integer.parseInt(score.getText()));
 			p.setRank(Integer.parseInt(rank.getText()));
 			tempo.setOD(p);
@@ -1068,7 +1070,7 @@ public class Controller
 			if(nada==1) stream1_x.setSelected(true);
 			else if(nada==2) stream2_x.setSelected(true);
 			else stream3_x.setSelected(true);
-//			dob_x.setValue(temp.getDate_of_birth());
+			dob_x.setValue(temp.getDate_of_birth());
 			fname_x.setText(temp.getFather_name());
 			addp_x.setText(temp.getAdd_permanent());
 			pin_x.setText(temp.getPincode());
