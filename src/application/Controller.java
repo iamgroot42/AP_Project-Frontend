@@ -23,6 +23,8 @@ public class Controller
 {
 	@FXML private TabPane t;
     @FXML private Tab t1;
+    @FXML private Tab t2;
+    @FXML private Tab t3;
     @FXML private TextField email_x;
     @FXML private TextField name_x;
     @FXML private TextField mob_x;
@@ -45,10 +47,6 @@ public class Controller
     @FXML private RadioButton stream1_x;
     @FXML private RadioButton stream2_x;
     @FXML private RadioButton stream3_x;
-    @FXML private Tab t2;
-    @FXML private Tab t3;
-    @FXML private Tab t4;
-    @FXML private Tab t5;
     @FXML Label error_t1;
     @FXML private Label email_x2;
     @FXML private Label name_x2;
@@ -71,8 +69,8 @@ public class Controller
     @FXML private TextField x_marks_y;
     @FXML private TextField xii_board_y;
     @FXML private TextField xii_marks_y;
-    @FXML private ChoiceBox<String> x_year_y;
-    @FXML private ChoiceBox<String> xii_year_y;
+    @FXML private ChoiceBox<Integer> x_year_y;
+    @FXML private ChoiceBox<Integer> xii_year_y;
     @FXML private Label x_board_yl;
     @FXML private Label x_marks_yl;
     @FXML private Label xii_board_yl;
@@ -111,6 +109,8 @@ public class Controller
     @FXML private ChoiceBox<Integer> cgpa2d;
     @FXML private TextField cgpa2;
     @FXML private TextField marks2;
+    @FXML private Label cgpa1l;
+    @FXML private Label cgpa2l;
     //Mini tab 1:
     @FXML private Label ece_pref1l;
     @FXML private Label ece_pref2l;
@@ -138,7 +138,7 @@ public class Controller
     //Mini tab 3:
     @FXML private TextField exam;
     @FXML private TextField subject;
-    @FXML private ChoiceBox<String> other_year;
+    @FXML private ChoiceBox<Integer> other_year;
     @FXML private TextField score;
     @FXML private TextField rank;
     @FXML private Label examl;
@@ -321,7 +321,6 @@ public class Controller
 	private boolean schooling()
 	{
 		boolean temp=true;
-		
 		if(x_board_y.getText().equals(""))
 		{
 			temp=false;
@@ -376,7 +375,6 @@ public class Controller
 			xii_marks_yl.setTextFill(Color.RED);
 			temp=false;
 		}
-		
 		return temp;
 	}
 	
@@ -427,6 +425,48 @@ public class Controller
 		else
 		{
 			grad_city_yl.setTextFill(Color.BLACK);
+		}
+		if(cgpa1b.isSelected())
+		{
+			try
+			{
+				float x=Float.parseFloat(cgpa1.getText());
+				if(x<0 || x>cgpa1d.getValue())
+				{
+					temp=false;
+					cgpa1l.setTextFill(Color.RED);
+				}
+				else
+				{
+					cgpa1l.setTextFill(Color.BLACK);
+				}
+			}
+			catch(Exception e)
+			{
+				temp=false;
+				cgpa1l.setTextFill(Color.RED);
+			}
+		}
+		if(marks1b.isSelected())
+		{
+			try
+			{
+				float x=Float.parseFloat(marks1.getText());
+				if(x<0 || x>100)
+				{
+					temp=false;
+					cgpa1l.setTextFill(Color.RED);
+				}
+				else
+				{
+					cgpa1l.setTextFill(Color.BLACK);
+				}
+			}
+			catch(Exception e)
+			{
+				temp=false;
+				cgpa1l.setTextFill(Color.RED);
+			}
 		}
 		return temp;
 	}
@@ -529,6 +569,48 @@ public class Controller
 		else
 		{
 			post_yearl.setTextFill(Color.BLACK);
+		}
+		if(cgpa2b.isSelected())
+		{
+			try
+			{
+				float x=Float.parseFloat(cgpa2.getText());
+				if(x<0 || x>cgpa2d.getValue())
+				{
+					temp=false;
+					cgpa2l.setTextFill(Color.RED);
+				}
+				else
+				{
+					cgpa2l.setTextFill(Color.BLACK);
+				}
+			}
+			catch(Exception e)
+			{
+				temp=false;
+				cgpa1l.setTextFill(Color.RED);
+			}
+		}
+		if(marks2b.isSelected())
+		{
+			try
+			{
+				float x=Float.parseFloat(marks2.getText());
+				if(x<0 || x>100)
+				{
+					temp=false;
+					cgpa2l.setTextFill(Color.RED);
+				}
+				else
+				{
+					cgpa2l.setTextFill(Color.BLACK);
+				}
+			}
+			catch(Exception e)
+			{
+				temp=false;
+				cgpa2l.setTextFill(Color.RED);
+			}
 		}
 		return temp;
 	}
@@ -687,7 +769,7 @@ public class Controller
 		boolean temp2;
 		temp2=schooling(); temp=temp && temp2;
 		temp2=graduation(); temp=temp && temp2;
-		//ToDo : Make the TitledPanes go Red as well
+		//ToDo : Fix problem with TitlePanes not going RED
 		if(check1.isSelected()) {temp2=teb1_check(); if(!temp2){ teb1.setTextFill(Color.RED);} else{teb1.setTextFill(Color.BLACK);}temp=temp && temp2;}
 		if(check2.isSelected()) {temp2=teb2_check(); if(!temp2){ teb2.setTextFill(Color.RED);} else{teb2.setTextFill(Color.BLACK);}temp=temp && temp2;}
 		if(check3.isSelected()) {temp2=teb3_check(); if(!temp2){ teb3.setTextFill(Color.RED);} else{teb3.setTextFill(Color.BLACK);}temp=temp && temp2;}
@@ -864,6 +946,15 @@ public class Controller
 			Personal temp=new Personal();
 			mane.setPersonal(temp);
 		}
+		if(genderm_x.isSelected()) this.gender=true;
+		else this.gender=false;
+		if(phyy_x.isSelected()) this.physical=true;
+		else this.physical=false;
+		if(wary_x.isSelected()) this.war=true;
+		else this.war=false;
+		if(stream1_x.isSelected()) this.phdstream=1;
+		else if(stream2_x.isSelected()) this.phdstream=2;
+		else this.phdstream=3;
 		mane.getPersonal().setAdd_correspondence(addc_x.getText());
 		mane.getPersonal().setAdd_permanent(addp_x.getText());
 		mane.getPersonal().setCategory(category_x.getValue());
@@ -883,6 +974,78 @@ public class Controller
 		temp[2]=pref3_x.getValue();
 		mane.getPersonal().setPreference(temp);
 		mane.getPersonal().setWar_category(this.war);	
+	}
+	
+	private void saveE()
+	{
+		if(mane.getEducation()==null)
+		{
+			Education temp=new Education();
+			mane.setEducation(temp);
+		}
+		mane.getEducation().setX_board(x_board_y.getText());
+		mane.getEducation().setX_marks(Float.parseFloat(x_marks_y.getText()));
+//		mane.getEducation().setX_year(x_year_y.getValue());
+		mane.getEducation().setXii_board(xii_board_y.getText());
+		mane.getEducation().setXii_marks(Float.parseFloat(xii_marks_y.getText()));
+//		mane.getEducation().setXii_year(xii_year_y.getValue());
+		mane.getEducation().setDegree(grad_degree_y.getText());
+		mane.getEducation().setDepartment(grad_dept_y.getText());
+		mane.getEducation().setCollege(grad_coll_y.getText());
+		mane.getEducation().setUniversity(grad_univ_y.getText());
+		mane.getEducation().setCity(grad_city_y.getText());
+		mane.getEducation().setState(grad_state_y.getValue());
+		mane.getEducation().setGraduation_year(grad_year_y.getValue());
+//		if(cgpa1b.isSelected())
+		boolean one,two,three,four;
+		one=check1.isSelected();
+		two=check2.isSelected();
+		three=check3.isSelected();
+		four=check4.isSelected();
+		mane.getEducation().setEce_phd(one);
+		mane.getEducation().setPost_graduate(two);
+		mane.getEducation().setOther_degree(three);
+		mane.getEducation().setGiven_gate(four);
+		if(one)
+		{
+			ECE p=new ECE();
+			String[] nada={ece_pref1.getValue(),ece_pref2.getValue(),ece_pref3.getValue(),ece_pref4.getValue()};
+			p.setPreferences(nada);
+			mane.getEducation().setE(p);
+		}
+		if(two)
+		{
+			Post_Graduate p=new Post_Graduate();
+			p.setCollege(post_coll.getText());
+			p.setCity(post_city.getText());
+//			p.setState(post_state.getValue());
+			p.setDepartment(post_dept.getText());
+			p.setDegree(post_degree.getText());
+			p.setTitle(post_thesis.getText());
+			p.setYear(post_year.getValue());
+			mane.getEducation().setPG(p);
+		}
+		if(three)
+		{
+			Other_Degree p=new Other_Degree();
+			p.setExam_name(exam.getText());
+			p.setSubject(subject.getText());
+//			p.setYear(other_year.getValue());
+			p.setScore(Integer.parseInt(score.getText()));
+			p.setRank(Integer.parseInt(rank.getText()));
+			mane.getEducation().setOD(p);
+		}
+		if(four)
+		{
+			Gate p=new Gate();
+			p.setArea(area.getText());
+			p.setYear(other_year.getValue());
+			p.setMarks(Float.parseFloat(marks_other.getText()));
+			p.setScore(Float.parseFloat(score_other.getText()));
+			p.setRank(Integer.parseInt(rank_other.getText()));
+			mane.getEducation().setG(p);
+		}	
+		//Save file
 	}
 	
 	private void populate_t1()
@@ -1050,28 +1213,6 @@ public class Controller
 			    "----","Biophysics - CB","Structural Biology - CB","Systems Biology - CB");
 			populate_choice_t1(); 
 			populate_tab2_choices();
-			populate_t1(); //Load details from file
-        	t.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Tab>()
-			{	
-        		@Override
-				public void changed(ObservableValue<? extends Tab> tab, Tab oldTab, Tab newTab) {
-					if(newTab==t1)
-					{
-					}
-					else if(newTab==t2)
-					{
-					}
-					else if(newTab==t3)
-					{
-					}
-					else if(newTab==t4)
-					{	
-					}
-					else
-					{
-						
-					}
-			}});
-        	
+			populate_t1(); //Load details from file    	
 	}
 }

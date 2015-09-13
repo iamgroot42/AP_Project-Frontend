@@ -16,28 +16,10 @@ abstract class CheckEmpty
 	public boolean filled(float x) {return x != -1;}
 }
 
-class Feedback
-{
-	String first_hear;
-	boolean[] interested;
-	public Feedback(String x,int i) {first_hear=x;for(int i1=0;i1<10;i1++) interested[i1]=false; interested[i]=true;}
-	public boolean[] getInterested() {return interested;}
-	public void setInterested(int i) {interested[i]=true;}
-	public String getFirsthear() {return first_hear;}
-	public void setFirsthear(String x) {first_hear=x;}
-}
-
 class Post_Graduate extends CheckEmpty
 {
 	String college,city,state,department,degree,title;
 	int year,marks;
-	public Post_Graduate(int x)
-	{
-		year=x;
-		college="";city="";state="";
-		department="";degree="";title="";
-		marks=-1;
-	}
 	public String getCollege() {
 		return college;
 	}
@@ -86,17 +68,11 @@ class Post_Graduate extends CheckEmpty
 	public void setMarks(int marks) {
 		this.marks = marks;
 	}
-	
 }
 
 class ECE extends CheckEmpty
 {
 	String[] preferences;
-	public ECE(String a,String b,String c)
-	{
-		preferences=new String[4];
-		preferences[0]=a;preferences[1]=b;preferences[2]=c;preferences[3]="";
-	}
 	public String[] getPreferences() {
 		return preferences;
 	}
@@ -109,16 +85,37 @@ class Other_Degree extends CheckEmpty
 {
 	String exam_name,subject;
 	int year,score,rank;
-	public Other_Degree(int x) {year=x;exam_name="";subject="";score=rank=-1;}
-	public int getYear() {return year;}
-	public void setSubject(String x) {subject=x;}
-	public String getSubject() {return subject;}
-	public void setExamName(String x) {exam_name=x;}
-	public String getExamName() {return exam_name;}
-	public void setScore(int x) {score=x;}
-	public int getScore() {return score;}
-	public void setRank(int x) {rank=x;}
-	public int getRank() {return rank;}
+	public String getExam_name() {
+		return exam_name;
+	}
+	public void setExam_name(String exam_name) {
+		this.exam_name = exam_name;
+	}
+	public String getSubject() {
+		return subject;
+	}
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+	public int getYear() {
+		return year;
+	}
+	public void setYear(int year) {
+		this.year = year;
+	}
+	public int getScore() {
+		return score;
+	}
+	public void setScore(int score) {
+		this.score = score;
+	}
+	public int getRank() {
+		return rank;
+	}
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
+	
 }
 
 class Gate extends CheckEmpty
@@ -126,7 +123,6 @@ class Gate extends CheckEmpty
 	String area;
 	int year,rank;
 	float marks,score;
-	public Gate(int x) {year=x;area="";rank=-1;marks=score=-1;}
 	public String getArea() {
 		return area;
 	}
@@ -157,6 +153,7 @@ class Gate extends CheckEmpty
 	public void setScore(float score) {
 		this.score = score;
 	}
+	
 }
 
 class Personal
@@ -264,27 +261,21 @@ class Personal
 class Education 
 {
 	int x_year,xii_year,graduation_year;
-	int ece_phd,post_graduate,other_degree,given_gate;
+	boolean ece_phd,post_graduate,other_degree,given_gate;
 	float x_marks,xii_marks,graduation_marks;
 	String x_board,xii_board;
 	String degree,department,college,university,city,state;
 	String achievements;
 	Other_Degree OD;
+	ECE E;
+	public ECE getE() {
+		return E;
+	}
+	public void setE(ECE e) {
+		E = e;
+	}
 	Gate G;
 	Post_Graduate PG;
-	public Education(String xb,String xiib,int yox,int yoxii,float x,float xii,String degree,String dept,String college,String univ,String city,String state,int year,int ece,int pg,int other,int sat)
-	{
-		achievements="";graduation_marks=-1;
-		x_board=xb;xii_board=xiib;
-		x_year=yox;xii_year=yoxii;
-		x_marks=x;xii_marks=xii;
-		this.degree=degree;department=dept;
-		this.college=college;university=univ;
-		this.city=city;this.state=state;
-		graduation_year=year;
-		ece_phd=ece;post_graduate=pg;
-		other_degree=other;given_gate=sat;
-	}
 	public int getX_year() {
 		return x_year;
 	}
@@ -303,28 +294,28 @@ class Education
 	public void setGraduation_year(int graduation_year) {
 		this.graduation_year = graduation_year;
 	}
-	public int getEce_phd() {
+	public boolean getEce_phd() {
 		return ece_phd;
 	}
-	public void setEce_phd(int ece_phd) {
+	public void setEce_phd(boolean ece_phd) {
 		this.ece_phd = ece_phd;
 	}
-	public int getPost_graduate() {
+	public boolean getPost_graduate() {
 		return post_graduate;
 	}
-	public void setPost_graduate(int post_graduate) {
+	public void setPost_graduate(boolean post_graduate) {
 		this.post_graduate = post_graduate;
 	}
-	public int getOther_degree() {
+	public boolean getOther_degree() {
 		return other_degree;
 	}
-	public void setOther_degree(int other_degree) {
+	public void setOther_degree(boolean other_degree) {
 		this.other_degree = other_degree;
 	}
-	public int getGiven_gate() {
+	public boolean getGiven_gate() {
 		return given_gate;
 	}
-	public void setGiven_gate(int given_gate) {
+	public void setGiven_gate(boolean given_gate) {
 		this.given_gate = given_gate;
 	}
 	public float getX_marks() {
@@ -419,42 +410,10 @@ class Education
 	}
 }
 
-class Payment
-{
-	boolean clear;
-	String bank,branch,draft;
-	public Payment(String a,String b,String c) {clear=false;bank=a;branch=b;draft=c;}
-	public boolean isClear() {
-		return clear;
-	}
-	public void setClear(boolean clear) {
-		this.clear = clear;
-	}
-	public String getBank() {
-		return bank;
-	}
-	public void setBank(String bank) {
-		this.bank = bank;
-	}
-	public String getBranch() {
-		return branch;
-	}
-	public void setBranch(String branch) {
-		this.branch = branch;
-	}
-	public String getDraft() {
-		return draft;
-	}
-	public void setDraft(String draft) {
-		this.draft = draft;
-	}
-}
-
 public class Model implements Serializable {
 	Personal P;
 	Education E;
 	String enrollment_number; //Yet to figure out
-	Payment bank;
 //	Date timestamp;
 	boolean cv,sop;
 	public Personal getP() {
@@ -475,12 +434,6 @@ public class Model implements Serializable {
 	public void setEnrollment_number(String enrollment_number) {
 		this.enrollment_number = enrollment_number;
 	}
-	public Payment getBank() {
-		return bank;
-	}
-	public void setBank(Payment bank) {
-		this.bank = bank;
-	}
 	public boolean isCv() {
 		return cv;
 	}
@@ -492,7 +445,5 @@ public class Model implements Serializable {
 	}
 	public void setSop(boolean sop) {
 		this.sop = sop;
-	}
-	
-	
+	}	
 }

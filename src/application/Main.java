@@ -39,8 +39,6 @@ public class Main extends Application
 {
 	Personal personal;
 	Education education;
-	Payment payment;
-	Feedback feedback;
 	ObjectInputStream in;
 	Model model;
 	boolean sop,cv;
@@ -60,26 +58,9 @@ public class Main extends Application
 	public void setEducation(Education education) {
 		this.education = education;
 	}
-
-	public Payment getPayment() {
-		return payment;
-	}
-
-	public void setPayment(Payment payment) {
-		this.payment = payment;
-	}
-
-	public Feedback getFeedback() {
-		return feedback;
-	}
-
-	public void setFeedback(Feedback feedback) {
-		this.feedback = feedback;
-	}
 	
 	private void closer()
 	{
-		this.model.setBank(this.payment);
 		this.model.setP(this.personal);
 		this.model.setE(this.education);
 		this.model.setSop(this.sop);
@@ -88,11 +69,11 @@ public class Main extends Application
 			ObjectOutputStream temp=new ObjectOutputStream(new FileOutputStream("temp.dat"));
 			temp.writeObject(this.model);
 			if(this.model.getP()==null) System.out.println("F*CK");
+			if(this.model==null) System.out.println("Double F*CK");
 		} catch (IOException e) {
 			System.out.println("Could not write to file");
 			e.printStackTrace();
 		}
-		
 	}
 	
 	@Override
