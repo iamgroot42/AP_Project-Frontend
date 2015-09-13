@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 
 import javafx.scene.control.DatePicker;
 
-abstract class CheckEmpty
+abstract class CheckEmpty implements Serializable
 {
 	public boolean filled(int x) {return x != -1;}
 	public boolean filled(String x) {return  !x.isEmpty();}
@@ -16,7 +16,7 @@ abstract class CheckEmpty
 	public boolean filled(float x) {return x != -1;}
 }
 
-class Post_Graduate extends CheckEmpty
+class Post_Graduate extends CheckEmpty implements Serializable
 {
 	String college,city,state,department,degree,title;
 	int year,marks;
@@ -70,7 +70,7 @@ class Post_Graduate extends CheckEmpty
 	}
 }
 
-class ECE extends CheckEmpty
+class ECE extends CheckEmpty implements Serializable
 {
 	String[] preferences;
 	public String[] getPreferences() {
@@ -81,7 +81,7 @@ class ECE extends CheckEmpty
 	}
 }
 
-class Other_Degree extends CheckEmpty
+class Other_Degree extends CheckEmpty implements Serializable
 {
 	String exam_name,subject;
 	int year,score,rank;
@@ -115,10 +115,9 @@ class Other_Degree extends CheckEmpty
 	public void setRank(int rank) {
 		this.rank = rank;
 	}
-	
 }
 
-class Gate extends CheckEmpty
+class Gate extends CheckEmpty implements Serializable
 {
 	String area;
 	int year,rank;
@@ -156,7 +155,7 @@ class Gate extends CheckEmpty
 	
 }
 
-class Personal
+class Personal implements Serializable
 {
 	String email,name,mobile,add_correspondence;
 	String add_permanent,father_name,nationality,pincode;
@@ -258,7 +257,7 @@ class Personal
 	
 }
 
-class Education 
+class Education implements Serializable
 {
 	int x_year,xii_year,graduation_year;
 	boolean ece_phd,post_graduate,other_degree,given_gate;

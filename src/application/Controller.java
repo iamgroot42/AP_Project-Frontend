@@ -936,16 +936,13 @@ public class Controller
 		if(temp)
 		{
 			save_P();
+			System.out.println("Writing new");
 		}
     }
 	
 	private void save_P()
 	{
-		if(mane.getPersonal()==null)
-		{			
-			Personal temp=new Personal();
-			mane.setPersonal(temp);
-		}
+		Personal tempo=new Personal();
 		if(genderm_x.isSelected()) this.gender=true;
 		else this.gender=false;
 		if(phyy_x.isSelected()) this.physical=true;
@@ -955,63 +952,61 @@ public class Controller
 		if(stream1_x.isSelected()) this.phdstream=1;
 		else if(stream2_x.isSelected()) this.phdstream=2;
 		else this.phdstream=3;
-		mane.getPersonal().setAdd_correspondence(addc_x.getText());
-		mane.getPersonal().setAdd_permanent(addp_x.getText());
-		mane.getPersonal().setCategory(category_x.getValue());
-//		mane.getPersonal().setDate_of_birth(dob_x.getValue());
-		mane.getPersonal().setEmail(email_x.getText());
-		mane.getPersonal().setFather_name(fname_x.getText());
-		mane.getPersonal().setGender(this.gender);
-		mane.getPersonal().setMobile(mob_x.getText());
-		mane.getPersonal().setName(name_x.getText());
-		mane.getPersonal().setNationality(nation_x.getValue());
-		mane.getPersonal().setPhd_stream(this.phdstream);
-		mane.getPersonal().setPhysically_disabled(this.physical);
-		mane.getPersonal().setPincode(pin_x.getText());
+		tempo.setAdd_correspondence(addc_x.getText());
+		tempo.setAdd_permanent(addp_x.getText());
+		tempo.setCategory(category_x.getValue());
+//		tempo.setDate_of_birth(dob_x.getValue());
+		tempo.setEmail(email_x.getText());
+		tempo.setFather_name(fname_x.getText());
+		tempo.setGender(this.gender);
+		tempo.setMobile(mob_x.getText());
+		tempo.setName(name_x.getText());
+		tempo.setNationality(nation_x.getValue());
+		tempo.setPhd_stream(this.phdstream);
+		tempo.setPhysically_disabled(this.physical);
+		tempo.setPincode(pin_x.getText());
 		String[] temp=new String[3];
 		temp[0]=pref1_x.getValue();
 		temp[1]=pref2_x.getValue();
 		temp[2]=pref3_x.getValue();
-		mane.getPersonal().setPreference(temp);
-		mane.getPersonal().setWar_category(this.war);	
+		tempo.setPreference(temp);
+		tempo.setWar_category(this.war);	
+		System.out.println("Updated new");
+		mane.setPersonal(tempo);
 	}
 	
 	private void saveE()
 	{
-		if(mane.getEducation()==null)
-		{
-			Education temp=new Education();
-			mane.setEducation(temp);
-		}
-		mane.getEducation().setX_board(x_board_y.getText());
-		mane.getEducation().setX_marks(Float.parseFloat(x_marks_y.getText()));
-//		mane.getEducation().setX_year(x_year_y.getValue());
-		mane.getEducation().setXii_board(xii_board_y.getText());
-		mane.getEducation().setXii_marks(Float.parseFloat(xii_marks_y.getText()));
-//		mane.getEducation().setXii_year(xii_year_y.getValue());
-		mane.getEducation().setDegree(grad_degree_y.getText());
-		mane.getEducation().setDepartment(grad_dept_y.getText());
-		mane.getEducation().setCollege(grad_coll_y.getText());
-		mane.getEducation().setUniversity(grad_univ_y.getText());
-		mane.getEducation().setCity(grad_city_y.getText());
-		mane.getEducation().setState(grad_state_y.getValue());
-		mane.getEducation().setGraduation_year(grad_year_y.getValue());
+		Education tempo=new Education();
+		tempo.setX_board(x_board_y.getText());
+		tempo.setX_marks(Float.parseFloat(x_marks_y.getText()));
+//	    tempo.setX_year(x_year_y.getValue());
+		tempo.setXii_board(xii_board_y.getText());
+		tempo.setXii_marks(Float.parseFloat(xii_marks_y.getText()));
+//		tempo.setXii_year(xii_year_y.getValue());
+		tempo.setDegree(grad_degree_y.getText());
+		tempo.setDepartment(grad_dept_y.getText());
+		tempo.setCollege(grad_coll_y.getText());
+		tempo.setUniversity(grad_univ_y.getText());
+		tempo.setCity(grad_city_y.getText());
+		tempo.setState(grad_state_y.getValue());
+		tempo.setGraduation_year(grad_year_y.getValue());
 //		if(cgpa1b.isSelected())
 		boolean one,two,three,four;
 		one=check1.isSelected();
 		two=check2.isSelected();
 		three=check3.isSelected();
 		four=check4.isSelected();
-		mane.getEducation().setEce_phd(one);
-		mane.getEducation().setPost_graduate(two);
-		mane.getEducation().setOther_degree(three);
-		mane.getEducation().setGiven_gate(four);
+		tempo.setEce_phd(one);
+		tempo.setPost_graduate(two);
+		tempo.setOther_degree(three);
+		tempo.setGiven_gate(four);
 		if(one)
 		{
 			ECE p=new ECE();
 			String[] nada={ece_pref1.getValue(),ece_pref2.getValue(),ece_pref3.getValue(),ece_pref4.getValue()};
 			p.setPreferences(nada);
-			mane.getEducation().setE(p);
+			tempo.setE(p);
 		}
 		if(two)
 		{
@@ -1023,7 +1018,7 @@ public class Controller
 			p.setDegree(post_degree.getText());
 			p.setTitle(post_thesis.getText());
 			p.setYear(post_year.getValue());
-			mane.getEducation().setPG(p);
+			tempo.setPG(p);
 		}
 		if(three)
 		{
@@ -1043,7 +1038,7 @@ public class Controller
 			p.setMarks(Float.parseFloat(marks_other.getText()));
 			p.setScore(Float.parseFloat(score_other.getText()));
 			p.setRank(Integer.parseInt(rank_other.getText()));
-			mane.getEducation().setG(p);
+			tempo.setG(p);
 		}	
 		//Save file
 	}
@@ -1115,6 +1110,7 @@ public class Controller
 			}
 		}
 	}
+	
 	
 	private void populate_cse_pref()
 	{

@@ -248,7 +248,7 @@
                                       </rowConstraints>
                                        <children>
                                           <CheckBox fx:id="check1" mnemonicParsing="false" onAction="#check1_f" text="Are you applying for ECE PhD?" />
-                                          <CheckBox fx:id="check3" mnemonicParsing="false" onAction="#check3_f" text="Have you completed your Post Graduation?" GridPane.rowIndex="1" />
+                                          <CheckBox fx:id="check3" mnemonicParsing="false" onAction="#check3_f" text="Other Academic Degrees?" GridPane.rowIndex="1" />
                                        </children>
                                     </GridPane>
                                  </children>
@@ -547,7 +547,7 @@
             </ScrollPane>
          </content>
       </Tab>
-      <Tab fx:id="t5" text="Submit">
+      <Tab fx:id="t3" text="Submit">
          <content>
             <Button mnemonicParsing="false" text="Submit" />
          </content>
