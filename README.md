@@ -1,2 +1,4 @@
-# AP_Project
-AP Project Frontend (made with Satyam Kumar)
+# AP_Project-Frontend
+AP Project Frontend (Anshuman & Satyam)
+- Frontend : Anshuman
+- Backend : Satyam
