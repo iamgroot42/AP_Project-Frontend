@@ -166,6 +166,7 @@ public class Controller
 	ObservableList<String> cse_pref;
 	ObservableList<String> ece_pref;
 	ObservableList<String> bt_pref;
+	ObservableList<String> states;
 	
 	public void setMainApp(Main p)
 	{
@@ -459,15 +460,15 @@ public class Controller
 		{
 			grad_city_yl.setTextFill(Color.BLACK);
 		}
-//		if(grad_state_y.getValue().equals("----"))
-//		{
-//			temp=false;
-//			grad_state_yl.setTextFill(Color.RED);
-//		}
-//		else
-//		{
-//			grad_state_yl.setTextFill(Color.BLACK);
-//		}
+		if(grad_state_y.getValue().equals("----"))
+		{
+			temp=false;
+			grad_state_yl.setTextFill(Color.RED);
+		}
+		else
+		{
+			grad_state_yl.setTextFill(Color.BLACK);
+		}
 		if(cgpa1b.isSelected())
 		{
 			try
@@ -603,15 +604,15 @@ public class Controller
 		{
 			post_thesisl.setTextFill(Color.BLACK);
 		}
-//		if(post_state.getValue().equals("----"))
-//		{
-//			temp=false;
-//			post_statel.setTextFill(Color.RED);
-//		}
-//		else
-//		{
-//			post_statel.setTextFill(Color.BLACK);
-//		}
+		if(post_state.getValue().equals("----"))
+		{
+			temp=false;
+			post_statel.setTextFill(Color.RED);
+		}
+		else
+		{
+			post_statel.setTextFill(Color.BLACK);
+		}
 		if(post_year.getValue().equals("----"))
 		{
 			temp=false;
@@ -1070,7 +1071,7 @@ public class Controller
 		tempo.setCollege(grad_coll_y.getText());
 		tempo.setUniversity(grad_univ_y.getText());
 		tempo.setCity(grad_city_y.getText());
-//		tempo.setState(grad_state_y.getValue());
+		tempo.setState(grad_state_y.getValue());
 		tempo.setGraduation_year(grad_year_y.getValue());
 		if(cgpa1b.isSelected())
 		{
@@ -1105,7 +1106,7 @@ public class Controller
 			Post_Graduate p=new Post_Graduate();
 			p.setCollege(post_coll.getText());
 			p.setCity(post_city.getText());
-//			p.setState(post_state.getValue());
+			p.setState(post_state.getValue());
 			p.setDepartment(post_dept.getText());
 			p.setDegree(post_degree.getText());
 			p.setTitle(post_thesis.getText());
@@ -1198,7 +1199,7 @@ public class Controller
 			grad_coll_y.setText(temp.getCollege());
 			grad_univ_y.setText(temp.getUniversity());
 			grad_city_y.setText(temp.getCity());
-//			grad_state_y.setValue(temp.getState());
+			grad_state_y.setValue(temp.getState());
 			grad_year_y.setValue(temp.getGraduation_year());
 			achievements.setText(temp.getAchievements());
 			if(temp.isType()==1)
@@ -1223,7 +1224,7 @@ public class Controller
 				check2.setSelected(true); check2_f();
 				post_coll.setText(nada.getCollege());
 				post_city.setText(nada.getCity());
-//				post_state.setValue(nada.getState());
+				post_state.setValue(nada.getState());
 				post_dept.setText(nada.getDepartment());
 				post_degree.setText(nada.getDegree());
 				post_thesis.setText(nada.getTitle());
@@ -1303,13 +1304,15 @@ public class Controller
 		nation_x.getSelectionModel().select(0);
 		pref1_x.setItems(FXCollections.observableArrayList(
 			    "----"));
+		pref1_x.getSelectionModel().select(0);
 		pref2_x.setItems(FXCollections.observableArrayList(
 			    "----"));
-		pref3_x.setItems(FXCollections.observableArrayList(
-			    "----"));
-		pref1_x.getSelectionModel().select(0);
 		pref2_x.getSelectionModel().select(0);
+		pref3_x.setItems(FXCollections.observableArrayList(
+			    "----"));	
 		pref3_x.getSelectionModel().select(0);
+		
+		
 	}
 	
 	private void populate_tab2_choices()
@@ -1353,7 +1356,10 @@ public class Controller
 		other_year.getSelectionModel().select(0);
 		year_other.setItems(years);
 		year_other.getSelectionModel().select(0);	
-		
+		grad_state_y.setItems(states);
+		grad_state_y.getSelectionModel().select(0);
+		post_state.setItems(states);
+		post_state.getSelectionModel().select(0);		
 	}
 	
 	@FXML
@@ -1376,6 +1382,12 @@ public class Controller
 			    "Wireless Networks - ECE");
 		bt_pref=FXCollections.observableArrayList(
 			    "----","Biophysics - CB","Structural Biology - CB","Systems Biology - CB");
+		states=FXCollections.observableArrayList("----", "Andaman and Nicobar Islands", "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar",
+    			"Chandigarh", "Chhattisgarh", "Dadra and Nagar Haveli", "Daman and Diu", "New Delhi", "Goa",
+    			"Gujarat", "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka", "Kerala",	
+    			"Lakshadweep", "Madhya Pradesh", "Maharashtra", "Nagpur", "Manipur", "Meghalaya", "Mizoram","Nagaland",
+    			"Odisha", "Puducherry", "Punjab", "Murree", "Shimla", "Rajasthan", "Sikkim", "Tamil Nadu", "Hyderabad", 
+    			"Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal");
 			populate_choice_t1(); 
 			populate_tab2_choices();
 			populate_t1(); //Load Personal details from file    	
