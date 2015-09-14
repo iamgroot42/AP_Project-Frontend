@@ -865,7 +865,7 @@ public class Controller
     void handleb1() {
 		boolean temp=true;
 		boolean random=false;
-		if(email_x.getText().equals(""))
+		if(email_x.getText().equals("")) //Add e-Mail validation
 		{
 			email_x2.setTextFill(Color.RED);
 			temp=false;
