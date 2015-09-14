@@ -2,7 +2,6 @@ package application;
 
 import java.time.LocalDate;
 import java.util.Calendar;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -160,6 +159,7 @@ public class Controller
     @FXML private Label rank_otherl;
     @FXML private Label year_otherl; 
       
+    //Non-FXML fields:
 	Main mane;
 	int phdstream;
 	boolean gender,physical,war;
@@ -167,6 +167,7 @@ public class Controller
 	ObservableList<String> ece_pref;
 	ObservableList<String> bt_pref;
 	ObservableList<String> states;
+	ObservableList<String> nations;
 	
 	public void setMainApp(Main p)
 	{
@@ -1301,7 +1302,7 @@ public class Controller
 			);
 		category_x.getSelectionModel().select(0);
 		nation_x.setItems(FXCollections.observableArrayList(
-			    "----", "India","Others")
+			    "----", "India","PotatoLand","TomatoLand","Others")
 			);
 		nation_x.getSelectionModel().select(0);
 		pref1_x.setItems(FXCollections.observableArrayList(
@@ -1312,9 +1313,7 @@ public class Controller
 		pref2_x.getSelectionModel().select(0);
 		pref3_x.setItems(FXCollections.observableArrayList(
 			    "----"));	
-		pref3_x.getSelectionModel().select(0);
-		
-		
+		pref3_x.getSelectionModel().select(0);		
 	}
 	
 	private void populate_tab2_choices()
@@ -1389,11 +1388,17 @@ public class Controller
     			"Gujarat", "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka", "Kerala",	
     			"Lakshadweep", "Madhya Pradesh", "Maharashtra", "Nagpur", "Manipur", "Meghalaya", "Mizoram","Nagaland",
     			"Odisha", "Puducherry", "Punjab", "Murree", "Shimla", "Rajasthan", "Sikkim", "Tamil Nadu", "Hyderabad", 
-    			"Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal");
-			populate_choice_t1(); 
-			populate_tab2_choices();
-			populate_t1(); //Load Personal details from file    	
-			populate_t2(); //Load Education details from file
+    			"Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal","Others");
+		populate_choice_t1(); 
+		populate_tab2_choices();
+		populate_t1(); //Load Personal details from file    	
+		populate_t2(); //Load Education details from file
+	}
+	
+	@FXML
+	void final_countdown()
+	{
+		//Check for tab1,tab2 again and write to file (PDF,or some other file)
 	}
 	
 	@FXML
@@ -1404,6 +1409,7 @@ public class Controller
 	
 	@FXML
 	void uploadSOP()
+
 	{
 		
 	}
