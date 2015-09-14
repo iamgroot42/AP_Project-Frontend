@@ -1,6 +1,7 @@
 package application;
 
 import java.time.LocalDate;
+import java.util.Calendar;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -362,6 +363,15 @@ public class Controller
 			x_marks_yl.setTextFill(Color.RED);
 			temp=false;
 		}
+		if(x_year_y.getValue()==Calendar.getInstance().get(Calendar.YEAR))
+		{
+			x_year_yl.setTextFill(Color.RED);
+			temp=false;
+		}
+		else
+		{
+			x_year_yl.setTextFill(Color.BLACK);
+		}
 		if(xii_board_y.getText().equals(""))
 		{
 			temp=false;
@@ -389,6 +399,15 @@ public class Controller
 			xii_marks_yl.setTextFill(Color.RED);
 			temp=false;
 		}
+		if(xii_year_y.getValue()==Calendar.getInstance().get(Calendar.YEAR))
+		{
+			xii_year_yl.setTextFill(Color.RED);
+			temp=false;
+		}
+		else
+		{
+			xii_year_yl.setTextFill(Color.BLACK);
+		}		
 		return temp;
 	}
 	
@@ -481,6 +500,15 @@ public class Controller
 				temp=false;
 				cgpa1l.setTextFill(Color.RED);
 			}
+		}
+		if(grad_year_y.getValue()==Calendar.getInstance().get(Calendar.YEAR))
+		{
+			grad_year_yl.setTextFill(Color.RED);
+			temp=false;
+		}
+		else
+		{
+			grad_year_yl.setTextFill(Color.BLACK);
 		}
 		return temp;
 	}
@@ -626,6 +654,15 @@ public class Controller
 				cgpa2l.setTextFill(Color.RED);
 			}
 		}
+		if(post_year.getValue()==Calendar.getInstance().get(Calendar.YEAR))
+		{
+			post_yearl.setTextFill(Color.RED);
+			temp=false;
+		}
+		else
+		{
+			post_yearl.setTextFill(Color.BLACK);
+		}
 		return temp;
 	}
 	
@@ -687,6 +724,15 @@ public class Controller
 			temp=false;
 		}
 		if(other_year.getValue().equals("----"))
+		{
+			other_yearl.setTextFill(Color.RED);
+			temp=false;
+		}
+		else
+		{
+			other_yearl.setTextFill(Color.BLACK);
+		}
+		if(other_year.getValue()==Calendar.getInstance().get(Calendar.YEAR))
 		{
 			other_yearl.setTextFill(Color.RED);
 			temp=false;
@@ -772,6 +818,15 @@ public class Controller
 		{
 			rank_otherl.setTextFill(Color.RED);
 			temp=false;
+		}
+		if(year_other.getValue()==Calendar.getInstance().get(Calendar.YEAR))
+		{
+			year_otherl.setTextFill(Color.RED);
+			temp=false;
+		}
+		else
+		{
+			year_otherl.setTextFill(Color.BLACK);
 		}
 		return temp;
 	}
@@ -1131,6 +1186,7 @@ public class Controller
 		pref1_x.getSelectionModel().select(0);
 		pref2_x.getSelectionModel().select(0);
 		pref3_x.getSelectionModel().select(0);
+		
 	}
 	
 	private void populate_ece_pref()
@@ -1196,6 +1252,26 @@ public class Controller
 				"Analog CMOS design","Digital Communications","Communication Networks","Linear systems","Introduction to Robotics",
 				"RF Circuit design","Antennas and Propagation","Embedded Systems"));
 		ece_pref4.getSelectionModel().select(0);
+		ObservableList<Integer> years=FXCollections.observableArrayList();
+		int j=Calendar.getInstance().get(Calendar.YEAR);
+		int i;
+		for(i=j;i>=1951;i--)
+		{
+			years.add(i);
+		}
+		x_year_y.setItems(years);
+		x_year_y.getSelectionModel().select(0);
+		xii_year_y.setItems(years);
+		xii_year_y.getSelectionModel().select(0);
+		grad_year_y.setItems(years);
+		grad_year_y.getSelectionModel().select(0);
+		post_year.setItems(years);
+		post_year.getSelectionModel().select(0);
+		other_year.setItems(years);
+		other_year.getSelectionModel().select(0);
+		year_other.setItems(years);
+		year_other.getSelectionModel().select(0);	
+		
 	}
 	
 	@FXML
