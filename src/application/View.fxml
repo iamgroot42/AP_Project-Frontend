@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<TabPane fx:id="t" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="2000.0" prefWidth="719.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+<TabPane fx:id="t" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
   <tabs>
     <Tab fx:id="t1" text="Personal Information">
          <content>
-            <ScrollPane prefHeight="795.0" prefWidth="655.0">
+            <ScrollPane>
                <content>
-                  <GridPane prefHeight="1297.0" prefWidth="683.0">
+                  <GridPane>
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="327.0" minWidth="10.0" prefWidth="319.0" />
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="397.0" minWidth="10.0" prefWidth="346.0" />
@@ -135,9 +136,9 @@
       </Tab>
       <Tab fx:id="t2" text="Education Information">
          <content>
-            <ScrollPane prefHeight="1194.0" prefWidth="720.0">
+            <ScrollPane>
                <content>
-                  <GridPane prefHeight="1627.0" prefWidth="674.0">
+                  <GridPane>
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
                      </columnConstraints>
@@ -148,7 +149,7 @@
                         <RowConstraints maxHeight="838.0" minHeight="0.0" prefHeight="73.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <GridPane prefHeight="1467.0" prefWidth="700.0">
+                        <GridPane>
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" maxWidth="366.0" minWidth="10.0" prefWidth="339.0" />
                             <ColumnConstraints hgrow="SOMETIMES" maxWidth="368.0" minWidth="10.0" prefWidth="361.0" />
@@ -489,7 +490,7 @@
                               </TitledPane>
                           </panes>
                         </Accordion>
-                        <GridPane prefHeight="584.0" prefWidth="643.0" GridPane.rowIndex="2">
+                        <GridPane GridPane.rowIndex="2">
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" maxWidth="549.0" minWidth="10.0" prefWidth="396.0" />
                             <ColumnConstraints hgrow="SOMETIMES" maxWidth="342.0" minWidth="10.0" prefWidth="301.0" />
