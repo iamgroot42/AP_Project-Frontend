@@ -997,17 +997,17 @@ public class Controller
 		Education tempo=new Education();
 		tempo.setX_board(x_board_y.getText());
 		tempo.setX_marks(Float.parseFloat(x_marks_y.getText()));
-	    tempo.setX_year(x_year_y.getValue());
+//	    tempo.setX_year(x_year_y.getValue());
 		tempo.setXii_board(xii_board_y.getText());
 		tempo.setXii_marks(Float.parseFloat(xii_marks_y.getText()));
-		tempo.setXii_year(xii_year_y.getValue());
+//		tempo.setXii_year(xii_year_y.getValue());
 		tempo.setDegree(grad_degree_y.getText());
 		tempo.setDepartment(grad_dept_y.getText());
 		tempo.setCollege(grad_coll_y.getText());
 		tempo.setUniversity(grad_univ_y.getText());
 		tempo.setCity(grad_city_y.getText());
-		tempo.setState(grad_state_y.getValue());
-		tempo.setGraduation_year(grad_year_y.getValue());
+//		tempo.setState(grad_state_y.getValue());
+//		tempo.setGraduation_year(grad_year_y.getValue());
 //		if(cgpa1b.isSelected())
 		boolean one,two,three,four;
 		one=check1.isSelected();
@@ -1018,6 +1018,7 @@ public class Controller
 		tempo.setPost_graduate(two);
 		tempo.setOther_degree(three);
 		tempo.setGiven_gate(four);
+		System.out.println("Nirdhaya was right!");
 		if(one)
 		{
 			ECE p=new ECE();
@@ -1058,6 +1059,7 @@ public class Controller
 			tempo.setG(p);
 		}	
 		//Save file
+		System.out.println("WTAF....WTAF?");
 		mane.getModel().setE(tempo);
 		mane.closer();
 	}
@@ -1077,7 +1079,6 @@ public class Controller
 			pref3_x.setValue(temp.getPreference()[2]);
 			category_x.setValue(temp.getCategory());
 			int nada=temp.getPhd_stream();
-			System.out.println(nada);
 			if(nada==1) {stream1_x.setSelected(true); stream1_x_f();}
 			else if(nada==2) {stream2_x.setSelected(true); stream2_x_f();}
 			else {stream3_x.setSelected(true); stream3_x_f();}
