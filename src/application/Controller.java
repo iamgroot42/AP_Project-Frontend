@@ -1158,18 +1158,19 @@ public class Controller
 			name_x.setText(temp.getName());
 			addc_x.setText(temp.getAdd_correspondence());
 			mob_x.setText(temp.getMobile());
-			pref1_x.setValue(temp.getPreference()[0]); //Not working :(
-			pref2_x.setValue(temp.getPreference()[1]);
-			pref3_x.setValue(temp.getPreference()[2]);
 			category_x.setValue(temp.getCategory());
 			int nada=temp.getPhd_stream();
 			if(nada==1) {stream1_x.setSelected(true); stream1_x_f();}
 			else if(nada==2) {stream2_x.setSelected(true); stream2_x_f();}
 			else {stream3_x.setSelected(true); stream3_x_f();}
+			pref1_x.setValue(temp.getPreference()[0]); //Not working :(
+			pref2_x.setValue(temp.getPreference()[1]);
+			pref3_x.setValue(temp.getPreference()[2]);
 			dob_x.setValue(temp.getDate_of_birth());
 			fname_x.setText(temp.getFather_name());
 			addp_x.setText(temp.getAdd_permanent());
 			pin_x.setText(temp.getPincode());
+			nation_x.setValue(temp.getNationality());
 			if(temp.getWar_category()) {wary_x.setSelected(true); wary_x_f();}
 			else {warn_x.setSelected(true); warn_x_f();}
 			if(temp.getPhysically_disabled()) {phyy_x.setSelected(true); phyy_x_f();}
