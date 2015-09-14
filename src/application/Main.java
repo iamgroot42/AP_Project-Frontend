@@ -6,6 +6,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.time.LocalDate;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -26,6 +28,8 @@ public class Main extends Application
 	{
 		try {
 			ObjectOutputStream temp=new ObjectOutputStream(new FileOutputStream("temp.dat"));
+			this.model.setTimestamp(LocalDate.now());
+			this.model.setEnrollment_number("Random_Potato"); //Look into this later
 			temp.writeObject(this.model);
 			if(this.model.getP()==null) System.out.println("F*CK");
 			if(this.model==null) System.out.println("Double F*CK");
@@ -52,6 +56,7 @@ public class Main extends Application
 				in=new ObjectInputStream(new FileInputStream("temp.dat"));
 				model=(Model)in.readObject();
 				System.out.println("File Loaded");
+				System.out.println("File was last open at "+model.getTimestamp());
 			}
 			catch(Exception e)
 			{

@@ -1,5 +1,7 @@
 package application;
 
+import java.time.LocalDate;
+
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -920,7 +922,7 @@ public class Controller
 		{
 			nation_x2.setTextFill(Color.BLACK);
 		}
-		if(dob_x.getValue()==null)
+		if(dob_x.getValue()==null || dob_x.getValue().compareTo(LocalDate.now())>0)
 		{
 			dob_x2.setTextFill(Color.RED);
 			temp=false;

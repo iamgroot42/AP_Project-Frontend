@@ -415,11 +415,17 @@ public class Model implements Serializable {
 	Personal P;
 	Education E;
 	String enrollment_number; //Yet to figure out
-//	Date timestamp;
+	LocalDate timestamp;
 	String CV,SOP;
 	boolean cv,sop;
 	public Personal getP() {
 		return P;
+	}
+	public LocalDate getTimestamp() {
+		return timestamp;
+	}
+	public void setTimestamp(LocalDate timestamp) {
+		this.timestamp = timestamp;
 	}
 	public void setP(Personal p) {
 		P = p;
