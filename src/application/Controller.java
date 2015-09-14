@@ -178,6 +178,7 @@ public class Controller
 	@FXML
 	void cgpat()
 	{
+		cgpa1b.setSelected(true);
 		marks1.setDisable(true);
 		cgpa1.setDisable(false);
 		cgpa1d.setDisable(false);
@@ -187,6 +188,7 @@ public class Controller
 	@FXML
 	void cgpa2t()
 	{
+		cgpa2b.setSelected(true);
 		marks2.setDisable(true);
 		cgpa2.setDisable(false);
 		cgpa2d.setDisable(false);
@@ -196,6 +198,7 @@ public class Controller
 	@FXML
 	void markst()
 	{
+		marks1b.setSelected(true);
 		marks1.setDisable(false);
 		cgpa1.setDisable(true);
 		cgpa1d.setDisable(true);
@@ -205,6 +208,7 @@ public class Controller
 	@FXML
 	void marks2t()
 	{
+		marks2b.setSelected(true);
 		marks2.setDisable(false);
 		cgpa2.setDisable(true);
 		cgpa2d.setDisable(true);
@@ -214,6 +218,7 @@ public class Controller
 	@FXML
 	void stream1_x_f()
 	{
+		stream1_x.setSelected(true);
 		stream2_x.setSelected(false);
 		stream3_x.setSelected(false);
 		populate_cse_pref();
@@ -223,6 +228,7 @@ public class Controller
 	void stream2_x_f()
 	{
 		stream1_x.setSelected(false);
+		stream2_x.setSelected(true);
 		stream3_x.setSelected(false);
 		populate_ece_pref();
 	}
@@ -232,12 +238,14 @@ public class Controller
 	{
 		stream1_x.setSelected(false);
 		stream2_x.setSelected(false);
+		stream3_x.setSelected(true);
 		populate_bt_pref();
 	}
 	
 	@FXML
 	void genderf_x_f()
 	{
+		genderf_x.setSelected(true);
 		genderm_x.setSelected(false);
 	}
 	
@@ -245,23 +253,27 @@ public class Controller
 	void genderm_x_f()
 	{
 		genderf_x.setSelected(false);
+		genderm_x.setSelected(true);
 	}
 	
 	@FXML
 	void phyn_x_f()
 	{
 		phyy_x.setSelected(false);
+		phyn_x.setSelected(true);
 	}
 	
 	@FXML
 	void phyy_x_f()
 	{
+		phyy_x.setSelected(true);
 		phyn_x.setSelected(false);
 	}
 	
 	@FXML
 	void wary_x_f()
 	{
+		wary_x.setSelected(true);
 		warn_x.setSelected(false);
 	}
 	
@@ -269,6 +281,7 @@ public class Controller
 	void warn_x_f()
 	{
 		wary_x.setSelected(false);
+		warn_x.setSelected(true);
 	}
 	
 	@FXML
@@ -1069,19 +1082,19 @@ public class Controller
 			category_x.setValue(temp.getCategory());
 			int nada=temp.getPhd_stream();
 			System.out.println(nada);
-			if(nada==1) stream1_x.setSelected(true);
-			else if(nada==2) stream2_x.setSelected(true);
-			else stream3_x.setSelected(true);
+			if(nada==1) {stream1_x.setSelected(true); stream1_x_f();}
+			else if(nada==2) {stream2_x.setSelected(true); stream2_x_f();}
+			else {stream3_x.setSelected(true); stream3_x_f();}
 			dob_x.setValue(temp.getDate_of_birth());
 			fname_x.setText(temp.getFather_name());
 			addp_x.setText(temp.getAdd_permanent());
 			pin_x.setText(temp.getPincode());
-			if(temp.getWar_category()) wary_x.setSelected(true);
-			else warn_x.setSelected(true);
-			if(temp.getPhysically_disabled()) phyy_x.setSelected(true);
-			else phyn_x.setSelected(true);
-			if(temp.getGender()) genderf_x.setSelected(true); //Sexism
-			else genderm_x.setSelected(true);
+			if(temp.getWar_category()) {wary_x.setSelected(true); wary_x_f();}
+			else {warn_x.setSelected(true); warn_x_f();}
+			if(temp.getPhysically_disabled()) {phyy_x.setSelected(true); phyy_x_f();}
+			else {phyn_x.setSelected(true); phyn_x_f();}
+			if(temp.getGender()) {genderf_x.setSelected(true); genderf_x_f();} //Sexism
+			else {genderm_x.setSelected(true); genderm_x_f();}
 		}
 		System.out.println("Maybe not..f**k you");
 	}
@@ -1105,10 +1118,10 @@ public class Controller
 			grad_city_y.setText(temp.getCity());
 			grad_state_y.setValue(temp.getState());
 			grad_year_y.setValue(temp.getGraduation_year());
-			if(temp.getEce_phd()) check1_f();
-			if(temp.getPost_graduate()) check2_f();
-			if(temp.getOther_degree()) check3_f();
-			if(temp.getGiven_gate()) check4_f();
+			if(temp.getEce_phd()){check1.setSelected(true); check1_f();}
+			if(temp.getPost_graduate()){check2.setSelected(true); check2_f();}
+			if(temp.getOther_degree()){check3.setSelected(true);check3_f();}
+			if(temp.getGiven_gate()){check4.setSelected(true); check4_f();}
 		}
 		System.out.println("Maybe not..f**k you");
 	}
