@@ -33,6 +33,7 @@ public class Main extends Application
 			temp.writeObject(this.model);
 			if(this.model.getP()==null) System.out.println("F*CK");
 			if(this.model==null) System.out.println("Double F*CK");
+			temp.close();
 		} catch (IOException e) {
 			System.out.println("Could not write to file");
 			e.printStackTrace();

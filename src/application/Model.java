@@ -1,12 +1,9 @@
 package application;
 
-import java.io.File;
 import java.io.Serializable;
-import java.sql.Timestamp;
 import java.time.LocalDate;
 
-import javafx.scene.control.DatePicker;
-
+@SuppressWarnings("serial")
 abstract class CheckEmpty implements Serializable
 {
 	public boolean filled(int x) {return x != -1;}
@@ -18,6 +15,7 @@ abstract class CheckEmpty implements Serializable
 	public boolean filled(float x) {return x != -1;}
 }
 
+@SuppressWarnings("serial")
 class Post_Graduate extends CheckEmpty implements Serializable
 {
 	String college,city,state,department,degree,title;
@@ -72,6 +70,7 @@ class Post_Graduate extends CheckEmpty implements Serializable
 	}
 }
 
+@SuppressWarnings("serial")
 class ECE extends CheckEmpty implements Serializable
 {
 	String[] preferences;
@@ -83,6 +82,7 @@ class ECE extends CheckEmpty implements Serializable
 	}
 }
 
+@SuppressWarnings("serial")
 class Other_Degree extends CheckEmpty implements Serializable
 {
 	String exam_name,subject;
@@ -119,6 +119,7 @@ class Other_Degree extends CheckEmpty implements Serializable
 	}
 }
 
+@SuppressWarnings("serial")
 class Gate extends CheckEmpty implements Serializable
 {
 	String area;
@@ -157,6 +158,7 @@ class Gate extends CheckEmpty implements Serializable
 	
 }
 
+@SuppressWarnings("serial")
 class Personal implements Serializable
 {
 	String email,name,mobile,add_correspondence;
@@ -259,6 +261,7 @@ class Personal implements Serializable
 	
 }
 
+@SuppressWarnings("serial")
 class Education implements Serializable
 {
 	int x_year,xii_year,graduation_year;
@@ -411,6 +414,7 @@ class Education implements Serializable
 	}
 }
 
+@SuppressWarnings("serial")
 public class Model implements Serializable {
 	Personal P;
 	Education E;
