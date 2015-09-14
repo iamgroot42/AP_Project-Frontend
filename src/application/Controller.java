@@ -1114,18 +1114,19 @@ public class Controller
 			if(cgpa2b.isSelected())
 			{
 				p.setType(1);
-				if(cgpa2d.getValue()==4) { p.setDrop(false); p.setMarks(Float.parseFloat(cgpa1.getText())/4);}
-				else { p.setDrop(true); p.setMarks(Float.parseFloat(cgpa1.getText())/10); }
+				if(cgpa2d.getValue()==4) { p.setDrop(false); p.setMarks(Float.parseFloat(cgpa2.getText()));}
+				else { p.setDrop(true); p.setMarks(Float.parseFloat(cgpa2.getText())); }
 			}
 			else if(marks1b.isSelected())
 			{
 				p.setType(2);
-				p.setMarks(Float.parseFloat(marks1.getText()));
+				p.setMarks(Float.parseFloat(marks2.getText()));
 			}
 			tempo.setPG(p);
 		}
 		if(three)
 		{
+			System.out.println("WTF1?");
 			Other_Degree p=new Other_Degree();
 			p.setExam_name(exam.getText());
 			p.setSubject(subject.getText());
@@ -1136,6 +1137,7 @@ public class Controller
 		}
 		if(four)
 		{
+			System.out.println("WTF1?");
 			Gate p=new Gate();
 			p.setArea(area.getText());
 			p.setYear(other_year.getValue());
