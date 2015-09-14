@@ -19,7 +19,22 @@ abstract class CheckEmpty implements Serializable
 class Post_Graduate extends CheckEmpty implements Serializable
 {
 	String college,city,state,department,degree,title;
-	int year,marks;
+	int year;
+	float marks;
+	boolean drop;
+	int type;
+	public boolean isDrop() {
+		return drop;
+	}
+	public void setDrop(boolean drop) {
+		this.drop = drop;
+	}
+	public int isType() {
+		return type;
+	}
+	public void setType(int type) {
+		this.type = type;
+	}
 	public String getCollege() {
 		return college;
 	}
@@ -62,10 +77,10 @@ class Post_Graduate extends CheckEmpty implements Serializable
 	public void setYear(int year) {
 		this.year = year;
 	}
-	public int getMarks() {
+	public float getMarks() {
 		return marks;
 	}
-	public void setMarks(int marks) {
+	public void setMarks(float marks) {
 		this.marks = marks;
 	}
 }
@@ -272,6 +287,20 @@ class Education implements Serializable
 	String achievements;
 	Other_Degree OD;
 	ECE E;
+	boolean drop;
+	int type;
+	public boolean isDrop() {
+		return drop;
+	}
+	public void setDrop(boolean drop) {
+		this.drop = drop;
+	}
+	public int isType() {
+		return type;
+	}
+	public void setType(int type) {
+		this.type = type;
+	}
 	public ECE getE() {
 		return E;
 	}

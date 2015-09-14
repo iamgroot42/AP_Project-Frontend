@@ -112,7 +112,7 @@ public class Controller
     @FXML private Label cgpa2l;
     @FXML private Label uploadCVl;
     @FXML private Label uploadSOPl;
-    
+    @FXML private TextArea achievements;
     //Mini tab 1:
     @FXML private Label ece_pref1l;
     @FXML private Label ece_pref2l;
@@ -459,6 +459,15 @@ public class Controller
 		{
 			grad_city_yl.setTextFill(Color.BLACK);
 		}
+//		if(grad_state_y.getValue().equals("----"))
+//		{
+//			temp=false;
+//			grad_state_yl.setTextFill(Color.RED);
+//		}
+//		else
+//		{
+//			grad_state_yl.setTextFill(Color.BLACK);
+//		}
 		if(cgpa1b.isSelected())
 		{
 			try
@@ -594,15 +603,15 @@ public class Controller
 		{
 			post_thesisl.setTextFill(Color.BLACK);
 		}
-		if(post_state.getValue().equals("----"))
-		{
-			temp=false;
-			post_statel.setTextFill(Color.RED);
-		}
-		else
-		{
-			post_statel.setTextFill(Color.BLACK);
-		}
+//		if(post_state.getValue().equals("----"))
+//		{
+//			temp=false;
+//			post_statel.setTextFill(Color.RED);
+//		}
+//		else
+//		{
+//			post_statel.setTextFill(Color.BLACK);
+//		}
 		if(post_year.getValue().equals("----"))
 		{
 			temp=false;
@@ -1029,7 +1038,7 @@ public class Controller
 		tempo.setDate_of_birth(dob_x.getValue());
 		tempo.setEmail(email_x.getText());
 		tempo.setFather_name(fname_x.getText());
-		tempo.setGender(this.gender);
+		tempo.setGender(!this.gender);
 		tempo.setMobile(mob_x.getText());
 		tempo.setName(name_x.getText());
 		tempo.setNationality(nation_x.getValue());
@@ -1052,18 +1061,28 @@ public class Controller
 		Education tempo=new Education();
 		tempo.setX_board(x_board_y.getText());
 		tempo.setX_marks(Float.parseFloat(x_marks_y.getText()));
-//	    tempo.setX_year(x_year_y.getValue());
+	    tempo.setX_year(x_year_y.getValue());
 		tempo.setXii_board(xii_board_y.getText());
 		tempo.setXii_marks(Float.parseFloat(xii_marks_y.getText()));
-//		tempo.setXii_year(xii_year_y.getValue());
+		tempo.setXii_year(xii_year_y.getValue());
 		tempo.setDegree(grad_degree_y.getText());
 		tempo.setDepartment(grad_dept_y.getText());
 		tempo.setCollege(grad_coll_y.getText());
 		tempo.setUniversity(grad_univ_y.getText());
 		tempo.setCity(grad_city_y.getText());
 //		tempo.setState(grad_state_y.getValue());
-//		tempo.setGraduation_year(grad_year_y.getValue());
-//		if(cgpa1b.isSelected())
+		tempo.setGraduation_year(grad_year_y.getValue());
+		if(cgpa1b.isSelected())
+		{
+			tempo.setType(1);
+			if(cgpa1d.getValue()==4) { tempo.setDrop(false); tempo.setGraduation_marks(Float.parseFloat(cgpa1.getText())/4);}
+			else { tempo.setDrop(true); tempo.setGraduation_marks(Float.parseFloat(cgpa1.getText())/10); }
+		}
+		else if(marks1b.isSelected())
+		{
+			tempo.setType(2);
+			tempo.setGraduation_marks(Float.parseFloat(marks1.getText()));
+		}
 		boolean one,two,three,four;
 		one=check1.isSelected();
 		two=check2.isSelected();
@@ -1073,7 +1092,7 @@ public class Controller
 		tempo.setPost_graduate(two);
 		tempo.setOther_degree(three);
 		tempo.setGiven_gate(four);
-		System.out.println("Nirdhaya was right!");
+		tempo.setAchievements(achievements.getText());
 		if(one)
 		{
 			ECE p=new ECE();
@@ -1086,11 +1105,22 @@ public class Controller
 			Post_Graduate p=new Post_Graduate();
 			p.setCollege(post_coll.getText());
 			p.setCity(post_city.getText());
-			p.setState(post_state.getValue());
+//			p.setState(post_state.getValue());
 			p.setDepartment(post_dept.getText());
 			p.setDegree(post_degree.getText());
 			p.setTitle(post_thesis.getText());
 			p.setYear(post_year.getValue());
+			if(cgpa2b.isSelected())
+			{
+				p.setType(1);
+				if(cgpa2d.getValue()==4) { p.setDrop(false); p.setMarks(Float.parseFloat(cgpa1.getText())/4);}
+				else { p.setDrop(true); p.setMarks(Float.parseFloat(cgpa1.getText())/10); }
+			}
+			else if(marks1b.isSelected())
+			{
+				p.setType(2);
+				p.setMarks(Float.parseFloat(marks1.getText()));
+			}
 			tempo.setPG(p);
 		}
 		if(three)
@@ -1114,7 +1144,6 @@ public class Controller
 			tempo.setG(p);
 		}	
 		//Save file
-		System.out.println("WTAF....WTAF?");
 		mane.getModel().setE(tempo);
 		mane.closer();
 	}
@@ -1168,12 +1197,64 @@ public class Controller
 			grad_coll_y.setText(temp.getCollege());
 			grad_univ_y.setText(temp.getUniversity());
 			grad_city_y.setText(temp.getCity());
-			grad_state_y.setValue(temp.getState());
+//			grad_state_y.setValue(temp.getState());
 			grad_year_y.setValue(temp.getGraduation_year());
-			if(temp.getEce_phd()){check1.setSelected(true); check1_f();}
-			if(temp.getPost_graduate()){check2.setSelected(true); check2_f();}
-			if(temp.getOther_degree()){check3.setSelected(true);check3_f();}
-			if(temp.getGiven_gate()){check4.setSelected(true); check4_f();}
+			achievements.setText(temp.getAchievements());
+			if(temp.isType()==1)
+			{ cgpa1b.setSelected(true); 
+			  cgpat(); 
+			  if(temp.isDrop()) {cgpa1.setText(String.valueOf(temp.getGraduation_marks()*4)); }
+			  else {cgpa1.setText(String.valueOf(temp.getGraduation_marks()*10)); }
+			}
+			else if(temp.isType()==2){ marks1b.setSelected(true); markst(); marks1.setText(String.valueOf(temp.getGraduation_marks()));}
+			if(temp.getEce_phd())
+			{ 
+				check1.setSelected(true); check1_f();
+				ECE nada=temp.getE();
+				ece_pref1.setValue(nada.getPreferences()[0]);
+				ece_pref2.setValue(nada.getPreferences()[1]);
+				ece_pref3.setValue(nada.getPreferences()[2]);
+				ece_pref4.setValue(nada.getPreferences()[3]);
+			}
+			if(temp.getPost_graduate())
+			{
+				Post_Graduate nada=temp.getPG();
+				check2.setSelected(true); check2_f();
+				post_coll.setText(nada.getCollege());
+				post_city.setText(nada.getCity());
+//				post_state.setValue(nada.getState());
+				post_dept.setText(nada.getDepartment());
+				post_degree.setText(nada.getDegree());
+				post_thesis.setText(nada.getTitle());
+				post_year.setValue(nada.getYear());
+				if(nada.isType()==1)
+				{ cgpa2b.setSelected(true); 
+				  cgpa2t(); 
+				  if(nada.isDrop()) {cgpa2.setText(String.valueOf(nada.getMarks()*4)); }
+				  else {cgpa2.setText(String.valueOf(nada.getMarks()*10)); }
+				}
+				else if(nada.isType()==2){ marks2b.setSelected(true); marks2t(); marks2.setText(String.valueOf(nada.getMarks()));}
+			}
+			if(temp.getOther_degree())
+			{
+				check3.setSelected(true);check3_f();
+				Other_Degree nada=temp.getOD();
+				exam.setText(nada.getExam_name());
+				subject.setText(nada.getSubject());
+				other_year.setValue(nada.getYear());
+				score.setText(String.valueOf(nada.getScore()));
+				rank.setText(String.valueOf(nada.getRank()));
+			}
+			if(temp.getGiven_gate())
+			{
+				Gate nada=temp.getG();
+				area.setText(nada.getArea());
+				year_other.setValue(nada.getYear());
+				marks_other.setText(String.valueOf(nada.getMarks()));
+				score_other.setText(String.valueOf(nada.getScore()));
+				rank_other.setText(String.valueOf(nada.getRank()));
+				check4.setSelected(true); check4_f();
+			}
 		}
 		System.out.println("Maybe not..f**k you");
 	}
