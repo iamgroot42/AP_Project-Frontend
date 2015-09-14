@@ -1076,8 +1076,8 @@ public class Controller
 		if(cgpa1b.isSelected())
 		{
 			tempo.setType(1);
-			if(cgpa1d.getValue()==4) { tempo.setDrop(false); tempo.setGraduation_marks(Float.parseFloat(cgpa1.getText())/4);}
-			else { tempo.setDrop(true); tempo.setGraduation_marks(Float.parseFloat(cgpa1.getText())/10); }
+			if(cgpa1d.getValue()==4) { tempo.setDrop(false); tempo.setGraduation_marks(Float.parseFloat(cgpa1.getText()));}
+			else { tempo.setDrop(true); tempo.setGraduation_marks(Float.parseFloat(cgpa1.getText())); }
 		}
 		else if(marks1b.isSelected())
 		{
@@ -1205,8 +1205,8 @@ public class Controller
 			if(temp.isType()==1)
 			{ cgpa1b.setSelected(true); 
 			  cgpat(); 
-			  if(temp.isDrop()) {cgpa1.setText(String.valueOf(temp.getGraduation_marks()*4)); }
-			  else {cgpa1.setText(String.valueOf(temp.getGraduation_marks()*10)); }
+			  if(!temp.isDrop()) {cgpa1d.setValue(4); cgpa1.setText(String.valueOf(temp.getGraduation_marks())); }
+			  else {cgpa1d.setValue(10); cgpa1.setText(String.valueOf(temp.getGraduation_marks())); }
 			}
 			else if(temp.isType()==2){ marks1b.setSelected(true); markst(); marks1.setText(String.valueOf(temp.getGraduation_marks()));}
 			if(temp.getEce_phd())
@@ -1232,8 +1232,8 @@ public class Controller
 				if(nada.isType()==1)
 				{ cgpa2b.setSelected(true); 
 				  cgpa2t(); 
-				  if(nada.isDrop()) {cgpa2.setText(String.valueOf(nada.getMarks()*4)); }
-				  else {cgpa2.setText(String.valueOf(nada.getMarks()*10)); }
+				  if(!nada.isDrop()) {cgpa2d.setValue(4); cgpa2.setText(String.valueOf(nada.getMarks())); }
+				  else {cgpa2d.setValue(10); cgpa2.setText(String.valueOf(nada.getMarks())); }
 				}
 				else if(nada.isType()==2){ marks2b.setSelected(true); marks2t(); marks2.setText(String.valueOf(nada.getMarks()));}
 			}
