@@ -522,7 +522,7 @@
                                 </rowConstraints>
                                  <children>
                                     <Button mnemonicParsing="false" onAction="#uploadCV" text="Choose FIle" />
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Upload a pdf file of max 10 MB" GridPane.rowIndex="1" />
+                                    <Text fx:id="filename1" strokeType="OUTSIDE" strokeWidth="0.0" text="Upload a pdf file of max 10 MB" GridPane.rowIndex="1" />
                                  </children>
                               </GridPane>
                               <GridPane GridPane.columnIndex="1" GridPane.rowIndex="3">
@@ -536,7 +536,7 @@
                                 </rowConstraints>
                                  <children>
                                     <Button mnemonicParsing="false" onAction="#uploadSOP" text="Choose FIle" />
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Upload a pdf file of max 10 MB" GridPane.rowIndex="1" />
+                                    <Text fx:id="filename2" strokeType="OUTSIDE" strokeWidth="0.0" text="Upload a pdf file of max 10 MB" GridPane.rowIndex="1" />
                                  </children>
                               </GridPane>
                            </children>

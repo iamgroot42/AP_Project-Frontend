@@ -1,5 +1,8 @@
 package application;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.time.LocalDate;
 import java.util.Calendar;
 import javafx.collections.FXCollections;
@@ -16,8 +19,10 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TitledPane;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
+import javafx.stage.Stage;
 
 public class Controller
 {
@@ -114,6 +119,8 @@ public class Controller
     @FXML private Label uploadCVl;
     @FXML private Label uploadSOPl;
     @FXML private TextArea achievements;
+    @FXML private Text filename1;
+    @FXML private Text filename2;
     //Mini tab 1:
     @FXML private Label ece_pref1l;
     @FXML private Label ece_pref2l;
@@ -1406,13 +1413,36 @@ public class Controller
 	@FXML
 	void uploadCV()
 	{
-		
+		FileChooser fileChooser = new FileChooser();
+		fileChooser.setTitle("Upload CV");
+		fileChooser.getExtensionFilters().addAll(new ExtensionFilter("PDF Files", "*.pdf"));
+		File tempu=fileChooser.showOpenDialog(new Stage());
+		File nada=new File("tempCV.pdf");
+		try {
+			Files.copy(tempu.toPath(),nada.toPath());
+			filename1.setText(tempu.getName());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("Couldn't save file");
+		}
 	}
 	
 	@FXML
 	void uploadSOP()
-
 	{
-		
+		FileChooser fileChooser = new FileChooser();
+		fileChooser.setTitle("Upload SOP");
+		fileChooser.getExtensionFilters().addAll(new ExtensionFilter("PDF Files", "*.pdf"));
+		File tempu=fileChooser.showOpenDialog(new Stage());
+		File nada=new File("tempSOP.pdf");
+		try {
+			Files.copy(tempu.toPath(),nada.toPath());
+			filename2.setText(tempu.getName());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("Couldn't save file");
+		}
 	}
 }
