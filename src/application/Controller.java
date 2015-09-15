@@ -889,7 +889,7 @@ public class Controller
 	{
 		boolean temp=true;
 		boolean random=false;
-		if(email_x.getText().equals("")) //Add e-Mail validation
+		if(email_x.getText().equals("") || (!email_x.getText().matches("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$"))) //http://stackoverflow.com/questions/624581/what-is-the-best-java-email-address-validation-method
 		{
 			email_x2.setTextFill(Color.RED);
 			temp=false;
@@ -916,7 +916,7 @@ public class Controller
 		{
 			addc_x2.setTextFill(Color.BLACK);
 		}
-		if(mob_x.getText().equals(""))
+		if(mob_x.getText().equals("") || (!mob_x.getText().equals("^(\\+\\d{1,3}[- ]?)?\\d{10}$"))) //http://stackoverflow.com/questions/22378736/regex-for-mobile-number-validation
 		{
 			mob_x2.setTextFill(Color.RED); 
 			temp=false;
