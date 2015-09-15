@@ -187,8 +187,7 @@ public class Controller
 		this.mane=p;
 	}
 	
-	@FXML
-	void cgpat()
+	@FXML void cgpat()
 	{
 		cgpa1b.setSelected(true);
 		marks1.setDisable(true);
@@ -198,8 +197,7 @@ public class Controller
 		marks1.clear();
 	}
 	
-	@FXML
-	void cgpa2t()
+	@FXML void cgpa2t()
 	{
 		cgpa2b.setSelected(true);
 		marks2.setDisable(true);
@@ -209,8 +207,7 @@ public class Controller
 		marks2.clear();
 	}
 	
-	@FXML
-	void markst()
+	@FXML void markst()
 	{
 		marks1b.setSelected(true);
 		marks1.setDisable(false);
@@ -220,8 +217,7 @@ public class Controller
 		cgpa1.clear();
 	}
 	
-	@FXML
-	void marks2t()
+	@FXML void marks2t()
 	{
 		marks2b.setSelected(true);
 		marks2.setDisable(false);
@@ -231,8 +227,7 @@ public class Controller
 		cgpa2.clear();
 	}
 	
-	@FXML
-	void stream1_x_f()
+	@FXML void stream1_x_f()
 	{
 		stream1_x.setSelected(true);
 		stream2_x.setSelected(false);
@@ -240,8 +235,7 @@ public class Controller
 		populate_cse_pref();
 	}
 	
-	@FXML
-	void stream2_x_f()
+	@FXML void stream2_x_f()
 	{
 		stream1_x.setSelected(false);
 		stream2_x.setSelected(true);
@@ -249,8 +243,7 @@ public class Controller
 		populate_ece_pref();
 	}
 	
-	@FXML
-	void stream3_x_f()
+	@FXML void stream3_x_f()
 	{
 		stream1_x.setSelected(false);
 		stream2_x.setSelected(false);
@@ -258,50 +251,43 @@ public class Controller
 		populate_bt_pref();
 	}
 	
-	@FXML
-	void genderf_x_f()
+	@FXML void genderf_x_f()
 	{
 		genderf_x.setSelected(true);
 		genderm_x.setSelected(false);
 	}
 	
-	@FXML
-	void genderm_x_f()
+	@FXML void genderm_x_f()
 	{
 		genderf_x.setSelected(false);
 		genderm_x.setSelected(true);
 	}
 	
-	@FXML
-	void phyn_x_f()
+	@FXML void phyn_x_f()
 	{
 		phyy_x.setSelected(false);
 		phyn_x.setSelected(true);
 	}
 	
-	@FXML
-	void phyy_x_f()
+	@FXML void phyy_x_f()
 	{
 		phyy_x.setSelected(true);
 		phyn_x.setSelected(false);
 	}
 	
-	@FXML
-	void wary_x_f()
+	@FXML void wary_x_f()
 	{
 		wary_x.setSelected(true);
 		warn_x.setSelected(false);
 	}
 	
-	@FXML
-	void warn_x_f()
+	@FXML void warn_x_f()
 	{
 		wary_x.setSelected(false);
 		warn_x.setSelected(true);
 	}
 	
-	@FXML
-	void check1_f()
+	@FXML void check1_f()
 	{
 		if(check1.isSelected())
 		{
@@ -313,8 +299,7 @@ public class Controller
 		}
 	}
 	
-	@FXML
-	void check2_f()
+	@FXML void check2_f()
 	{
 		if(check2.isSelected())
 		{
@@ -326,8 +311,7 @@ public class Controller
 		}
 	}
 	
-	@FXML
-	void check3_f()
+	@FXML void check3_f()
 	{
 		if(check3.isSelected())
 		{
@@ -339,8 +323,7 @@ public class Controller
 		}
 	}
 	
-	@FXML
-	void check4_f()
+	@FXML void check4_f()
 	{
 		if(check4.isSelected())
 		{
@@ -874,8 +857,7 @@ public class Controller
 		return temp;
 	}
 	
-	@FXML
-	void handleb2()
+	@FXML void handleb2()
 	{
 		Boolean nada=local_handleb2();
 		if(nada)
@@ -1040,8 +1022,7 @@ public class Controller
 		return temp;
 	}
 	
-	@FXML
-    void handleb1() {
+	@FXML void handleb1() {
 		Boolean nada=local_handleb1();
 		if(nada)
 		{
@@ -1391,8 +1372,7 @@ public class Controller
 		post_state.getSelectionModel().select(0);		
 	}
 	
-	@FXML
-	public void initialize_() {	
+	@FXML public void initialize_() {	
 		teb1.setDisable(true);
 		teb2.setDisable(true);
 		teb3.setDisable(true);
@@ -1423,8 +1403,7 @@ public class Controller
 		populate_t2(); //Load Education details from file
 	}
 	
-	@FXML
-	void final_countdown()
+	@FXML void final_countdown()
 	{
 		//Check for tab1,tab2 again and write to file (PDF,or some other file)
 		boolean x,y;
@@ -1438,8 +1417,7 @@ public class Controller
 		}
 	}
 	
-	@FXML
-	void uploadCV()
+	@FXML void uploadCV()
 	{
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setTitle("Upload CV");
@@ -1461,8 +1439,7 @@ public class Controller
 		}
 	}
 	
-	@FXML
-	void uploadSOP()
+	@FXML void uploadSOP()
 	{
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setTitle("Upload SOP");
