@@ -449,7 +449,6 @@ public class Model implements Serializable {
 	Education E;
 	String enrollment_number; //Yet to figure out
 	LocalDate timestamp;
-	String CV,SOP;
 	boolean cv,sop;
 	public Personal getP() {
 		return P;
@@ -487,10 +486,4 @@ public class Model implements Serializable {
 	public void setSop(boolean sop) {
 		this.sop = sop;
 	}	
-	public void setSOP(String sop) {
-		this.SOP = sop;
-	}
-	public void setCV(String sop) {
-		this.CV = sop;
-	}
 }
