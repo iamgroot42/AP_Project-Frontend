@@ -9,6 +9,7 @@ import java.util.Calendar;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
@@ -168,7 +169,8 @@ public class Controller
     @FXML private Label score_otherl;
     @FXML private Label rank_otherl;
     @FXML private Label year_otherl; 
-      
+    //Tab 3:
+    @FXML private Button final_save_b;
     //Non-FXML fields:
 	Main mane;
 	int phdstream;
@@ -193,6 +195,7 @@ public class Controller
 		cgpa1.setDisable(false);
 		cgpa1d.setDisable(false);
 		marks1b.setSelected(false);
+		marks1.clear();
 	}
 	
 	@FXML
@@ -203,6 +206,7 @@ public class Controller
 		cgpa2.setDisable(false);
 		cgpa2d.setDisable(false);
 		marks2b.setSelected(false);
+		marks2.clear();
 	}
 	
 	@FXML
@@ -213,6 +217,7 @@ public class Controller
 		cgpa1.setDisable(true);
 		cgpa1d.setDisable(true);
 		cgpa1b.setSelected(false);
+		cgpa1.clear();
 	}
 	
 	@FXML
@@ -223,6 +228,7 @@ public class Controller
 		cgpa2.setDisable(true);
 		cgpa2d.setDisable(true);
 		cgpa2b.setSelected(false);
+		cgpa2.clear();
 	}
 	
 	@FXML
@@ -859,7 +865,8 @@ public class Controller
 		boolean temp2;
 		temp2=schooling(); temp=temp && temp2;
 		temp2=graduation(); temp=temp && temp2;
-		//ToDo : Fix problem with TitlePanes not going RED
+		if(filename1.getText().equals("Upload a pdf file of max 10 MB")) {temp=false; uploadCVl.setTextFill(Color.RED);} else {uploadCVl.setTextFill(Color.BLACK);}
+		if(filename2.getText().equals("Upload a pdf file of max 10 MB")) {temp=false; uploadSOPl.setTextFill(Color.RED);} else {uploadSOPl.setTextFill(Color.BLACK);}
 		if(check1.isSelected()) {temp2=teb1_check(); if(!temp2){ teb1.setTextFill(Color.RED);} else{teb1.setTextFill(Color.BLACK);}temp=temp && temp2;}
 		if(check2.isSelected()) {temp2=teb2_check(); if(!temp2){ teb2.setTextFill(Color.RED);} else{teb2.setTextFill(Color.BLACK);}temp=temp && temp2;}
 		if(check3.isSelected()) {temp2=teb3_check(); if(!temp2){ teb3.setTextFill(Color.RED);} else{teb3.setTextFill(Color.BLACK);}temp=temp && temp2;}
@@ -870,7 +877,8 @@ public class Controller
 	@FXML
 	void handleb2()
 	{
-		if(local_handleb2())
+		Boolean nada=local_handleb2();
+		if(nada)
 		{
 			saveE();
 			System.out.println("Writing new Education");
@@ -1034,7 +1042,8 @@ public class Controller
 	
 	@FXML
     void handleb1() {
-		if(local_handleb1())
+		Boolean nada=local_handleb1();
+		if(nada)
 		{
 			save_P();
 			System.out.println("Writing new Personal");
@@ -1423,7 +1432,9 @@ public class Controller
 		y=local_handleb2();
 		if(x && y)
 		{
-			System.out.print("Kick Ambar's a**");
+			System.out.print(":*");
+			mane.final_closer();
+			final_save_b.setTextFill(Color.GREEN);
 		}
 	}
 	
@@ -1435,6 +1446,11 @@ public class Controller
 		fileChooser.getExtensionFilters().addAll(new ExtensionFilter("PDF Files", "*.pdf"));
 		File tempu=fileChooser.showOpenDialog(new Stage());
 		File nada=new File("tempCV.pdf");
+		try
+		{
+			nada.delete();
+		}
+		catch(Exception e){}
 		try {
 			Files.copy(tempu.toPath(),nada.toPath());
 			filename1.setText(tempu.getName());
@@ -1453,6 +1469,11 @@ public class Controller
 		fileChooser.getExtensionFilters().addAll(new ExtensionFilter("PDF Files", "*.pdf"));
 		File tempu=fileChooser.showOpenDialog(new Stage());
 		File nada=new File("tempSOP.pdf");
+		try
+		{
+			nada.delete();
+		}
+		catch(Exception e){}
 		try {
 			Files.copy(tempu.toPath(),nada.toPath());
 			filename2.setText(tempu.getName());

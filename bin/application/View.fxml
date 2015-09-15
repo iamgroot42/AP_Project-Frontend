@@ -550,7 +550,7 @@
       </Tab>
       <Tab fx:id="t3" text="Submit">
          <content>
-            <Button mnemonicParsing="false" onAction="#final_countdown" text="Final Save" />
+            <Button fx:id="final_save_b" mnemonicParsing="false" onAction="#final_countdown" text="Final Save" />
          </content>
       </Tab>
   </tabs>

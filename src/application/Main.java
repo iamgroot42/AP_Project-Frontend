@@ -1,5 +1,6 @@
 package application;
 	
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
@@ -27,12 +28,31 @@ public class Main extends Application
 	public void closer()
 	{
 		try {
-			ObjectOutputStream temp=new ObjectOutputStream(new FileOutputStream("temp.dat"));
+			ObjectOutputStream temp=new ObjectOutputStream(new FileOutputStream(this.model.getEnrollment_number()+".dat"));
+			File tempcv=new File("tempCV.pdf");
+			File realcv=new File(this.model.getEnrollment_number()+"_CV.pdf");
+			File tempsop=new File("tempSOP.pdf");
+			File realsop=new File(this.model.getEnrollment_number()+"_SOP.pdf");
+			tempcv.renameTo(realcv);
+			tempsop.renameTo(realsop);
+			this.model.setEnrollment_number("PotatoLAND");
 			this.model.setTimestamp(LocalDate.now());
-			this.model.setEnrollment_number("Random_Potato"); //Look into this later
 			temp.writeObject(this.model);
 			if(this.model.getP()==null) System.out.println("F*CK");
 			if(this.model==null) System.out.println("Double F*CK");
+			temp.close();
+		} catch (IOException e) {
+			System.out.println("Could not write to file");
+			e.printStackTrace();
+		}
+	}
+	
+	public void final_closer()
+	{
+		try {
+			ObjectOutputStream temp=new ObjectOutputStream(new FileOutputStream("temp.dat"));
+			this.model.setTimestamp(LocalDate.now());
+			temp.writeObject(this.model);
 			temp.close();
 		} catch (IOException e) {
 			System.out.println("Could not write to file");
