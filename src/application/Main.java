@@ -71,14 +71,6 @@ public class Main extends Application
 			Controller x=b.getController();
 			x.setMainApp(this);
 			x.initialize_();
-			//This works :
-//			FileChooser fileChooser = new FileChooser();
-//			fileChooser.setTitle("Testing Potato");
-//			fileChooser.getExtensionFilters().addAll(new ExtensionFilter("PDF Files", "*.pdf"));
-//			File tempu=fileChooser.showOpenDialog(p);
-//			File nada=new File("/home/anshuman/Desktop/bat.pdf");
-//			Files.copy(tempu.toPath(),nada.toPath());
-//			System.out.println(tempu.getAbsolutePath());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
