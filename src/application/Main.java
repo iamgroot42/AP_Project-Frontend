@@ -1,20 +1,16 @@
 package application;
 	
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.nio.file.Files;
 import java.time.LocalDate;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 
@@ -74,14 +70,6 @@ public class Main extends Application
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
-	
-	private void uploadCV()
-	{
-//		FileChooser fileChooser = new FileChooser();
-//		fileChooser.setTitle("Testing Potato");
-//		fileChooser.getExtensionFilters().addAll(new ExtensionFilter("PDF Files", "*.pdf"));
-//		fileChooser.showOpenDialog();
 	}
 	
 	public static void main(String[] args) {

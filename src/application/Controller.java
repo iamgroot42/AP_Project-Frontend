@@ -1,6 +1,7 @@
 package application;
 
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.time.LocalDate;
@@ -177,6 +178,7 @@ public class Controller
 	ObservableList<String> bt_pref;
 	ObservableList<String> states;
 	ObservableList<String> nations;
+	FileReader cv,lor;
 	
 	public void setMainApp(Main p)
 	{
@@ -851,8 +853,7 @@ public class Controller
 		return temp;
 	}
 	
-	@FXML
-	void handleb2()
+	private boolean local_handleb2()
 	{
 		boolean temp=true;
 		boolean temp2;
@@ -863,17 +864,21 @@ public class Controller
 		if(check2.isSelected()) {temp2=teb2_check(); if(!temp2){ teb2.setTextFill(Color.RED);} else{teb2.setTextFill(Color.BLACK);}temp=temp && temp2;}
 		if(check3.isSelected()) {temp2=teb3_check(); if(!temp2){ teb3.setTextFill(Color.RED);} else{teb3.setTextFill(Color.BLACK);}temp=temp && temp2;}
 		if(check4.isSelected()) {temp2=teb4_check(); if(!temp2){ teb4.setTextFill(Color.RED);} else{teb4.setTextFill(Color.BLACK);}temp=temp && temp2;}
-		//Check for uploaded file
-		if(temp)
+		return temp;
+	}
+	
+	@FXML
+	void handleb2()
+	{
+		if(local_handleb2())
 		{
-			//write objects of subclasses individually
 			saveE();
 			System.out.println("Writing new Education");
 		}
 	}
 	
-	@FXML
-    void handleb1() {
+	private boolean local_handleb1()
+	{
 		boolean temp=true;
 		boolean random=false;
 		if(email_x.getText().equals("")) //Add e-Mail validation
@@ -1024,7 +1029,12 @@ public class Controller
 		{
 			pref1_x2.setTextFill(Color.BLACK);
 		}
-		if(temp)
+		return temp;
+	}
+	
+	@FXML
+    void handleb1() {
+		if(local_handleb1())
 		{
 			save_P();
 			System.out.println("Writing new Personal");
@@ -1408,6 +1418,13 @@ public class Controller
 	void final_countdown()
 	{
 		//Check for tab1,tab2 again and write to file (PDF,or some other file)
+		boolean x,y;
+		x=local_handleb1();
+		y=local_handleb2();
+		if(x && y)
+		{
+			System.out.print("Kick Ambar's a**");
+		}
 	}
 	
 	@FXML
