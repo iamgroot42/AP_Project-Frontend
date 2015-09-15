@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.nio.file.Files;
 import java.time.LocalDate;
 
 import javafx.application.Application;
@@ -70,6 +71,14 @@ public class Main extends Application
 			Controller x=b.getController();
 			x.setMainApp(this);
 			x.initialize_();
+			//This works :
+//			FileChooser fileChooser = new FileChooser();
+//			fileChooser.setTitle("Testing Potato");
+//			fileChooser.getExtensionFilters().addAll(new ExtensionFilter("PDF Files", "*.pdf"));
+//			File tempu=fileChooser.showOpenDialog(p);
+//			File nada=new File("/home/anshuman/Desktop/bat.pdf");
+//			Files.copy(tempu.toPath(),nada.toPath());
+//			System.out.println(tempu.getAbsolutePath());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -77,11 +86,10 @@ public class Main extends Application
 	
 	private void uploadCV()
 	{
-		FileChooser fileChooser = new FileChooser();
-		fileChooser.setTitle("Testing Potato");
-		fileChooser.getExtensionFilters().addAll(new ExtensionFilter("PDF Files", "*.pdf"));
-		Stage lol=new Stage();
-		fileChooser.showOpenDialog(lol);
+//		FileChooser fileChooser = new FileChooser();
+//		fileChooser.setTitle("Testing Potato");
+//		fileChooser.getExtensionFilters().addAll(new ExtensionFilter("PDF Files", "*.pdf"));
+//		fileChooser.showOpenDialog();
 	}
 	
 	public static void main(String[] args) {
