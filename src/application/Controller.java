@@ -898,7 +898,7 @@ public class Controller
 		{
 			addc_x2.setTextFill(Color.BLACK);
 		}
-		if(mob_x.getText().equals("") || (!mob_x.getText().equals("^(\\+\\d{1,3}[- ]?)?\\d{10}$"))) //http://stackoverflow.com/questions/22378736/regex-for-mobile-number-validation
+		if(mob_x.getText().equals("") || (!mob_x.getText().matches("^(\\+\\d{1,3}[- ]?)?\\d{10}$"))) //http://stackoverflow.com/questions/22378736/regex-for-mobile-number-validation
 		{
 			mob_x2.setTextFill(Color.RED); 
 			temp=false;

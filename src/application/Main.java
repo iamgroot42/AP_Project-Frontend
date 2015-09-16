@@ -28,11 +28,28 @@ public class Main extends Application
 	public void closer()
 	{
 		try {
-			ObjectOutputStream temp=new ObjectOutputStream(new FileOutputStream(this.model.getEnrollment_number()+".dat"));
+			String enrl=this.model.getEnrollment_number();
+			File dir = new File("UserFiles");
+			if (!dir.exists()) {
+				if (dir.mkdir()) {
+					System.out.println("Directory is created! (one time)");
+				} else {
+					System.out.println("Failed to create directory!");
+				}
+			}
+			File dir2 = new File("UserFiles"+File.separator+enrl);
+			if (!dir2.exists()) {
+				if (dir2.mkdir()) {
+					System.out.println("Directory for user is created! (one time)");
+				} else {
+					System.out.println("Failed to create directory for user!");
+				}
+			}
+			ObjectOutputStream temp=new ObjectOutputStream(new FileOutputStream("UserFiles"+File.separator+enrl+File.separator+enrl+".dat"));
 			File tempcv=new File("tempCV.pdf");
-			File realcv=new File(this.model.getEnrollment_number()+"_CV.pdf");
+			File realcv=new File("UserFiles"+File.separator+enrl+File.separator+enrl+"_CV.pdf");
 			File tempsop=new File("tempSOP.pdf");
-			File realsop=new File(this.model.getEnrollment_number()+"_SOP.pdf");
+			File realsop=new File("UserFiles"+File.separator+enrl+File.separator+enrl+"_SOP.pdf");
 			tempcv.renameTo(realcv);
 			tempsop.renameTo(realsop);
 			this.model.setEnrollment_number("PotatoLAND");
