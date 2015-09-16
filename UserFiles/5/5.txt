@@ -1,0 +1,40 @@
+Enrollment Number : 5
+Timestamp : 2015-09-16
+
+PERSONAL DETAILS:
+Email : asd@gg.com
+Name : dfsdf 
+Address of Correspondence : sdfsdf
+Mobile : 9898989898
+PhD Stream : Computer Science
+PhD Preference 1 : Theoretical Computer Science - CSE
+PhD Preference 2 : Signal and Image Processing - CSE
+PhD Preference 3 : Machine Learning - CSE
+Gender : Male
+Category : General
+Physically Disabled : Yes
+Date of Birth : 2015-09-08
+Children/War Widows of Defence Personnel wounded/killed in war : Yes
+Father's Name : sfsdf
+Nationality : India
+Permanent Address : sdf
+Pincode : 
+
+SCHOOLING DETAILS:
+Xth Board : 132
+Xth Marks : 23.0
+Year of Passing Xth : 2007
+XIIth Board : sf12
+XIIth Marks : 12.0
+Year of Passing XIIth : 2009
+
+GRADUATION DETAILS:
+Degree : fs
+Department/Discipline : sdfsd
+College : sdf
+University : fsdf
+City : sdfsd
+State : Dadra and Nagar Haveli
+Year of Graduation : 2005
+
+Achievements :zfsdf

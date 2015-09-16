@@ -16,6 +16,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.nio.file.Files;
 import java.time.LocalDate;
 
 import javafx.application.Application;
@@ -88,6 +89,22 @@ public class Main extends Application
 			if(this.model==null) System.out.println("Double F*CK");
 			temp.close();
 			TXT_Record_Maker();
+			//Delete temporary .dat file :
+			boolean flux=new File("temp.dat").delete();
+			if(flux)
+			{
+				System.out.println("Succcessfully deleted temp.dat file");
+			}
+			boolean flux2=tempcv.delete();
+			if(flux2)
+			{
+				System.out.println("Succcessfully deleted temp_CV.dat file");
+			}
+			boolean flux3=tempsop.delete();
+			if(flux3)
+			{
+				System.out.println("Succcessfully deleted temp_SOP.dat file");
+			}
 		} catch (IOException e) {
 			System.out.println("Could not write to file");
 			e.printStackTrace();
