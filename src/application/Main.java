@@ -1,5 +1,7 @@
 package application;
 
+import java.io.BufferedReader;
+
 //@author : Anshuman Suri : 2014021
 //Please read the README.md before testing the applciation 
 	
@@ -8,6 +10,7 @@ import java.io.File;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 
 import java.io.IOException;
@@ -33,7 +36,28 @@ public class Main extends Application
 	
 	public void closer()
 	{
+		BufferedReader enrI=null;
+		BufferedWriter enrO=null;
 		try {
+			try
+			{
+				enrI=new BufferedReader(new FileReader("enrol.txt"));
+				int yoda=Integer.parseInt(enrI.readLine());
+				yoda+=1;
+				this.model.setEnrollment_number(String.valueOf(yoda));
+				enrI.close();
+				enrO=new BufferedWriter(new FileWriter("enrol.txt"));
+				enrO.write(String.valueOf(yoda));
+				enrO.close();
+			}
+			catch(Exception e)
+			{
+				enrO=new BufferedWriter(new FileWriter("enrol.txt"));
+				enrO.write("1");
+				enrO.close();
+				this.model.setEnrollment_number("1");
+			}
+//			this.model.setEnrollment_number("PotatoLAND");
 			String enrl=this.model.getEnrollment_number();
 			File dir = new File("UserFiles");
 			if (!dir.exists()) {
@@ -58,7 +82,6 @@ public class Main extends Application
 			File realsop=new File("UserFiles"+File.separator+enrl+File.separator+enrl+"_SOP.pdf");
 			tempcv.renameTo(realcv);
 			tempsop.renameTo(realsop);
-			this.model.setEnrollment_number("PotatoLAND");
 			this.model.setTimestamp(LocalDate.now());
 			temp.writeObject(this.model);
 			if(this.model.getP()==null) System.out.println("F*CK");
