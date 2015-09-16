@@ -292,10 +292,12 @@ public class Controller
 		if(check1.isSelected())
 		{
 			teb1.setDisable(false);
+			teb1.setExpanded(true);
 		}
 		else
 		{
 			teb1.setDisable(true);
+			teb1.setExpanded(false);
 		}
 	}
 	
@@ -304,10 +306,12 @@ public class Controller
 		if(check2.isSelected())
 		{
 			teb2.setDisable(false);
+			teb2.setExpanded(true);
 		}
 		else
 		{
 			teb2.setDisable(true);
+			teb2.setExpanded(false);
 		}
 	}
 	
@@ -316,10 +320,12 @@ public class Controller
 		if(check3.isSelected())
 		{
 			teb3.setDisable(false);
+			teb3.setExpanded(true);
 		}
 		else
 		{
 			teb3.setDisable(true);
+			teb3.setExpanded(false);
 		}
 	}
 	
@@ -328,10 +334,12 @@ public class Controller
 		if(check4.isSelected())
 		{
 			teb4.setDisable(false);
+			teb4.setExpanded(true);
 		}
 		else
 		{
 			teb4.setDisable(true);
+			teb4.setExpanded(false);
 		}
 	}
 		

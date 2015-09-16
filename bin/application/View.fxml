@@ -11,145 +11,149 @@
   <tabs>
     <Tab fx:id="t1" text="Personal Information">
          <content>
-            <GridPane>
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="327.0" minWidth="10.0" prefWidth="319.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="397.0" minWidth="10.0" prefWidth="346.0" />
-              </columnConstraints>
-              <rowConstraints>
-                  <RowConstraints vgrow="SOMETIMES" />
-                  <RowConstraints vgrow="SOMETIMES" />
-                  <RowConstraints vgrow="SOMETIMES" />
-                  <RowConstraints vgrow="SOMETIMES" />
-                  <RowConstraints vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="150.0" minHeight="0.0" prefHeight="43.0" vgrow="SOMETIMES" />
-                  <RowConstraints vgrow="SOMETIMES" />
-                  <RowConstraints vgrow="SOMETIMES" />
-                <RowConstraints vgrow="SOMETIMES" />
-                <RowConstraints vgrow="SOMETIMES" />
-                <RowConstraints vgrow="SOMETIMES" />
-                  <RowConstraints vgrow="SOMETIMES" />
-                  <RowConstraints vgrow="SOMETIMES" />
-                  <RowConstraints vgrow="SOMETIMES" />
-                  <RowConstraints vgrow="SOMETIMES" />
-                  <RowConstraints vgrow="SOMETIMES" />
-                  <RowConstraints vgrow="SOMETIMES" />
-                  <RowConstraints vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <TextField fx:id="email_x" GridPane.columnIndex="1" />
-                  <TextField fx:id="name_x" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField fx:id="mob_x" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <TextArea fx:id="addc_x" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <ChoiceBox fx:id="pref1_x" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <ChoiceBox fx:id="pref2_x" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <ChoiceBox fx:id="pref3_x" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                  <TextField fx:id="pin_x" GridPane.columnIndex="1" GridPane.rowIndex="16" />
-                  <TextField fx:id="fname_x" GridPane.columnIndex="1" GridPane.rowIndex="13" />
-                  <TextArea fx:id="addp_x" GridPane.columnIndex="1" GridPane.rowIndex="15" />
-                  <ChoiceBox fx:id="nation_x" GridPane.columnIndex="1" GridPane.rowIndex="14" />
-                  <GridPane GridPane.columnIndex="1" GridPane.rowIndex="8">
+            <ScrollPane hbarPolicy="ALWAYS" pannable="true" vbarPolicy="ALWAYS">
+               <content>
+                  <GridPane hgap="10.0" vgap="10.0">
                     <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" />
-                      <ColumnConstraints hgrow="SOMETIMES" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="327.0" minWidth="10.0" prefWidth="319.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="397.0" minWidth="10.0" prefWidth="346.0" />
                     </columnConstraints>
                     <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                     <children>
-                        <RadioButton fx:id="genderm_x" mnemonicParsing="false" onAction="#genderm_x_f" text="Male" />
-                        <RadioButton fx:id="genderf_x" mnemonicParsing="false" onAction="#genderf_x_f" text="Female" GridPane.columnIndex="1" />
-                     </children>
-                  </GridPane>
-                  <ChoiceBox fx:id="category_x" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-                  <GridPane GridPane.columnIndex="1" GridPane.rowIndex="10">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                     <children>
-                        <RadioButton fx:id="phyy_x" mnemonicParsing="false" onAction="#phyy_x_f" text="Yes" />
-                        <RadioButton fx:id="phyn_x" mnemonicParsing="false" onAction="#phyn_x_f" text="No" GridPane.columnIndex="1" />
-                     </children>
-                  </GridPane>
-                  <DatePicker fx:id="dob_x" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="11" />
-                  <GridPane GridPane.columnIndex="1" GridPane.rowIndex="12">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" />
-                      <ColumnConstraints hgrow="SOMETIMES" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                     <children>
-                        <RadioButton fx:id="wary_x" mnemonicParsing="false" onAction="#wary_x_f" text="Yes" />
-                        <RadioButton fx:id="warn_x" mnemonicParsing="false" onAction="#warn_x_f" text="No" GridPane.columnIndex="1" />
-                     </children>
-                  </GridPane>
-                  <GridPane GridPane.columnIndex="1" GridPane.rowIndex="4">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" />
-                    </columnConstraints>
-                    <rowConstraints>
+                        <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="150.0" minHeight="0.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
                       <RowConstraints vgrow="SOMETIMES" />
                       <RowConstraints vgrow="SOMETIMES" />
                       <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <RadioButton fx:id="stream1_x" mnemonicParsing="false" onAction="#stream1_x_f" text="Computer Science" />
-                        <RadioButton fx:id="stream2_x" mnemonicParsing="false" onAction="#stream2_x_f" text="Electronics and Communication" GridPane.rowIndex="1" />
-                        <RadioButton fx:id="stream3_x" mnemonicParsing="false" onAction="#stream3_x_f" text="Computational Biology" GridPane.rowIndex="2" />
+                        <TextField fx:id="email_x" GridPane.columnIndex="1" />
+                        <TextField fx:id="name_x" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="mob_x" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextArea fx:id="addc_x" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <ChoiceBox fx:id="pref1_x" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <ChoiceBox fx:id="pref2_x" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <ChoiceBox fx:id="pref3_x" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <TextField fx:id="pin_x" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+                        <TextField fx:id="fname_x" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                        <TextArea fx:id="addp_x" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+                        <ChoiceBox fx:id="nation_x" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="8">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" />
+                            <ColumnConstraints hgrow="SOMETIMES" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <RadioButton fx:id="genderm_x" mnemonicParsing="false" onAction="#genderm_x_f" text="Male" />
+                              <RadioButton fx:id="genderf_x" mnemonicParsing="false" onAction="#genderf_x_f" text="Female" GridPane.columnIndex="1" />
+                           </children>
+                        </GridPane>
+                        <ChoiceBox fx:id="category_x" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="10">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <RadioButton fx:id="phyy_x" mnemonicParsing="false" onAction="#phyy_x_f" text="Yes" />
+                              <RadioButton fx:id="phyn_x" mnemonicParsing="false" onAction="#phyn_x_f" text="No" GridPane.columnIndex="1" />
+                           </children>
+                        </GridPane>
+                        <DatePicker fx:id="dob_x" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="12">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" />
+                            <ColumnConstraints hgrow="SOMETIMES" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <RadioButton fx:id="wary_x" mnemonicParsing="false" onAction="#wary_x_f" text="Yes" />
+                              <RadioButton fx:id="warn_x" mnemonicParsing="false" onAction="#warn_x_f" text="No" GridPane.columnIndex="1" />
+                           </children>
+                        </GridPane>
+                        <GridPane vgap="10.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints vgrow="SOMETIMES" />
+                            <RowConstraints vgrow="SOMETIMES" />
+                            <RowConstraints vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <RadioButton fx:id="stream1_x" mnemonicParsing="false" onAction="#stream1_x_f" text="Computer Science" />
+                              <RadioButton fx:id="stream2_x" mnemonicParsing="false" onAction="#stream2_x_f" text="Electronics and Communication" GridPane.rowIndex="1" />
+                              <RadioButton fx:id="stream3_x" mnemonicParsing="false" onAction="#stream3_x_f" text="Computational Biology" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                        <Button fx:id="button1" mnemonicParsing="false" onAction="#handleb1" text="Save" GridPane.columnIndex="1" GridPane.rowIndex="17" />
+                        <Label fx:id="error_t1" prefHeight="50.0" prefWidth="327.0" GridPane.rowIndex="17" />
+                        <Label fx:id="email_x2" text="Email*">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </Label>
+                        <Label fx:id="name_x2" text="Name*" GridPane.rowIndex="1" />
+                        <Label fx:id="addc_x2" text="Address of Correspondence*" GridPane.rowIndex="2" />
+                        <Label fx:id="mob_x2" text="Mobile*" GridPane.rowIndex="3" />
+                        <Label fx:id="phd_x2" text="PhD Stream" GridPane.rowIndex="4" />
+                        <Label fx:id="pref1_x2" text="PhD Area Preference 1*" GridPane.rowIndex="5" />
+                        <Label fx:id="pref2_x2" text="PhD Area Preference 2" GridPane.rowIndex="6" />
+                        <Label fx:id="pref3_x2" text="PhD Area Preference 3" GridPane.rowIndex="7" />
+                        <Label fx:id="gender_x2" text="Gender*" GridPane.rowIndex="8" />
+                        <Label fx:id="category_x2" text="Category*" GridPane.rowIndex="9" />
+                        <Label fx:id="phy_x2" text="Physically Disabled*" GridPane.rowIndex="10" />
+                        <Label fx:id="dob_x2" text="Date of Birth*" GridPane.rowIndex="11" />
+                        <Label fx:id="war_x2" text="Children/War Widows of Defence Personnel killed/Disabled in Action*" wrapText="true" GridPane.rowIndex="12" />
+                        <Label fx:id="fname_x2" text="Father's Name*" GridPane.rowIndex="13" />
+                        <Label fx:id="nation_x2" text="Nationality*" GridPane.rowIndex="14" />
+                        <Label fx:id="addp_x2" text="Permanent Address*" GridPane.rowIndex="15" />
+                        <Label text="Pincode" GridPane.rowIndex="16" />
                      </children>
-                  </GridPane>
-                  <Button fx:id="button1" mnemonicParsing="false" onAction="#handleb1" text="Save" GridPane.columnIndex="1" GridPane.rowIndex="17" />
-                  <Label fx:id="error_t1" prefHeight="50.0" prefWidth="327.0" GridPane.rowIndex="17" />
-                  <Label fx:id="email_x2" text="Email*">
-                     <GridPane.margin>
+                     <opaqueInsets>
                         <Insets />
-                     </GridPane.margin>
-                  </Label>
-                  <Label fx:id="name_x2" text="Name*" GridPane.rowIndex="1" />
-                  <Label fx:id="addc_x2" text="Address of Correspondence*" GridPane.rowIndex="2" />
-                  <Label fx:id="mob_x2" text="Mobile*" GridPane.rowIndex="3" />
-                  <Label fx:id="phd_x2" text="PhD Stream" GridPane.rowIndex="4" />
-                  <Label fx:id="pref1_x2" text="PhD Area Preference 1*" GridPane.rowIndex="5" />
-                  <Label fx:id="pref2_x2" text="PhD Area Preference 2" GridPane.rowIndex="6" />
-                  <Label fx:id="pref3_x2" text="PhD Area Preference 3" GridPane.rowIndex="7" />
-                  <Label fx:id="gender_x2" text="Gender*" GridPane.rowIndex="8" />
-                  <Label fx:id="category_x2" text="Category*" GridPane.rowIndex="9" />
-                  <Label fx:id="phy_x2" text="Physically Disabled*" GridPane.rowIndex="10" />
-                  <Label fx:id="dob_x2" text="Date of Birth*" GridPane.rowIndex="11" />
-                  <Label fx:id="war_x2" text="Children/War Widows of Defence Personnel killed/Disabled in Action*" wrapText="true" GridPane.rowIndex="12" />
-                  <Label fx:id="fname_x2" text="Father's Name*" GridPane.rowIndex="13" />
-                  <Label fx:id="nation_x2" text="Nationality*" GridPane.rowIndex="14" />
-                  <Label fx:id="addp_x2" text="Permanent Address*" GridPane.rowIndex="15" />
-                  <Label text="Pincode" GridPane.rowIndex="16" />
-               </children>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-            </GridPane>
+                     </opaqueInsets>
+                  </GridPane>
+               </content>
+            </ScrollPane>
          </content>
       </Tab>
       <Tab fx:id="t2" text="Education Information">
          <content>
             <ScrollPane>
                <content>
-                  <GridPane>
+                  <GridPane prefHeight="1451.0" prefWidth="699.0">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
                      </columnConstraints>
                      <rowConstraints>
                         <RowConstraints maxHeight="1461.0" minHeight="10.0" prefHeight="660.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="838.0" minHeight="10.0" prefHeight="567.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="838.0" minHeight="10.0" prefHeight="348.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="838.0" minHeight="0.0" prefHeight="73.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="838.0" minHeight="10.0" prefHeight="421.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="838.0" minHeight="0.0" prefHeight="310.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="838.0" minHeight="0.0" prefHeight="72.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <GridPane>
+                        <GridPane vgap="10.0">
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" maxWidth="366.0" minWidth="10.0" prefWidth="339.0" />
                             <ColumnConstraints hgrow="SOMETIMES" maxWidth="368.0" minWidth="10.0" prefWidth="361.0" />
@@ -186,7 +190,7 @@
                                     </Label>
                                  </children>
                               </GridPane>
-                              <GridPane GridPane.columnIndex="1">
+                              <GridPane vgap="5.0" GridPane.columnIndex="1">
                                 <columnConstraints>
                                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                 </columnConstraints>
@@ -239,7 +243,7 @@
                                     <Label fx:id="grad_state_yl" text="State*" GridPane.rowIndex="6" />
                                     <Label fx:id="grad_year_yl" text="Year of Graduation*" GridPane.rowIndex="7" />
                                     <Label fx:id="cgpa1l" text="CGPA or MARKS?" GridPane.rowIndex="8" />
-                                    <GridPane GridPane.rowIndex="10">
+                                    <GridPane vgap="5.0" GridPane.rowIndex="10">
                                       <columnConstraints>
                                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                       </columnConstraints>
@@ -278,7 +282,7 @@
                                     <TextField fx:id="grad_univ_y" GridPane.rowIndex="4" />
                                     <TextField fx:id="grad_city_y" GridPane.rowIndex="5" />
                                     <ChoiceBox fx:id="grad_year_y" prefWidth="150.0" GridPane.rowIndex="7" />
-                                    <GridPane GridPane.rowIndex="10">
+                                    <GridPane vgap="5.0" GridPane.rowIndex="10">
                                       <columnConstraints>
                                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                       </columnConstraints>
@@ -304,7 +308,7 @@
                                           <TextField fx:id="marks1" GridPane.columnIndex="1" />
                                        </children>
                                     </GridPane>
-                                    <GridPane GridPane.rowIndex="8">
+                                    <GridPane hgap="5.0" GridPane.rowIndex="8">
                                       <columnConstraints>
                                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="114.0" minWidth="10.0" prefWidth="69.0" />
                                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="172.0" minWidth="10.0" prefWidth="138.0" />
@@ -398,7 +402,7 @@
                                           <TextField fx:id="post_thesis" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                                           <ChoiceBox fx:id="post_state" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                                           <ChoiceBox fx:id="post_year" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                                          <GridPane GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                          <GridPane hgap="5.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
                                             <columnConstraints>
                                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="107.0" minWidth="10.0" prefWidth="69.0" />
                                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.0" minWidth="10.0" prefWidth="138.0" />
@@ -490,7 +494,7 @@
                               </TitledPane>
                           </panes>
                         </Accordion>
-                        <GridPane GridPane.rowIndex="2">
+                        <GridPane vgap="5.0" GridPane.rowIndex="2">
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" maxWidth="549.0" minWidth="10.0" prefWidth="396.0" />
                             <ColumnConstraints hgrow="SOMETIMES" maxWidth="342.0" minWidth="10.0" prefWidth="301.0" />
