@@ -797,7 +797,7 @@ public class Controller
 		try
 		{
 			float x=Float.parseFloat(score_other.getText());
-			if(x<0 || x>100)
+			if(x<600 || x>2400) //SAT score range
 			{
 				temp=false;
 				score_otherl.setTextFill(Color.RED);
@@ -815,7 +815,7 @@ public class Controller
 		try
 		{
 			int x=Integer.parseInt(rank_other.getText());
-			if(x<0 || x>100)
+			if(x<0)
 			{
 				temp=false;
 				rank_otherl.setTextFill(Color.RED);
