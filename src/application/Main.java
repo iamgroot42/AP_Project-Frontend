@@ -1,4 +1,7 @@
 package application;
+
+//@author : Anshuman Suri : 2014021
+//Please read the README.md before testing the applciation 
 	
 import java.io.BufferedWriter;
 import java.io.File;
