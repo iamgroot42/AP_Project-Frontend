@@ -1064,7 +1064,7 @@ public class Controller
 		tempo.setWar_category(this.war);	
 		System.out.println("Updated new");
 		mane.getModel().setP(tempo);
-		mane.closer();
+		mane.temp_closer();
 	}
 	
 	private void saveE()
@@ -1158,7 +1158,7 @@ public class Controller
 		}	
 		//Save file
 		mane.getModel().setE(tempo);
-		mane.closer();
+		mane.temp_closer();
 	}
 	
 	private void populate_t1()
@@ -1412,7 +1412,7 @@ public class Controller
 		if(x && y)
 		{
 			System.out.print(":*");
-			mane.final_closer();
+			mane.closer();
 			final_save_b.setTextFill(Color.GREEN);
 		}
 	}

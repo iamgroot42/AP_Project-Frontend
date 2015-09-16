@@ -1,8 +1,11 @@
 package application;
 	
+import java.io.BufferedWriter;
 import java.io.File;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -58,13 +61,137 @@ public class Main extends Application
 			if(this.model.getP()==null) System.out.println("F*CK");
 			if(this.model==null) System.out.println("Double F*CK");
 			temp.close();
+			TXT_Record_Maker();
 		} catch (IOException e) {
 			System.out.println("Could not write to file");
 			e.printStackTrace();
 		}
 	}
 	
-	public void final_closer()
+	private void TXT_Record_Maker()
+	{
+		BufferedWriter nada= null;
+	      try
+	      {
+	    	  nada=new BufferedWriter(new FileWriter("UserFiles"+File.separator+this.model.getEnrollment_number()+File.separator+this.model.getEnrollment_number()+".txt"));
+	    	  Personal x=this.model.getP();
+	    	  Education y=this.model.getE();
+	    	  String yolo;
+	    	  nada.write("Enrollment Number : "+this.model.getEnrollment_number()+"\n");
+	    	  nada.write("Timestamp : "+this.model.getTimestamp()+"\n\n");
+	    	  nada.write("PERSONAL DETAILS:\n");
+	    	  nada.write("Email : "+x.getEmail()+"\n");
+	    	  nada.write("Name : "+x.getName()+"\n");
+	    	  nada.write("Address of Correspondence : "+x.getAdd_correspondence()+"\n");
+	    	  nada.write("Mobile : "+x.getMobile()+"\n");
+	    	  if(x.getPhd_stream()==1) yolo="Computer Science";
+	    	  else if(x.getPhd_stream()==2) yolo="Electronics and Communication";
+	    	  else yolo="Computational Biology";
+	    	  nada.write("PhD Stream : "+yolo+"\n");
+	    	  nada.write("PhD Preference 1 : "+x.getPreference()[0]+"\n");
+	    	  nada.write("PhD Preference 2 : "+x.getPreference()[1]+"\n");
+	    	  nada.write("PhD Preference 3 : "+x.getPreference()[2]+"\n");
+	    	  if(x.getGender()) yolo="Female";
+	    	  else yolo="Male";
+	    	  nada.write("Gender : "+yolo+"\n");
+	    	  nada.write("Category : "+x.getCategory()+"\n");
+	    	  if(x.getPhysically_disabled()) yolo="Yes";
+	    	  else yolo="No";
+	    	  nada.write("Physically Disabled : "+yolo+"\n");
+	    	  nada.write("Date of Birth : "+x.getDate_of_birth().toString()+"\n");
+	    	  if(x.getWar_category()) yolo="Yes";
+	    	  else yolo="No";
+	    	  nada.write("Children/War Widows of Defence Personnel wounded/killed in war : "+yolo+"\n");
+	    	  nada.write("Father's Name : "+x.getFather_name()+"\n");
+	    	  nada.write("Nationality : "+x.getNationality()+"\n");
+	    	  nada.write("Permanent Address : "+x.getAdd_permanent()+"\n");
+	    	  nada.write("Pincode : "+x.getPincode()+"\n");
+	    	  nada.write("\n");
+	    	  nada.write("SCHOOLING DETAILS:\n");
+	    	  nada.write("Xth Board : "+y.getX_board()+"\n");
+	    	  nada.write("Xth Marks : "+y.getX_marks()+"\n");
+	    	  nada.write("Year of Passing Xth : "+y.getX_year()+"\n");
+	    	  nada.write("XIIth Board : "+y.getXii_board()+"\n");
+	    	  nada.write("XIIth Marks : "+y.getXii_marks()+"\n");
+	    	  nada.write("Year of Passing XIIth : "+y.getXii_year()+"\n");
+	    	  nada.write("\n");
+	    	  nada.write("GRADUATION DETAILS:\n");
+	    	  nada.write("Degree : "+y.getDegree()+"\n");
+	    	  nada.write("Department/Discipline : "+y.getDepartment()+"\n");
+	    	  nada.write("College : "+y.getCollege()+"\n");
+	    	  nada.write("University : "+y.getUniversity()+"\n");
+	    	  nada.write("City : "+y.getCity()+"\n");
+	    	  nada.write("State : "+y.getState()+"\n");
+	    	  nada.write("Year of Graduation : "+y.getGraduation_year()+"\n");
+	    	  if(y.isType()==1){
+	    		  if(y.isDrop()) yolo="10";
+	    		  else yolo="4";
+	    		  nada.write("CGPA : "+y.getGraduation_marks()+"/"+yolo+"\n");
+	    	  }
+	    	  else if(y.isType()==2)
+	    	  {
+	    		  nada.write("Marks : "+y.getGraduation_marks()+"%\n");
+	    	  }
+	    	  nada.write("\n");
+	    	  if(y.getEce_phd())
+	    	  {
+	    		  nada.write("ECE PhD\n");
+	    		  nada.write("Preference 1 : "+y.getE().getPreferences()[0]+"\n");
+	    		  nada.write("Preference 2 : "+y.getE().getPreferences()[1]+"\n");
+	    		  nada.write("Preference 3 : "+y.getE().getPreferences()[2]+"\n");
+	    		  nada.write("Preference 4 : "+y.getE().getPreferences()[3]+"\n");
+	    		  nada.write("\n");
+	    	  }
+	    	  if(y.getPost_graduate())
+	    	  {
+	    		  nada.write("POST GRADUATION\n");
+	    		  nada.write("College : "+y.getPG().getCollege()+"\n");
+	    		  nada.write("City : "+y.getPG().getCity()+"\n");
+	    		  nada.write("State : "+y.getPG().getState()+"\n");
+	    		  nada.write("Department/Discipline : "+y.getPG().getDepartment()+"\n");
+	    		  nada.write("Thesis title : "+y.getPG().getTitle()+"\n");
+	    		  nada.write("Year of Post-Graduation : "+y.getPG().getYear()+"\n");
+	    		  if(y.getPG().isType()==1){
+		    		  if(y.getPG().isDrop()) yolo="10";
+		    		  else yolo="4";
+		    		  nada.write("CGPA : "+y.getPG().getMarks()+"/"+yolo+"\n");
+		    	  }
+		    	  else if(y.getPG().isType()==2)
+		    	  {
+		    		  nada.write("Marks : "+y.getPG().getMarks()+"%\n");
+		    	  }
+	    		  nada.write("\n");
+	    	  }
+	    	  if(y.getOther_degree())
+	    	  {
+	    		  nada.write("OTHER DEGREE\n");
+	    		  nada.write("Exam Name : "+y.getOD().getExam_name()+"\n");
+	    		  nada.write("Subject : "+y.getOD().getSubject()+"\n");
+	    		  nada.write("Year : "+y.getOD().getYear()+"\n");
+	    		  nada.write("Score : "+y.getOD().getScore()+"\n");
+	    		  nada.write("Rank : "+y.getOD().getRank()+"\n");
+	    		  nada.write("\n");
+	    	  }
+	    	  if(y.getGiven_gate())
+	    	  {
+	    		  nada.write("Area : "+y.getG().getArea()+"\n");
+	    		  nada.write("Year : "+y.getG().getYear()+"\n");
+	    		  nada.write("Marks : "+y.getG().getMarks()+"/100\n");
+	    		  nada.write("Score : "+y.getG().getScore()+"\n");
+	    		  nada.write("Rank : "+y.getG().getRank()+"\n");
+	    		  nada.write("\n");
+	    	  }
+	    	  nada.write("Achievements :"+y.getAchievements()+"\n");
+	    	  nada.close();
+	      }
+	      catch (Exception e)
+	      {
+	         e.printStackTrace();
+	         System.out.println("Could not make .txt file");
+	      }
+	}
+	
+	public void temp_closer()
 	{
 		try {
 			ObjectOutputStream temp=new ObjectOutputStream(new FileOutputStream("temp.dat"));
