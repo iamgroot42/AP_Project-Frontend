@@ -1,0 +1,41 @@
+Enrollment Number : 9
+Timestamp : 2015-09-17
+
+PERSONAL DETAILS:
+Email : kv@sdfgsdf.com
+Name : hmvmk
+Address of Correspondence : jl
+Mobile : 9898989898
+PhD Stream : Computer Science
+PhD Preference 1 : Signal and Image Processing - CSE
+PhD Preference 2 : Software Engineering - CSE
+PhD Preference 3 : Computer Vision - CSE
+Gender : Female
+Category : ST
+Physically Disabled : Yes
+Date of Birth : 2015-09-15
+Children/War Widows of Defence Personnel wounded/killed in war : Yes
+Father's Name : nm,.
+Nationality : TomatoLand
+Permanent Address : ,.jb
+Pincode : 95695
+
+SCHOOLING DETAILS:
+Xth Board : njklb,.b.
+Xth Marks : 32.0
+Year of Passing Xth : 2008
+XIIth Board : pot
+XIIth Marks : 99.0
+Year of Passing XIIth : 2004
+
+GRADUATION DETAILS:
+Degree : nmb
+Department/Discipline : m,n
+College : v,m
+University : m,nm
+City : b
+State : Madhya Pradesh
+Year of Graduation : 1995
+Marks : 99.2%
+
+Achievements :.hbvolh

@@ -34,7 +34,7 @@ public class Main extends Application
 		return this.model;
 	}
 	
-	public void closer()
+	public String closer()
 	{
 		BufferedReader enrI=null;
 		BufferedWriter enrO=null;
@@ -109,6 +109,7 @@ public class Main extends Application
 			System.out.println("Could not write to file");
 			e.printStackTrace();
 		}
+		return this.model.getEnrollment_number();
 	}
 	
 	private void TXT_Record_Maker()

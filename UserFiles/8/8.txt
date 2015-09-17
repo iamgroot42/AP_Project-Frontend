@@ -1,0 +1,41 @@
+Enrollment Number : 8
+Timestamp : 2015-09-17
+
+PERSONAL DETAILS:
+Email : sdfd@sgs.com
+Name : klhb
+Address of Correspondence : .n,b
+Mobile : 9898989898
+PhD Stream : Electronics and Communication
+PhD Preference 1 : Wireless Networks - ECE
+PhD Preference 2 : Signal and Image Processing - ECE
+PhD Preference 3 : Embedded Systems - ECE
+Gender : Male
+Category : ST
+Physically Disabled : Yes
+Date of Birth : 2015-09-01
+Children/War Widows of Defence Personnel wounded/killed in war : Yes
+Father's Name : sgsrt
+Nationality : PotatoLand
+Permanent Address : adfsf
+Pincode : 1100C1
+
+SCHOOLING DETAILS:
+Xth Board :  nbvlnm
+Xth Marks : 23.0
+Year of Passing Xth : 2008
+XIIth Board : ,jb,k
+XIIth Marks : 55.0
+Year of Passing XIIth : 2004
+
+GRADUATION DETAILS:
+Degree : mnbv
+Department/Discipline : ,mbv,mbn,mbnM,BM,BmB
+College : MBM
+University : NBM
+City : B
+State : Karnataka
+Year of Graduation : 1996
+CGPA : 3.2/4
+
+Achievements :mnn 

@@ -108,27 +108,27 @@
                         </GridPane>
                         <Button fx:id="button1" mnemonicParsing="false" onAction="#handleb1" text="Save" GridPane.columnIndex="1" GridPane.rowIndex="17" />
                         <Label fx:id="error_t1" prefHeight="50.0" prefWidth="327.0" GridPane.rowIndex="17" />
-                        <Label fx:id="email_x2" text="Email*">
+                        <Label fx:id="email_x2" alignment="CENTER" text="Email*" GridPane.halignment="CENTER">
                            <GridPane.margin>
                               <Insets />
                            </GridPane.margin>
                         </Label>
-                        <Label fx:id="name_x2" text="Name*" GridPane.rowIndex="1" />
-                        <Label fx:id="addc_x2" text="Address of Correspondence*" GridPane.rowIndex="2" />
-                        <Label fx:id="mob_x2" text="Mobile*" GridPane.rowIndex="3" />
-                        <Label fx:id="phd_x2" text="PhD Stream" GridPane.rowIndex="4" />
-                        <Label fx:id="pref1_x2" text="PhD Area Preference 1*" GridPane.rowIndex="5" />
-                        <Label fx:id="pref2_x2" text="PhD Area Preference 2" GridPane.rowIndex="6" />
-                        <Label fx:id="pref3_x2" text="PhD Area Preference 3" GridPane.rowIndex="7" />
-                        <Label fx:id="gender_x2" text="Gender*" GridPane.rowIndex="8" />
-                        <Label fx:id="category_x2" text="Category*" GridPane.rowIndex="9" />
-                        <Label fx:id="phy_x2" text="Physically Disabled*" GridPane.rowIndex="10" />
-                        <Label fx:id="dob_x2" text="Date of Birth*" GridPane.rowIndex="11" />
-                        <Label fx:id="war_x2" text="Children/War Widows of Defence Personnel killed/Disabled in Action*" wrapText="true" GridPane.rowIndex="12" />
-                        <Label fx:id="fname_x2" text="Father's Name*" GridPane.rowIndex="13" />
-                        <Label fx:id="nation_x2" text="Nationality*" GridPane.rowIndex="14" />
-                        <Label fx:id="addp_x2" text="Permanent Address*" GridPane.rowIndex="15" />
-                        <Label text="Pincode" GridPane.rowIndex="16" />
+                        <Label fx:id="name_x2" text="Name*" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <Label fx:id="addc_x2" text="Address of Correspondence*" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                        <Label fx:id="mob_x2" text="Mobile*" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                        <Label fx:id="phd_x2" text="PhD Stream" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                        <Label fx:id="pref1_x2" text="PhD Area Preference 1*" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                        <Label fx:id="pref2_x2" text="PhD Area Preference 2" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                        <Label fx:id="pref3_x2" text="PhD Area Preference 3" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+                        <Label fx:id="gender_x2" text="Gender*" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+                        <Label fx:id="category_x2" text="Category*" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
+                        <Label fx:id="phy_x2" text="Physically Disabled*" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
+                        <Label fx:id="dob_x2" text="Date of Birth*" GridPane.halignment="CENTER" GridPane.rowIndex="11" />
+                        <Label fx:id="war_x2" text="Children/War Widows of Defence Personnel killed/Disabled in Action*" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="12" />
+                        <Label fx:id="fname_x2" text="Father's Name*" GridPane.halignment="CENTER" GridPane.rowIndex="13" />
+                        <Label fx:id="nation_x2" text="Nationality*" GridPane.halignment="CENTER" GridPane.rowIndex="14" />
+                        <Label fx:id="addp_x2" text="Permanent Address*" GridPane.halignment="CENTER" GridPane.rowIndex="15" />
+                        <Label text="Pincode" GridPane.halignment="CENTER" GridPane.rowIndex="16" />
                      </children>
                      <opaqueInsets>
                         <Insets />
@@ -177,13 +177,13 @@
                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <Label text="Xth Board*" GridPane.rowIndex="1" fx:id="x_board_yl" />
-                                    <Label text="Xth Marks (%)*" GridPane.rowIndex="2" fx:id="x_marks_yl" />
-                                    <Label text="Year of Passing Xth*" GridPane.rowIndex="3" fx:id="x_year_yl" />
-                                    <Label text="XIIth Board*" GridPane.rowIndex="4" fx:id="xii_board_yl" />
-                                    <Label text="XIIth Marks (%)*" GridPane.rowIndex="5" fx:id="xii_marks_yl" />
-                                    <Label text="Year of Passing XIIth*" GridPane.rowIndex="6" fx:id="xii_year_yl" />
-                                    <Label text="Schooling Information">
+                                    <Label text="Xth Board*" GridPane.halignment="CENTER" GridPane.rowIndex="1" fx:id="x_board_yl" />
+                                    <Label text="Xth Marks (%)*" GridPane.halignment="CENTER" GridPane.rowIndex="2" fx:id="x_marks_yl" />
+                                    <Label text="Year of Passing Xth*" GridPane.halignment="CENTER" GridPane.rowIndex="3" fx:id="x_year_yl" />
+                                    <Label text="XIIth Board*" GridPane.halignment="CENTER" GridPane.rowIndex="4" fx:id="xii_board_yl" />
+                                    <Label text="XIIth Marks (%)*" GridPane.halignment="CENTER" GridPane.rowIndex="5" fx:id="xii_marks_yl" />
+                                    <Label text="Year of Passing XIIth*" GridPane.halignment="CENTER" GridPane.rowIndex="6" fx:id="xii_year_yl" />
+                                    <Label text="Schooling Information" GridPane.halignment="CENTER">
                                        <font>
                                           <Font name="System Bold" size="19.0" />
                                        </font>
@@ -230,19 +230,19 @@
                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <Label text="Graduation Information">
+                                    <Label text="Graduation Information" GridPane.halignment="CENTER">
                                        <font>
                                           <Font name="System Bold" size="19.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="grad_degree_yl" text="Degree*" GridPane.rowIndex="1" />
-                                    <Label fx:id="grad_dept_yl" text="Department/Discipline*" GridPane.rowIndex="2" />
-                                    <Label fx:id="grad_coll_yl" text="Name of College*" GridPane.rowIndex="3" />
-                                    <Label fx:id="grad_univ_yl" text="Name of University*" GridPane.rowIndex="4" />
-                                    <Label fx:id="grad_city_yl" text="City*" GridPane.rowIndex="5" />
-                                    <Label fx:id="grad_state_yl" text="State*" GridPane.rowIndex="6" />
-                                    <Label fx:id="grad_year_yl" text="Year of Graduation*" GridPane.rowIndex="7" />
-                                    <Label fx:id="cgpa1l" text="CGPA or MARKS?" GridPane.rowIndex="8" />
+                                    <Label fx:id="grad_degree_yl" text="Degree*" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                                    <Label fx:id="grad_dept_yl" text="Department/Discipline*" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                                    <Label fx:id="grad_coll_yl" text="Name of College*" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                                    <Label fx:id="grad_univ_yl" text="Name of University*" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                                    <Label fx:id="grad_city_yl" text="City*" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                                    <Label fx:id="grad_state_yl" text="State*" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                                    <Label fx:id="grad_year_yl" text="Year of Graduation*" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+                                    <Label fx:id="cgpa1l" text="CGPA or MARKS?" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
                                     <GridPane vgap="5.0" GridPane.rowIndex="10">
                                       <columnConstraints>
                                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -354,10 +354,10 @@
                                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                             </rowConstraints>
                                              <children>
-                                                <Label fx:id="ece_pref1l" text="Preference 1*" />
-                                                <Label fx:id="ece_pref2l" text="Preference 2*" GridPane.rowIndex="1" />
-                                                <Label fx:id="ece_pref3l" text="Preference 3*" GridPane.rowIndex="2" />
-                                                <Label fx:id="ece_pref4l" text="Preference 4" GridPane.rowIndex="3" />
+                                                <Label fx:id="ece_pref1l" text="Preference 1*" GridPane.halignment="CENTER" />
+                                                <Label fx:id="ece_pref2l" text="Preference 2*" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                                                <Label fx:id="ece_pref3l" text="Preference 3*" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                                                <Label fx:id="ece_pref4l" text="Preference 4" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
                                                 <ChoiceBox fx:id="ece_pref1" GridPane.columnIndex="1" />
                                                 <ChoiceBox fx:id="ece_pref2" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                                 <ChoiceBox fx:id="ece_pref3" GridPane.columnIndex="1" GridPane.rowIndex="2" />
@@ -387,14 +387,14 @@
                                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                       </rowConstraints>
                                        <children>
-                                          <Label fx:id="post_colll" prefHeight="68.0" prefWidth="386.0" text="Name of College*" />
-                                          <Label fx:id="post_cityl" prefHeight="151.0" prefWidth="488.0" text="City*" GridPane.rowIndex="1" />
-                                          <Label fx:id="post_statel" prefHeight="151.0" prefWidth="526.0" text="State*" GridPane.rowIndex="2" />
-                                          <Label fx:id="post_deptl" prefHeight="117.0" prefWidth="442.0" text="Department/Discipline*" GridPane.rowIndex="3" />
-                                          <Label fx:id="post_degreel" prefHeight="150.0" prefWidth="464.0" text="Degree*" GridPane.rowIndex="4" />
-                                          <Label fx:id="post_thesisl" prefHeight="122.0" prefWidth="487.0" text="Thesis Title*" GridPane.rowIndex="5" />
-                                          <Label fx:id="post_yearl" prefHeight="119.0" prefWidth="483.0" text="Year of Post-Graduation*" GridPane.rowIndex="6" />
-                                          <Label fx:id="cgpa2l" prefHeight="141.0" prefWidth="476.0" text="CGPA or MARKS?" GridPane.rowIndex="7" />
+                                          <Label fx:id="post_colll" prefHeight="24.0" prefWidth="137.0" text="Name of College*" GridPane.halignment="CENTER" />
+                                          <Label fx:id="post_cityl" prefHeight="24.0" prefWidth="65.0" text="City*" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                                          <Label fx:id="post_statel" prefHeight="24.0" prefWidth="66.0" text="State*" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                                          <Label fx:id="post_deptl" prefHeight="24.0" prefWidth="161.0" text="Department/Discipline*" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                                          <Label fx:id="post_degreel" prefHeight="24.0" prefWidth="77.0" text="Degree*" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                                          <Label fx:id="post_thesisl" prefHeight="24.0" prefWidth="105.0" text="Thesis Title*" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                                          <Label fx:id="post_yearl" prefHeight="25.0" prefWidth="176.0" text="Year of Post-Graduation*" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                                          <Label fx:id="cgpa2l" prefHeight="25.0" prefWidth="135.0" text="CGPA or MARKS?" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
                                           <TextField fx:id="post_coll" GridPane.columnIndex="1" />
                                           <TextField fx:id="post_city" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                           <TextField fx:id="post_dept" GridPane.columnIndex="1" GridPane.rowIndex="3" />
@@ -449,11 +449,11 @@
                                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                       </rowConstraints>
                                        <children>
-                                          <Label fx:id="examl" prefHeight="104.0" prefWidth="578.0" text="Exam Name*" />
-                                          <Label fx:id="other_yearl" prefHeight="200.0" prefWidth="541.0" text="Year*" GridPane.rowIndex="2" />
-                                          <Label fx:id="scorel" prefHeight="172.0" prefWidth="530.0" text="Score*" GridPane.rowIndex="3" />
-                                          <Label fx:id="rankl" prefHeight="212.0" prefWidth="584.0" text="Rank*" GridPane.rowIndex="4" />
-                                          <Label fx:id="subjectl" prefHeight="151.0" prefWidth="529.0" text="Subject*" GridPane.rowIndex="1" />
+                                          <Label fx:id="examl" prefHeight="74.0" prefWidth="134.0" text="Exam Name*" GridPane.halignment="CENTER" />
+                                          <Label fx:id="other_yearl" prefHeight="44.0" prefWidth="53.0" text="Year*" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                                          <Label fx:id="scorel" prefHeight="44.0" prefWidth="70.0" text="Score*" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                                          <Label fx:id="rankl" prefHeight="43.0" prefWidth="73.0" text="Rank*" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                                          <Label fx:id="subjectl" prefHeight="44.0" prefWidth="75.0" text="Subject*" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                                           <TextField fx:id="exam" GridPane.columnIndex="1" />
                                           <TextField fx:id="subject" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                           <TextField fx:id="score" GridPane.columnIndex="1" GridPane.rowIndex="3" />
@@ -478,11 +478,11 @@
                                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                       </rowConstraints>
                                        <children>
-                                          <Label fx:id="areal" prefHeight="181.0" prefWidth="513.0" text="Area*" />
-                                          <Label fx:id="year_otherl" prefHeight="179.0" prefWidth="519.0" text="Year of Graduation*" GridPane.rowIndex="1" />
-                                          <Label fx:id="marks_otherl" prefHeight="173.0" prefWidth="499.0" text="Marks(Out Of 100) *" GridPane.rowIndex="2" />
-                                          <Label fx:id="score_otherl" prefHeight="176.0" prefWidth="493.0" text="Score*" GridPane.rowIndex="3" />
-                                          <Label fx:id="rank_otherl" prefHeight="187.0" prefWidth="572.0" text="Rank*" GridPane.rowIndex="4" />
+                                          <Label fx:id="areal" prefHeight="44.0" prefWidth="53.0" text="Area*" GridPane.halignment="CENTER" />
+                                          <Label fx:id="year_otherl" prefHeight="44.0" prefWidth="162.0" text="Year of Graduation*" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                                          <Label fx:id="marks_otherl" prefHeight="44.0" prefWidth="147.0" text="Marks(Out Of 100) *" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                                          <Label fx:id="score_otherl" prefHeight="44.0" prefWidth="74.0" text="Score*" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                                          <Label fx:id="rank_otherl" prefHeight="43.0" prefWidth="54.0" text="Rank*" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
                                           <TextField fx:id="area" GridPane.columnIndex="1" />
                                           <TextField fx:id="marks_other" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                                           <TextField fx:id="score_other" GridPane.columnIndex="1" GridPane.rowIndex="3" />
@@ -509,7 +509,7 @@
                               <Label text="Achievements (Other information like ranks, medals etc.)" wrapText="true" GridPane.rowIndex="1" />
                               <Label fx:id="uploadCVl" text="CV/Resume*" GridPane.rowIndex="2" />
                               <Label fx:id="uploadSOPl" text="Statement of Purpose*" GridPane.rowIndex="3" />
-                              <Label text="Achievements, CV and Statement of Purpose">
+                              <Label text="Achievements, CV and Statement of Purpose" GridPane.halignment="CENTER">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
@@ -554,7 +554,12 @@
       </Tab>
       <Tab fx:id="t3" text="Submit">
          <content>
-            <Button fx:id="final_save_b" mnemonicParsing="false" onAction="#final_countdown" text="Final Save" />
+            <AnchorPane>
+               <children>
+                  <Button fx:id="final_save_b" mnemonicParsing="false" onAction="#final_countdown" text="Final Save" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="50.0" />
+                  <Label fx:id="ENum" layoutX="193.0" layoutY="26.0" prefHeight="75.0" prefWidth="503.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="26.0" />
+               </children>
+            </AnchorPane>
          </content>
       </Tab>
   </tabs>

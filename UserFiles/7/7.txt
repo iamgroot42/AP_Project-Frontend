@@ -1,0 +1,41 @@
+Enrollment Number : 7
+Timestamp : 2015-09-17
+
+PERSONAL DETAILS:
+Email : tazer@sggs.com
+Name : potato pal
+Address of Correspondence : tomatoland 
+Mobile : 9797979797
+PhD Stream : Computer Science
+PhD Preference 1 : Theoretical Computer Science - CSE
+PhD Preference 2 : Software Engineering - CSE
+PhD Preference 3 : Security and Privacy - CSE
+Gender : Male
+Category : General
+Physically Disabled : Yes
+Date of Birth : 2015-09-03
+Children/War Widows of Defence Personnel wounded/killed in war : Yes
+Father's Name : wt
+Nationality : India
+Permanent Address : sSg
+Pincode : 110001
+
+SCHOOLING DETAILS:
+Xth Board : kglkgh
+Xth Marks : 12.0
+Year of Passing Xth : 2005
+XIIth Board : jklblkgul
+XIIth Marks : 12.0
+Year of Passing XIIth : 2005
+
+GRADUATION DETAILS:
+Degree : ,,ihjhl
+Department/Discipline : .,bj.,bj
+College : .,jb.
+University : ,,mb
+City : mb
+State : Kerala
+Year of Graduation : 1993
+CGPA : 3.2/4
+
+Achievements :wtwt 2t6 34

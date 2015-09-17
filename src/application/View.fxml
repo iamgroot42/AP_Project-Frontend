@@ -554,7 +554,12 @@
       </Tab>
       <Tab fx:id="t3" text="Submit">
          <content>
-            <Button fx:id="final_save_b" mnemonicParsing="false" onAction="#final_countdown" text="Final Save" />
+            <AnchorPane>
+               <children>
+                  <Button fx:id="final_save_b" mnemonicParsing="false" onAction="#final_countdown" text="Final Save" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="50.0" />
+                  <Label fx:id="ENum" layoutX="193.0" layoutY="26.0" prefHeight="75.0" prefWidth="503.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="26.0" />
+               </children>
+            </AnchorPane>
          </content>
       </Tab>
   </tabs>

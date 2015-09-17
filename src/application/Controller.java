@@ -172,6 +172,7 @@ public class Controller
     @FXML private Label score_otherl;
     @FXML private Label rank_otherl;
     @FXML private Label year_otherl; 
+    @FXML private Label ENum;
     //Tab 3:
     @FXML private Button final_save_b;
     //Non-FXML fields:
@@ -1418,13 +1419,18 @@ public class Controller
 	{
 		//Check for tab1,tab2 again and write to file (PDF,or some other file)
 		boolean x,y;
+		String yoda;
 		x=local_handleb1();
 		y=local_handleb2();
 		if(x && y)
 		{
 			System.out.print("Yayay!! :*");
-			mane.closer();
+			yoda=mane.closer();
 			final_save_b.setTextFill(Color.GREEN);
+			ENum.setText("Enrollment Number Generated : "+yoda);
+			t1.setDisable(true);
+			t2.setDisable(true);
+			t3.setDisable(true);
 		}
 	}
 	
