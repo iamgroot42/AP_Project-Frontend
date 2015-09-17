@@ -230,7 +230,7 @@
                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                  <children>
-                                    <Label text="Graduation Information">
+                                    <Label text="Graduation Information" GridPane.halignment="CENTER">
                                        <font>
                                           <Font name="System Bold" size="19.0" />
                                        </font>
