@@ -59,6 +59,7 @@ public class Main extends Application
 			}
 //			this.model.setEnrollment_number("PotatoLAND");
 			String enrl=this.model.getEnrollment_number();
+			System.out.println("Your Enrollment number :"+ enrl);
 			File dir = new File("UserFiles");
 			if (!dir.exists()) {
 				if (dir.mkdir()) {

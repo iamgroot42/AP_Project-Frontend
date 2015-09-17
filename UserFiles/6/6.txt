@@ -1,0 +1,42 @@
+Enrollment Number : 6
+Timestamp : 2015-09-17
+
+PERSONAL DETAILS:
+Email : razer@hotmail.co.in
+Name : Anshuman Suri
+Address of Correspondence : Home , Potato-Land
+Next to my neighbour's house.
+Mobile : 9718189529
+PhD Stream : Computer Science
+PhD Preference 1 : Artificial Intelligence and Robotics - CSE
+PhD Preference 2 : Machine Learning - CSE
+PhD Preference 3 : Security and Privacy - CSE
+Gender : Male
+Category : General
+Physically Disabled : No
+Date of Birth : 1996-03-09
+Children/War Widows of Defence Personnel wounded/killed in war : No
+Father's Name : Tomato King
+Nationality : India
+Permanent Address : Same as corr.
+Pincode : 110058
+
+SCHOOLING DETAILS:
+Xth Board : CBSE
+Xth Marks : 92.0
+Year of Passing Xth : 2012
+XIIth Board : CBSE
+XIIth Marks : 96.0
+Year of Passing XIIth : 2014
+
+GRADUATION DETAILS:
+Degree : B.Tech
+Department/Discipline : CSE
+College : IIITD
+University : IIITD
+City : New Delhi
+State : New Delhi
+Year of Graduation : 2014
+CGPA : 9.2/10
+
+Achievements ::*

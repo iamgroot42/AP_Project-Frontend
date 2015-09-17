@@ -1422,7 +1422,7 @@ public class Controller
 		y=local_handleb2();
 		if(x && y)
 		{
-			System.out.print(":*");
+			System.out.print("Yayay!! :*");
 			mane.closer();
 			final_save_b.setTextFill(Color.GREEN);
 		}
