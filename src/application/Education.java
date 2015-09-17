@@ -1,7 +1,7 @@
 package application;
 
 //@author : Anshuman Suri : 2014021
-//Please read the README.md before testing the applciation 
+//Please read the README.md before testing the application 
 
 import java.io.Serializable;
 
