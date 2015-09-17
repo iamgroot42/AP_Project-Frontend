@@ -217,6 +217,7 @@ public class Main extends Application
 	    	  }
 	    	  if(y.getGiven_gate())
 	    	  {
+	    		  nada.write("GATE\n");
 	    		  nada.write("Area : "+y.getG().getArea()+"\n");
 	    		  nada.write("Year : "+y.getG().getYear()+"\n");
 	    		  nada.write("Marks : "+y.getG().getMarks()+"/100\n");
