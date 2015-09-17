@@ -808,7 +808,7 @@ public class Controller
 		try
 		{
 			float x=Float.parseFloat(score_other.getText());
-			if(x<600 || x>2400) //SAT score range
+			if(x<0 || x>1000) //GATE score range
 			{
 				temp=false;
 				score_otherl.setTextFill(Color.RED);
