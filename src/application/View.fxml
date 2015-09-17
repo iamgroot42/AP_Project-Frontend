@@ -7,11 +7,11 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<TabPane fx:id="t" prefHeight="1663.0" prefWidth="701.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+<TabPane fx:id="t" prefHeight="1135.0" prefWidth="703.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
   <tabs>
     <Tab fx:id="t1" text="Personal Information">
          <content>
-            <ScrollPane hbarPolicy="ALWAYS" pannable="true" vbarPolicy="ALWAYS">
+            <ScrollPane pannable="true">
                <content>
                   <GridPane hgap="10.0" vgap="10.0">
                     <columnConstraints>
@@ -148,8 +148,8 @@
                      </columnConstraints>
                      <rowConstraints>
                         <RowConstraints maxHeight="1461.0" minHeight="10.0" prefHeight="660.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="838.0" minHeight="10.0" prefHeight="421.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="838.0" minHeight="0.0" prefHeight="310.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="838.0" minHeight="10.0" prefHeight="346.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="838.0" minHeight="0.0" prefHeight="379.0" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="838.0" minHeight="0.0" prefHeight="72.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
