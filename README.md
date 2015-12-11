@@ -1,9 +1,6 @@
 # AP_Project-Frontend
-AP Project Frontend (Anshuman & Satyam)
-- Frontend : Anshuman
-- Backend : Satyam
 
-How to Use the Applciation :
+### Using the application :
 - Run the applciation via Eclipse (4.5 ot higher).
 - You may face 'build configuration problem' when trying to launch the application. Add external .JARs to Build Path to fix this error.
 - Fill all the necessary fields in any of the tabs and click on the 'save' button on the bottom of the respective tab to save your work.
